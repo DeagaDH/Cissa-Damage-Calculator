@@ -1312,7 +1312,7 @@ class BuffWindow(wx.Frame):
             if col==1:
                 empty2=wx.StaticText(self,label='            ')
                 self.top_box.Add(empty2,pos=(row,col-1))  
-            self.top_box.Add(label_dict[name],pos=(row,col), flag=wx.ALIGN_RIGHT)
+            self.top_box.Add(label_dict[name],pos=(row,col))
             self.top_box.Add(choice_dict[name],pos=(row,col+1),flag=wx.EXPAND)
             self.top_box.Add(empty,pos=(row,col+2))
             
