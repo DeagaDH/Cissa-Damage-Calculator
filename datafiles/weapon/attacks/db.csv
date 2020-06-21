@@ -1,0 +1,123 @@
+﻿Attack Name,Raw,,Element,Raw_mult
+Double Slash (L),cut,8,0.60,1
+Double Slash (R),cut,10,0.60,1
+Double Slash Return Stroke (R),cut,9,0.60,1
+Double Slash Return Stroke (L),cut,10,0.60,1
+Circle Slash (R1),cut,9,0.70,1
+Circle Slash (L),cut,11,0.70,1
+Circle Slash (R2),cut,11,0.70,1
+Lunging Strike (L1),cut,3,0.60,1
+Lunging Strike (R1),cut,3,0.60,1
+Lunging Strike (L2),cut,5,0.60,1
+Lunging Strike (R2),cut,5,0.60,1
+Rising Slash (After Lunging Strike),cut,7,0.60,1
+Turn Slash (L),cut,5,0.60,1
+Turn Slash (R),cut,5,0.60,1
+Left Roundslash (L1),cut,15,0.60,1
+Left Roundslash (R),cut,7,0.60,1
+Left Roundslash (L2),cut,5,0.60,1
+Right Roundslash (R1),cut,15,0.60,1
+Right Roundslash (L),cut,7,0.60,1
+Right Roundslash (R2),cut,5,0.60,1
+Left Double Roundslash (L1),cut,19,1.00,1
+Left Double Roundslash (R),cut,11,1.00,1
+Left Double Roundslash (L2),cut,7,1.00,1
+Right Double Roundslash (R1),cut,19,1.00,1
+Right Double Roundslash (L),cut,11,1.00,1
+Right Double Roundslash (R2),cut,7,1.00,1
+Demon Flurry (L1),cut,9,0.80,1
+Demon Flurry (R1),cut,9,0.80,1
+Demon Flurry (R2),cut,7,0.80,1
+Demon Flurry (L2),cut,7,0.80,1
+Demon Flurry (R3),cut,3,1.00,1
+Demon Flurry (L3),cut,17,1.00,1
+Demon Flurry (R4),cut,17,1.00,1
+Demon Fangs,cut,11,0.80,1
+Twofold Demon Slash (R),cut,14,0.80,1
+Twofold Demon Slash (L),cut,7,0.80,1
+Sixfold Demon Slash (L1),cut,10,0.80,1
+Sixfold Demon Slash (R1),cut,10,0.80,1
+Sixfold Demon Slash (R2),cut,9,0.80,1
+Sixfold Demon Slash (L2),cut,9,0.80,1
+Sixfold Demon Slash (L3),cut,16,0.80,1
+Sixfold Demon Slash (R3),cut,16,0.80,1
+Left Fade Slash,cut,7,0.80,1
+Right Fade Slash,cut,7,0.80,1
+Rising Slash (After Fade Slash),cut,9,0.80,1
+Demon Flurry Rush (L1),cut,5,0.60,1
+Demon Flurry Rush (L2),cut,4,0.60,1
+Demon Flurry Rush (L3),cut,8,1.00,1
+Demon Flurry Rush (R1),cut,5,0.60,1
+Demon Flurry Rush (R2),cut,4,0.60,1
+Demon Flurry Rush (R3),cut,8,1.00,1
+Rising Slash (After Demon Flurry Rush),cut,8,0.80,1
+Blade Dance (L1),cut,17,1.00,1
+Blade Dance (R1),cut,17,1.00,1
+Blade Dance (L2),cut,6,0.80,1
+Blade Dance (R2),cut,6,0.80,1
+Blade Dance (L3),cut,10,0.80,1
+Blade Dance (R3),cut,10,0.80,1
+Blade Dance (R4),cut,9,0.80,1
+Blade Dance (L4),cut,9,0.80,1
+Blade Dance (R5),cut,11,0.80,1
+Blade Dance (L5),cut,11,0.80,1
+Blade Dance (L6),cut,9,0.80,1
+Blade Dance (R6),cut,9,0.80,1
+Blade Dance (L7),cut,12,0.80,1
+Blade Dance (R7),cut,12,0.80,1
+Blade Dance (L8),cut,7,1.00,1
+Blade Dance (R8),cut,20,1.00,1
+Jumping Double Slash (R),cut,12,0.60,1
+Jumping Double Slash (L),cut,9,0.60,1
+Sliding Slash (L1),cut,10,0.70,1
+Sliding Slash (R1),cut,10,0.70,1
+Sliding Slash (L2),cut,13,0.70,1
+Sliding Slash (R2),cut,13,0.70,1
+Midair Spinning Blade Dance (R1),cut,10,0.50,1
+Midair Spinning Blade Dance (L1),cut,15,0.50,1
+Midair Spinning Blade Dance (R2),cut,15,0.70,1
+Midair Spinning Blade Dance (L2),cut,10,0.70,1
+Midair Spinning Blade Dance Finisher (L1),cut,20,0.70,1
+Midair Spinning Blade Dance Finisher (R1),cut,20,0.70,1
+Heavenly Blade Dance (L1),cut,17,0.40,1
+Heavenly Blade Dance (R1),cut,11,0.40,1
+Heavenly Blade Dance (L2),cut,11,0.40,1
+Heavenly Blade Dance (R2),cut,17,0.40,1
+Heavenly Blade Dance (L1) 9 to 14 hits,cut,17,0.40,0.7
+Heavenly Blade Dance (R1) 9 to 14 hits,cut,11,0.40,0.7
+Heavenly Blade Dance (L2) 9 to 14 hits,cut,11,0.40,0.7
+Heavenly Blade Dance (R2) 9 to 14 hits,cut,17,0.40,0.7
+Heavenly Blade Dance (L1) 14 to 19 hits,cut,17,0.40,0.5
+Heavenly Blade Dance (R1) 14 to 19 hits,cut,11,0.40,0.5
+Heavenly Blade Dance (L2) 14 to 19 hits,cut,11,0.40,0.5
+Heavenly Blade Dance (R2) 14 to 19 hits,cut,17,0.40,0.5
+Heavenly Blade Dance (L1) 20+ hits,cut,17,0.40,0.3
+Heavenly Blade Dance (R1) 20+ hits,cut,11,0.40,0.3
+Heavenly Blade Dance (L2) 20+ hits,cut,11,0.40,0.3
+Heavenly Blade Dance (R2) 20+ hits,cut,17,0.40,0.3
+Heavenly Blade Dance Finisher (R),cut,21,1.00,1
+Heavenly Blade Dance Finisher (L),cut,21,1.00,1
+Spinning Blade Dance Finisher (L1),cut,20,0.70,1
+Spinning Blade Dance Finisher (R1),cut,20,0.70,1
+Spinning Blade Dance Finisher (L2),cut,12,0.70,1
+Spinning Blade Dance Finisher (R2),cut,12,0.70,1
+Special Claw Attack,cut,8,0.00,1
+[Clutching] Weapon Attack (L1, R1),cut,13,0.70,1
+[Clutching] Weapon Attack (R2),cut,13,0.70,1
+[Clutching] Weapon Attack (L2),cut,9,0.50,1
+[Clutching] Weapon Attack (R3),cut,9,0.70,1
+[Clutching] Weapon Attack (L3 Repeated),cut,9,0.70,1
+[Clutching] Weapon Attack (R4 Repeated),cut,9,0.70,1
+[Clutching] Spinning Rising Slash (L),cut,23,1.00,1
+[Clutching] Spinning Rising Slash (R),cut,23,1.00,1
+[Mounting] Demon Flurry (L1),cut,18,1.00,1
+[Mounting] Demon Flurry (R1),cut,18,1.00,1
+[Mounting] Demon Flurry (R2),cut,10,0.50,1
+[Mounting] Demon Flurry (L2),cut,10,0.50,1
+[Mounting] Demon Flurry (R3),cut,8,0.50,1
+[Mounting] Demon Flurry (L3),cut,12,0.50,1
+[Mounting] Demon Flurry (R4),cut,12,0.50,1
+[Mounting] Demon Flurry (L Repeated),cut,10,0.70,1
+[Mounting] Demon Flurry (R Repeated),cut,10,0.70,1
+[Mounting] Demon Flurry (L Final),cut,23,1.00,1
+[Mounting] Demon Flurry (R Final),cut,23,1.00,1

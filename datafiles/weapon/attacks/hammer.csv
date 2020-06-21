@@ -1,0 +1,44 @@
+﻿Attack Name,Raw,,Element
+Swing,impact,20,1.00
+Backswing,impact,16,1.00
+Overhead Smash I,impact,37,1.00
+Overhead Smash II,impact,23,1.00
+Upswing / Spinning Strong Upswing,impact,86,1.00
+Charged Side Blow,impact,18,1.00
+Charged Follow-up,impact,25,1.00
+Charged Upswing,impact,38,1.00
+Side Smash / Spinning Side Smash,impact,15,1.00
+Charged Big Bang (1st Hit),impact,15,1.00
+Charged Big Bang (2nd Hit),impact,76,1.00
+Charged Brutal Upswing,impact,45,1.00
+Charged Brutal Big Bang (1st and 2nd Hit),impact,15,1.00
+Charged Brutal Big Bang (Final Hit),impact,85,1.00
+Spinning Bludgeon (1st Hit),impact,26,1.00
+Spinning Bludgeon (Spinning),impact,18,1.00
+Spinning Follow-up / Charged Follow-up (Power Charge),impact,55,1.00
+Spinning Swing,impact,32,1.00
+Big Bang I / Big Bang Finisher (1st and 2nd Hit),impact,28,1.00
+Big Bang II,impact,32,1.00
+Big Bang III,impact,45,1.00
+Big Bang IV,impact,65,1.00
+Big Bang Finisher (3rd Hit),impact,100,1.00
+Jumping Smash,impact,37,1.00
+Jumping Charged Attack,impact,65,1.00
+Jumping Charged Attack II,impact,70,1.00
+Jumping Charged Attack III,impact,80,1.00
+Midair Spinning Bludgeon (Spinning),impact,25,1.00
+Midair Spinning Bludgeon (Final Hit),impact,100,1.00
+Clutch Claw,cut,8,0.00
+Spinning Flying Smash,impact,8,0.80
+Flying Smash / Spinning Flying Smash Finisher,impact,40,1.00
+[Clutching] Weapon Attack (1st Hit),impact,20,1.00
+[Clutching] Weapon Attack (2nd Hit),impact,55,1.00
+[Mounting] Charged Attack Lv1,impact,68,1.00
+[Mounting] Charged Attack Lv2,impact,85,1.00
+[Mounting] Charged Attack Lv3,impact,111,1.00
+[Mounting: Tail] Charged Attack Lv1 (1st Hit),impact,32,1.00
+[Mounting: Tail] Charged Attack Lv2 (1st Hit),impact,42,1.00
+[Mounting: Tail] Charged Attack Lv3 (1st Hit),impact,55,1.00
+[Mounting: Tail] Charged Attack Lv1 (2nd Hit),impact,60,1.00
+[Mounting: Tail] Charged Attack Lv2 (2nd Hit),impact,77,1.00
+[Mounting: Tail] Charged Attack Lv3 (2nd Hit),impact,90,1.00

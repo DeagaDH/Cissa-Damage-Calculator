@@ -1,0 +1,26 @@
+﻿Attack Name,Raw,,Element
+Mid Thrust I,cut,20,0.70
+Mid Thrust II,cut,20,0.70
+Mid Thrust III,cut,27,0.70
+High Thrust I / Cancel Thrust,cut,22,0.70
+High Thrust II,cut,22,0.70
+High Thrust III,cut,27,0.70
+Wide Sweep I/II/III,cut,20,0.70
+Guard Thrust,cut,20,0.70
+Counter-thrust,cut,40,0.70
+Leaping Thrust,cut,8,0.30
+Shield Attack,impact,14,0.00
+Dash Attack,cut,11,0.20
+Finishing Thrust,cut,50,0.80
+Finishing Twin Thrust (1st Hit),cut,25,0.70
+Finishing Twin Thrust (2nd Hit),cut,50,0.80
+Reverse Attack,cut,50,0.80
+Jumping Thrust / Advancing Jump Thrust,cut,30,0.70
+Dash Attack (Midair),cut,25,0.70
+Counter Claw (1st Hit),cut,8,0.00
+Counter Claw (2nd Hit),impact,16,0.00
+[Clutching] Weapon Attack (1st Hit),cut,33,1.00
+[Clutching] Weapon Attack (2nd Hit),cut,45,1.00
+[Mounting] Finishing Thrust (1st Hit),cut,40,1.00
+[Mounting] Finishing Thrust (2nd Hit),cut,10,1.00
+[Mounting] Finishing Thrust (3rd Hit),cut,20,1.00

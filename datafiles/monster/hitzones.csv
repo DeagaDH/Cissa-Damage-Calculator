@@ -1,0 +1,616 @@
+.Large Monster,Body Part,State,Cut,Impact,Shot,Fire,Water,Thunder,Ice,Dragon,Stun,T
+Acidic Glavenus,Head,0,43,55,45,20,10,15,5,15,100,1
+Acidic Glavenus,Neck,0,37,37,25,15,10,10,10,10,0,1
+Acidic Glavenus,Throat,0,65,45,45,25,10,15,10,10,0,1
+Acidic Glavenus,Back,0,45,45,35,20,5,10,10,10,0,2
+Acidic Glavenus,Body,0,23,23,18,15,5,10,10,10,0,2
+Acidic Glavenus,Forelegs,0,23,23,18,15,5,5,5,5,0,
+Acidic Glavenus,Hind Legs,0,30,30,25,15,5,10,5,5,0,3
+Acidic Glavenus,Tail Base,0,37,32,25,20,10,15,10,10,0,4
+Acidic Glavenus,Tail,0,37,32,25,25,10,15,10,10,0,4
+Acidic Glavenus,Tail,Hvy Crystal,18,24,15,35,5,20,5,5,0,4
+Acidic Glavenus,Tail,Sharpened,65,60,50,20,10,10,10,15,0,4
+Anjanath,Nose,0,65,63,55,0,30,15,20,10,100,1
+Anjanath,Head,0,60,60,45,0,25,10,15,5,100,1
+Anjanath,Neck,0,30,30,10,0,20,5,15,5,0,1
+Anjanath,Wings,0,63,45,55,0,30,15,20,10,0,2
+Anjanath,Body,0,30,30,45,0,15,5,10,0,0,2
+Anjanath,Legs,0,21,21,15,0,15,5,10,0,0,3
+Anjanath,Legs,Broken,45,45,50,0,15,5,10,0,0,3
+Anjanath,Tail,0,60,60,75,0,20,10,15,5,0,4
+Azure Rathalos,Head,0,60,65,55,0,15,15,20,30,100,1
+Azure Rathalos,Neck,0,30,35,25,0,5,5,10,20,0,1
+Azure Rathalos,Body,0,20,20,20,0,5,5,10,20,0,
+Azure Rathalos,Back,0,20,20,20,0,5,5,10,20,0,
+Azure Rathalos,Wings,0,50,45,40,0,10,10,15,25,0,2
+Azure Rathalos,Legs,0,35,35,30,0,0,0,5,15,0,3
+Azure Rathalos,Tail,0,18,18,20,0,5,5,10,20,0,4
+Azure Rathalos,Tail Tip,0,55,50,45,0,10,10,15,25,0,4
+Banbaro,Horns,0,30,45,35,10,0,5,0,15,100,1
+Banbaro,Horns,Broken,65,65,55,20,0,10,0,25,100,1
+Banbaro,Head,0,65,65,55,20,0,10,0,25,100,1
+Banbaro,Neck,0,45,45,35,5,0,0,0,10,0,
+Banbaro,Body,0,30,30,25,0,0,0,0,5,0,
+Banbaro,Forearms,0,30,30,25,0,0,0,0,5,0,
+Banbaro,Hind Legs,0,45,45,45,0,0,0,0,5,0,2
+Banbaro,Hind Legs,Broken,55,55,50,5,0,0,0,10,0,2
+Banbaro,Tail,0,35,35,25,0,0,0,0,5,0,3
+Barioth,Head,0,65,70,55,20,10,15,0,15,100,1
+Barioth,Neck/Back,0,30,30,25,5,5,5,0,5,0,
+Barioth,Belly,0,38,38,25,10,0,5,0,5,0,
+Barioth,Claws,0,21,45,25,35,5,25,0,10,0,2
+Barioth,Claws,Broken,25,45,30,20,5,15,0,10,0,2
+Barioth,Wings,0,30,45,20,10,0,5,0,5,0,2
+Barioth,Front Legs,0,40,45,35,15,0,10,0,5,0,2
+Barioth,Hind Legs,0,25,24,25,5,5,5,0,5,0,
+Barioth,Tail,0,45,23,45,10,0,5,0,5,0,3
+Barioth,Tail Tip,0,60,40,40,15,0,10,0,5,0,3
+Barroth,Head,0,20,22,10,20,0,0,15,10,100,1
+Barroth,Head,Mud,19,23,8,0,45,0,10,5,100,1
+Barroth,Body,0,46,46,50,20,0,0,10,5,0,
+Barroth,Body,Mud,20,20,18,0,45,0,10,5,0,
+Barroth,Forearms,0,65,70,60,30,0,0,10,5,0,2
+Barroth,Forearms,Mud,33,36,28,0,45,0,10,5,0,2
+Barroth,Hindlegs,0,36,35,25,20,0,0,10,5,0,3
+Barroth,Hindlegs,Mud,23,23,19,0,45,0,10,5,0,3
+Barroth,Tail,0,55,50,40,25,0,0,15,10,0,4
+Barroth,Tail,Mud,23,23,19,0,45,0,10,5,0,4
+Bazelgeuse,Head,0,80,85,60,0,15,25,20,20,100,1
+Bazelgeuse,Body,0,45,45,35,0,5,15,10,10,0,
+Bazelgeuse,Back,0,30,30,25,0,5,15,10,10,0,
+Bazelgeuse,Legs,0,36,34,30,0,5,15,10,10,0,2
+Bazelgeuse,Wings,0,25,25,65,0,5,15,10,10,0,3
+Bazelgeuse,Tail,0,75,70,55,0,10,20,15,15,0,4
+Beotodus,Head,0,46,50,45,25,10,15,0,0,100,1
+Beotodus,Head,Snow,30,34,25,25,0,5,0,0,0,1
+Beotodus,Body/Back,0,35,35,35,20,5,10,0,0,0,2
+Beotodus,Body/Back,Snow,30,30,25,20,0,5,0,0,0,2
+Beotodus,Legs,0,70,65,50,30,10,15,0,0,0,2
+Beotodus,Tail,0,40,35,35,20,5,10,0,0,0,3
+Beotodus,Tail,Snow,34,30,25,20,0,5,0,0,0,3
+Black Diablos,Horn,0,18,29,15,0,20,10,25,0,100,1
+Black Diablos,Head,0,43,55,30,0,25,10,30,0,100,1
+Black Diablos,Neck,0,40,40,25,0,15,5,20,0,0,1
+Black Diablos,Stomach,0,58,63,32,0,30,10,35,0,0,2
+Black Diablos,Back,0,24,42,30,0,20,10,25,0,0,2
+Black Diablos,Wings,0,40,30,60,0,25,10,30,0,0,
+Black Diablos,Legs,0,35,35,35,0,10,5,15,0,0,3
+Black Diablos,Tail,0,45,24,45,0,20,10,15,0,0,4
+Black Diablos,Tail Tip,0,19,20,10,0,20,10,25,0,0,4
+Blackveil Vaal Hazak,Head,0,65,75,50,15,5,10,15,0,100,1
+Blackveil Vaal Hazak,Head,Broken,75,85,60,20,5,10,15,25,100,1
+Blackveil Vaal Hazak,Neck,0,30,30,25,10,5,5,10,15,0,
+Blackveil Vaal Hazak,Chest,0,30,30,25,10,5,5,10,15,0,2
+Blackveil Vaal Hazak,Chest,Spore Sac,60,65,45,15,10,10,10,20,0,2
+Blackveil Vaal Hazak,Stomach,0,35,40,25,15,5,5,10,0,0,2
+Blackveil Vaal Hazak,Stomach,Broken,45,50,35,20,5,10,15,25,0,2
+Blackveil Vaal Hazak,Back,0,25,24,20,15,5,5,10,0,0,
+Blackveil Vaal Hazak,Back,Broken,45,45,30,20,5,10,15,25,0,
+Blackveil Vaal Hazak,Hindlegs,0,23,23,20,5,0,0,0,5,0,
+Blackveil Vaal Hazak,Forelegs,0,45,40,20,10,0,0,5,5,0,3
+Blackveil Vaal Hazak,Forelegs,Broken,50,45,30,15,5,5,10,20,0,3
+Blackveil Vaal Hazak,Wings,0,23,23,25,15,5,10,10,15,0,
+Blackveil Vaal Hazak,Tail,0,30,24,30,15,5,10,10,15,0,4
+Blackveil Vaal Hazak,Tail,Spore Sac,60,55,45,15,10,10,10,20,0,4
+Blackveil Vaal Hazak,Tail Tip,0,50,25,40,15,5,10,10,15,0,4
+Brachydios,Head,0,55,60,45,0,15,10,20,5,100,1
+Brachydios,Neck,0,30,30,25,0,15,5,20,5,0,
+Brachydios,Body,0,30,30,25,0,10,5,15,0,0,
+Brachydios,Forearms,0,40,40,35,0,15,5,30,0,0,2
+Brachydios,Hind Legs,0,30,30,20,0,10,5,15,0,0,
+Brachydios,Tail,0,50,45,50,0,15,10,15,5,0,3
+Brachydios,Tail Tip,0,20,20,15,0,5,5,10,10,0,3
+Brute Tigrex,Head,0,55,60,45,0,25,15,10,15,100,1
+Brute Tigrex,Neck,0,25,25,15,5,15,15,12,15,0,
+Brute Tigrex,Belly,0,25,25,15,5,15,15,12,15,0,
+Brute Tigrex,Back,0,25,25,15,0,15,15,10,15,0,
+Brute Tigrex,Forelegs,0,45,40,30,0,20,18,12,5,0,2
+Brute Tigrex,Hindlegs,0,30,30,20,0,15,10,12,10,0,
+Brute Tigrex,Tail,0,35,30,25,0,10,5,0,5,0,3
+Brute Tigrex,Tail Tip,0,35,30,25,0,10,10,0,10,0,3
+Coral Pukei-Pukei,Head,0,60,65,45,10,0,15,30,10,100,1
+Coral Pukei-Pukei,Body,0,30,30,25,5,0,5,15,5,0,
+Coral Pukei-Pukei,Wings,0,34,34,40,5,0,10,25,5,0,2
+Coral Pukei-Pukei,Legs,0,30,30,25,5,0,10,20,5,0,3
+Coral Pukei-Pukei,Tail,0,40,35,30,5,0,10,25,5,0,4
+Deviljho,Head,0,60,70,60,10,10,15,5,15,100,1
+Deviljho,Chest,0,37,37,35,15,15,20,10,20,0,2
+Deviljho,Torso,0,25,25,25,5,5,20,5,20,0,
+Deviljho,Forelegs,0,30,30,30,5,5,20,5,20,0,2
+Deviljho,Hindlegs,0,45,38,35,5,5,10,5,10,0,
+Deviljho,Tail,0,40,35,25,5,5,20,5,20,0,3
+Deviljho,Head,Enraged,45,50,45,15,15,20,10,20,100,1
+Deviljho,Chest,Enraged,75,75,70,20,20,25,15,25,0,2
+Deviljho,Torso,Enraged,22,22,20,10,10,25,10,25,0,
+Deviljho,Forelegs,Enraged,25,25,25,10,10,25,10,25,0,2
+Deviljho,Hindlegs,Enraged,25,25,25,10,10,15,5,15,0,
+Deviljho,Tail,Enraged,25,25,20,5,5,20,5,20,0,3
+Diablos,Horn,0,19,38,18,0,20,10,25,20,100,1
+Diablos,Head,0,45,57,35,0,25,10,30,25,100,1
+Diablos,Neck,0,40,40,25,0,15,5,20,15,0,1
+Diablos,Stomach,0,65,70,35,0,30,10,35,30,0,2
+Diablos,Back,0,24,42,35,0,20,10,25,20,0,2
+Diablos,Wings,0,40,30,60,0,25,10,30,25,0,
+Diablos,Legs,0,35,35,35,0,10,5,15,10,0,3
+Diablos,Tail,0,50,24,45,0,20,10,15,20,0,4
+Diablos,Tail Tip,0,20,26,10,0,20,10,25,20,0,4
+Dodogama,Head,0,35,35,25,0,20,30,20,10,100,1
+Dodogama,Head,Rock 1,60,60,52,0,20,30,20,10,100,1
+Dodogama,Head,Rock 2,80,80,72,0,20,30,20,10,100,1
+Dodogama,Neck,0,30,30,20,0,10,25,10,5,100,1
+Dodogama,Neck,Rock 1,52,52,45,0,10,25,10,5,100,1
+Dodogama,Neck,Rock 2,72,72,64,0,10,25,10,5,100,1
+Dodogama,Body,0,45,45,40,0,5,10,5,5,0,
+Dodogama,Back,0,45,45,40,0,5,10,5,5,0,
+Dodogama,Forelegs,0,45,45,40,0,5,10,5,5,0,2
+Dodogama,Hindlegs,0,45,45,40,0,5,10,5,5,0,
+Dodogama,Tail,0,48,48,45,0,10,15,10,5,0,3
+Ebony Odogaron,Head,0,43,45,45,25,35,25,25,5,100,1
+Ebony Odogaron,Head,Broken,65,75,55,20,25,20,20,5,100,1
+Ebony Odogaron,Neck,0,25,30,25,15,20,15,15,5,100,1
+Ebony Odogaron,Body,0,25,25,20,10,15,10,10,5,0,
+Ebony Odogaron,Back,0,25,25,20,10,15,10,10,5,0,
+Ebony Odogaron,Forelegs,0,34,38,30,20,30,20,20,5,0,2
+Ebony Odogaron,Forelegs,Broken,45,45,40,10,20,10,10,5,0,2
+Ebony Odogaron,Hindlegs,0,30,30,25,20,30,20,20,5,0,3
+Ebony Odogaron,Hindlegs,Broken,50,50,40,10,20,10,10,5,0,3
+Ebony Odogaron,Tail,0,25,22,25,20,30,20,20,5,0,4
+Ebony Odogaron,Tail,Broken,50,45,45,10,15,10,10,5,0,4
+Ebony Odogaron,Tail Tip,0,45,30,40,15,20,15,15,5,0,4
+Fulgur Anjanath,Nose,0,65,60,55,15,20,0,30,10,100,1
+Fulgur Anjanath,Nose,Charged,65,60,55,15,35,0,20,10,100,1
+Fulgur Anjanath,Head,0,60,60,45,10,15,0,25,5,100,1
+Fulgur Anjanath,Head,Charged,55,55,45,10,25,0,15,5,100,1
+Fulgur Anjanath,Neck,0,30,30,10,5,15,0,20,5,0,1
+Fulgur Anjanath,Neck,Charged,23,23,10,5,20,0,15,5,0,1
+Fulgur Anjanath,Wings,0,65,45,55,15,20,0,30,10,0,2
+Fulgur Anjanath,Wings,Charged,55,40,50,15,35,0,20,10,0,2
+Fulgur Anjanath,Body,0,30,30,45,5,10,0,15,0,0,2
+Fulgur Anjanath,Body,Charged,23,23,40,5,15,0,10,0,0,2
+Fulgur Anjanath,Legs,0,30,30,10,5,10,0,15,0,0,3
+Fulgur Anjanath,Legs,Charged,35,35,15,5,15,0,10,0,0,3
+Fulgur Anjanath,Legs,Broken,45,45,50,5,15,0,15,0,0,3
+Fulgur Anjanath,Tail,0,60,60,75,10,15,0,20,5,0,4
+Fulgur Anjanath,Tail,Charged,55,55,70,10,20,0,15,5,0,4
+Fulgur Anjanath,Tail,Broken,60,60,75,10,15,0,15,5,0,4
+Furious Rajang,Head,0,55,57,45,0,5,0,20,0,100,
+Furious Rajang,Head,Rampage,60,62,50,0,5,0,20,0,100,
+Furious Rajang,Forelegs,0,38,38,30,0,5,0,10,0,0,1
+Furious Rajang,Forelegs,Rampage,5,5,5,0,5,0,10,0,0,1
+Furious Rajang,Hindlegs,0,21,21,15,0,5,0,10,0,0,2
+Furious Rajang,Body,0,30,35,20,0,5,0,10,0,0,
+Glavenus,Head,0,50,55,30,0,25,10,15,15,100,1
+Glavenus,Neck,0,37,37,25,0,20,10,13,10,0,1
+Glavenus,Throat,0,65,65,45,0,30,10,15,10,0,1
+Glavenus,Back,0,45,45,35,0,20,5,10,10,0,2
+Glavenus,Body,0,20,20,30,0,15,5,10,10,0,2
+Glavenus,Forearms,0,20,20,18,0,15,5,5,5,0,
+Glavenus,Hind Legs,0,37,35,25,0,15,5,5,5,0,3
+Glavenus,Tail Base,0,37,35,25,0,20,10,15,15,0,4
+Glavenus,Tail,0,37,35,25,0,20,5,10,10,0,4
+Glavenus,Tail,Rusted,20,20,15,0,15,5,5,5,0,4
+Glavenus,Tail,Heating,65,60,45,0,25,10,15,15,0,4
+Gold Rathian,Head,0,20,20,20,0,5,10,5,0,100,1
+Gold Rathian,Head,Broken,55,60,50,0,20,30,10,0,100,1
+Gold Rathian,Neck,0,20,20,20,0,5,10,5,0,0,1
+Gold Rathian,Neck,Broken,30,35,30,0,20,30,10,0,0,1
+Gold Rathian,Body,0,25,30,30,5,10,15,10,0,0,
+Gold Rathian,Back,0,20,20,15,0,5,10,5,0,0,
+Gold Rathian,Wings,0,44,44,45,0,15,20,10,0,0,2
+Gold Rathian,Legs,0,38,35,28,0,10,10,5,0,0,3
+Gold Rathian,Tail,0,20,20,15,0,5,10,5,0,0,4
+Gold Rathian,Tail Tip,0,45,45,35,0,10,10,5,0,0,4
+Great Girros,Head,0,65,70,60,15,30,0,20,10,100,1
+Great Girros,Neck,0,40,45,35,5,20,0,10,5,100,1
+Great Girros,Body,0,35,35,30,0,15,0,5,0,0,
+Great Girros,Back,0,35,35,30,0,15,0,5,0,0,
+Great Girros,Forelegs,0,55,50,45,10,25,0,15,5,0,2
+Great Girros,Hindlegs,0,35,35,30,0,15,0,5,0,0,
+Great Girros,Tail,0,50,45,40,5,20,0,10,5,0,3
+Great Jagras,Head,0,65,70,60,30,0,20,15,10,100,1
+Great Jagras,Neck,0,50,55,45,20,0,10,5,5,100,1
+Great Jagras,Body,0,50,45,40,20,0,10,5,0,0,2
+Great Jagras,Stomach,Inflated,70,75,65,30,0,20,15,10,0,2
+Great Jagras,Back,0,45,40,35,15,0,5,5,0,0,2
+Great Jagras,Forelegs,0,50,45,45,25,0,15,10,5,0,3
+Great Jagras,Hindlegs,0,45,40,35,15,0,5,0,0,0,
+Great Jagras,Tail,0,45,45,40,15,0,5,0,0,0,
+Jyuratodus,Head,0,58,58,58,5,0,10,5,5,100,1
+Jyuratodus,Head,Mud,23,23,23,0,25,0,5,5,100,1
+Jyuratodus,Neck,0,43,43,43,5,0,10,5,5,0,1
+Jyuratodus,Body,0,35,35,35,10,0,25,5,5,0,2
+Jyuratodus,Body,Mud,21,21,21,0,25,0,5,5,0,2
+Jyuratodus,Back,0,24,24,24,5,0,15,5,5,0,2
+Jyuratodus,Fins,0,25,25,25,10,0,20,5,5,0,2
+Jyuratodus,Legs,0,30,30,25,15,0,30,5,5,0,
+Jyuratodus,Legs,Mud,21,21,21,0,25,0,5,5,0,
+Jyuratodus,Tail,0,55,50,45,5,0,10,5,5,0,3
+Jyuratodus,Tail,Mud,23,23,23,0,25,0,5,5,0,3
+Kirin,Head,0,55,55,45,25,20,0,20,5,100,1
+Kirin,Body,0,31,31,22,20,15,0,15,5,0,2
+Kirin,Body,Electric,18,18,10,15,10,0,10,5,0,2
+Kirin,Lower Body,0,29,29,20,20,15,0,15,5,0,2
+Kirin,Lower Body,Electric,18,18,10,15,10,0,10,5,0,2
+Kulu-Ya-Ku,Head,0,68,68,60,15,20,15,15,15,100,1
+Kulu-Ya-Ku,Forearms,0,52,56,45,15,20,15,15,15,0,2
+Kulu-Ya-Ku,Body,0,45,45,40,15,20,15,15,15,0,3
+Kulu-Ya-Ku,Tail,0,55,50,35,15,20,15,15,15,0,
+Kulu-Ya-Ku,Rock,0,5,5,5,5,20,5,5,5,0,
+Kulve Taroth,Head,0,20,25,10,0,5,10,0,0,100,1
+Kulve Taroth,Chest,0,65,65,45,0,5,0,10,5,0,2
+Kulve Taroth,Exp. Foreleg,0,70,65,25,0,10,0,20,15,0,3
+Kulve Taroth,Forelegs,0,20,25,10,0,5,10,0,0,0,3
+Kulve Taroth,Hindlegs,0,50,50,15,0,5,0,15,10,0,
+Kulve Taroth,Body,0,20,25,10,0,5,10,0,0,0,
+Kulve Taroth,Tail,0,20,25,10,0,5,10,0,0,0,
+Kulve Taroth,Head,Molten,80,85,30,10,15,20,0,10,100,1
+Kulve Taroth,Forelegs,Molten,80,85,30,10,15,20,0,10,0,3
+Kulve Taroth,Body,Molten,80,85,30,10,15,20,0,10,0,
+Kulve Taroth,Tail,Molten,80,85,30,10,15,20,0,10,0,
+Kulve Taroth,Head,Released,90,95,20,0,10,0,20,15,100,1
+Kulve Taroth,Chest,Released,65,65,45,0,5,0,10,5,0,2
+Kulve Taroth,Forelegs,Released,70,65,25,0,10,0,20,15,0,3
+Kulve Taroth,Hindlegs,Released,50,50,15,0,5,0,15,10,0,
+Kulve Taroth,Body,Released,35,35,20,0,5,0,10,5,0,
+Kulve Taroth,Tail,Released,50,40,20,0,5,0,15,10,0,
+Kushala Daora,Head,0,55,50,45,10,5,20,0,10,100,1
+Kushala Daora,Neck,0,36,35,25,10,5,15,0,5,0,
+Kushala Daora,Body,0,35,50,25,10,5,15,0,10,0,
+Kushala Daora,Wings,0,18,15,18,10,5,20,0,15,0,2
+Kushala Daora,Back,0,18,24,24,10,5,15,0,10,0,
+Kushala Daora,Forelegs,0,45,50,30,10,5,20,0,10,0,
+Kushala Daora,Hindlegs,0,30,30,25,10,5,15,0,5,0,
+Kushala Daora,Tail,0,35,30,55,10,5,20,0,15,0,3
+Lavasioth,Head,Hardened,15,17,15,50,15,0,0,5,100,1
+Lavasioth,Head,Broken,35,40,35,5,35,15,15,5,100,1
+Lavasioth,Head,Heated,55,60,55,0,45,10,10,5,100,1
+Lavasioth,Neck,0,15,15,15,10,10,0,0,5,0,1
+Lavasioth,Abdomen,0,35,35,35,10,10,0,0,5,0,2
+Lavasioth,Body,Hardened,17,17,17,10,15,0,0,5,0,2
+Lavasioth,Body,Broken,35,35,35,5,30,20,20,5,0,2
+Lavasioth,Body,Heated,50,45,50,0,35,15,15,5,0,2
+Lavasioth,Fins,0,30,30,30,10,10,0,0,5,0,2
+Lavasioth,Legs,Hardened,15,15,15,10,5,0,0,5,0,
+Lavasioth,Legs,Broken,30,30,30,5,25,5,5,5,0,
+Lavasioth,Legs,Heated,40,40,40,0,30,5,5,5,0,
+Lavasioth,Tail,Hardened,17,15,17,10,10,0,0,5,0,3
+Lavasioth,Tail,Broken,35,30,35,5,30,15,15,5,0,3
+Lavasioth,Tail,Heated,45,40,45,0,35,10,10,5,0,3
+Legiana,Head,0,59,63,54,20,15,25,0,10,100,1
+Legiana,Neck,0,35,40,30,10,5,15,0,5,0,1
+Legiana,Body,0,24,24,18,10,5,15,0,5,0,
+Legiana,Back,0,24,24,18,10,5,15,0,5,0,
+Legiana,Wings,0,50,45,40,15,10,20,0,5,0,2
+Legiana,Legs,0,35,35,30,5,0,10,0,0,0,3
+Legiana,Tail,0,45,40,35,10,5,15,0,5,0,4
+Leshen,Head,0,65,65,60,25,0,15,10,15,100,1
+Leshen,Body,0,45,45,45,20,0,10,5,10,0,1
+Leshen,Arms,0,45,45,50,20,0,10,5,10,0,1
+Leshen,Legs,0,45,45,50,20,0,10,5,10,0,1
+Lunastra,Head,0,37,60,45,0,7,7,30,25,100,1
+Lunastra,Neck,0,33,37,33,0,3,3,20,15,0,
+Lunastra,Body,0,17,17,20,0,0,0,15,10,0,
+Lunastra,Back,0,17,17,20,0,0,0,15,10,0,
+Lunastra,Forelegs,0,25,30,20,0,3,3,15,10,0,2
+Lunastra,Hindlegs,0,30,25,20,0,3,3,15,10,0,
+Lunastra,Wings,0,55,35,40,0,7,7,25,20,0,3
+Lunastra,Tail,0,45,37,50,0,3,3,20,15,0,4
+Namielle,Head,0,40,40,25,40,0,0,15,30,100,1
+Namielle,Head,Dehydrated,60,65,50,5,0,0,5,10,100,1
+Namielle,Neck,0,25,25,40,25,0,0,10,15,0,1
+Namielle,Neck,Dehydrated,45,40,45,10,0,0,5,5,0,1
+Namielle,Back,0,25,25,30,30,0,0,10,20,0,
+Namielle,Back,Dehydrated,30,30,45,10,0,0,5,10,0,
+Namielle,Stomach,0,30,45,45,20,0,0,15,15,0,
+Namielle,Stomach,Dehydrated,40,60,50,10,0,0,5,10,0,
+Namielle,Forelegs,0,45,35,20,10,0,0,15,10,0,2
+Namielle,Forelegs,Dehydrated,65,55,30,5,0,0,5,10,0,2
+Namielle,Hindlegs,0,20,20,20,10,0,0,5,5,0,
+Namielle,Hindlegs,Dehydrated,25,25,25,5,0,0,5,5,0,
+Namielle,Wings,0,25,25,20,30,5,0,20,20,0,3
+Namielle,Wings,Dehydrated,35,35,30,10,0,0,5,15,0,3
+Namielle,Tail,0,25,25,25,25,0,0,10,15,0,4
+Namielle,Tail,Dehydrated,40,35,30,10,0,0,5,15,0,4
+Nargacuga,Head,0,65,70,40,20,0,30,10,10,100,1
+Nargacuga,Neck/Back,0,30,30,35,10,0,15,5,5,0,
+Nargacuga,Belly,0,40,40,30,10,0,20,5,5,0,
+Nargacuga,Front Legs,0,21,21,15,10,0,15,5,5,0,2
+Nargacuga,Front Legs,Broken,43,23,35,10,0,20,5,5,0,2
+Nargacuga,Hind Legs,0,30,30,25,10,0,15,5,5,0,
+Nargacuga,Tail,0,46,40,45,10,0,25,5,5,0,3
+Nargacuga,Tail Tip,0,40,35,40,10,0,20,5,5,0,3
+Nightshade Paolumu,Head,0,55,60,45,15,25,10,10,0,100,1
+Nightshade Paolumu,Neck,0,35,40,30,10,15,5,5,0,100,1
+Nightshade Paolumu,Neck Pouch,0,70,75,50,15,30,10,10,0,100,1
+Nightshade Paolumu,Body,0,46,46,35,10,15,5,5,0,0,
+Nightshade Paolumu,Legs,0,30,30,25,10,15,5,5,0,0,
+Nightshade Paolumu,Wings,0,30,30,40,10,15,5,5,0,0,2
+Nightshade Paolumu,Tail,0,25,25,15,10,15,5,5,0,0,3
+Odogaron,Head,0,60,65,55,10,15,20,30,0,100,1
+Odogaron,Neck,0,36,45,32,0,5,10,20,0,100,1
+Odogaron,Body,0,30,30,25,0,0,5,15,0,0,
+Odogaron,Back,0,30,30,25,0,0,5,15,0,0,
+Odogaron,Forelegs,0,55,50,45,5,10,15,25,0,0,2
+Odogaron,Hindlegs,0,45,36,32,5,10,15,25,0,0,3
+Odogaron,Tail,0,45,36,32,5,5,10,20,0,0,4
+Paolumu,Head,0,55,55,45,25,0,15,10,10,100,1
+Paolumu,Neck,0,40,40,30,20,0,15,10,10,100,1
+Paolumu,Neck Pouch,0,65,65,52,25,0,15,10,10,100,1
+Paolumu,Body,0,46,46,42,15,0,10,5,5,0,
+Paolumu,Legs,0,40,35,25,15,0,10,5,5,0,
+Paolumu,Wings,0,35,35,45,15,0,10,5,5,0,2
+Paolumu,Tail,0,20,20,15,20,0,15,10,10,0,3
+Pink Rathian,Head,0,60,65,55,0,15,20,15,30,100,1
+Pink Rathian,Neck,0,30,35,25,0,0,5,0,15,0,1
+Pink Rathian,Body,0,20,20,20,0,5,10,5,20,0,
+Pink Rathian,Back,0,20,20,20,0,5,10,5,20,0,
+Pink Rathian,Wings,0,50,45,40,0,10,15,10,25,0,2
+Pink Rathian,Legs,0,37,37,35,0,0,5,0,15,0,3
+Pink Rathian,Tail,0,18,18,20,0,5,10,5,20,0,4
+Pink Rathian,Tail Tip,0,50,45,40,0,5,10,5,20,0,4
+Pukei-Pukei,Head,0,60,64,56,15,0,30,20,10,100,1
+Pukei-Pukei,Tongue,0,76,72,68,15,0,30,20,10,100,
+Pukei-Pukei,Neck,0,40,35,30,5,0,20,10,5,0,1
+Pukei-Pukei,Body,0,35,35,30,0,0,15,5,5,0,
+Pukei-Pukei,Wings,0,50,45,40,10,0,25,15,5,0,2
+Pukei-Pukei,Legs,0,23,23,20,0,0,15,5,0,0,3
+Pukei-Pukei,Tail,0,55,50,45,10,0,25,15,5,0,4
+Radobaan,Head,0,60,65,45,20,20,20,20,30,100,1
+Radobaan,Head Bone,0,21,23,15,0,0,0,0,0,100,1
+Radobaan,Neck,0,30,30,25,10,10,10,15,20,0,
+Radobaan,Body,0,45,50,30,10,10,10,15,20,0,2
+Radobaan,Back Bone,0,20,25,15,0,0,0,0,0,0,2
+Radobaan,Hindlegs,0,55,45,40,10,10,10,10,15,0,3
+Radobaan,Leg Bone,0,20,25,15,0,0,0,0,0,0,3
+Radobaan,Tail,0,45,30,30,15,15,15,15,15,0,4
+Raging Brachydios,Horn,0,60,65,45,0,10,10,25,5,100,1
+Raging Brachydios,Horn,Red Slime,75,75,10,0,20,0,5,0,100,1
+Raging Brachydios,Head,0,60,65,50,0,5,10,15,5,100,1
+Raging Brachydios,Neck,0,32,32,30,0,5,5,10,5,0,1
+Raging Brachydios,Body,0,32,32,30,0,10,5,15,0,0,
+Raging Brachydios,Forearms,0,55,50,45,0,10,5,25,0,0,2
+Raging Brachydios,Forearms,Red Slime,75,75,10,0,20,0,5,0,0,2
+Raging Brachydios,Hind Legs,0,32,32,30,0,5,5,10,0,0,3
+Raging Brachydios,Tail,0,50,45,55,0,10,10,15,5,0,4
+Raging Brachydios,Tail Tip,0,18,30,10,0,10,5,25,10,0,4
+Raging Brachydios,Tail Tip,Red Slime,75,75,10,0,20,0,5,0,0,4
+Rajang,Head,0,60,62,45,0,5,0,30,0,100,
+Rajang,Forelegs,0,43,43,35,0,5,0,15,0,0,1
+Rajang,Forelegs,Rampage,10,10,5,0,5,0,15,0,0,1
+Rajang,Hindlegs,0,25,25,15,0,5,0,15,0,0,2
+Rajang,Body,0,30,35,20,0,5,0,15,0,0,
+Rajang,Tail,0,35,32,25,0,5,0,15,0,0,2
+Rajang,Tail,Rampage,47,45,35,0,5,0,15,0,0,2
+Rathalos,Head,0,60,65,50,0,15,20,15,30,100,1
+Rathalos,Neck,0,35,37,30,0,5,10,5,20,0,1
+Rathalos,Body,0,25,25,20,0,5,10,5,20,0,
+Rathalos,Back,0,25,25,20,0,5,10,5,20,0,
+Rathalos,Wings,0,20,21,19,0,10,15,10,25,0,2
+Rathalos,Legs,0,35,35,30,0,0,5,0,15,0,3
+Rathalos,Tail,0,45,40,35,0,5,10,5,20,0,4
+Rathian,Head,0,60,65,45,0,15,20,15,30,100,1
+Rathian,Neck,0,37,45,30,0,0,5,0,15,0,1
+Rathian,Body,0,35,30,25,0,5,10,5,20,0,
+Rathian,Back,0,35,30,25,0,5,10,5,20,0,
+Rathian,Wings,0,21,21,45,0,10,15,10,25,0,2
+Rathian,Legs,0,37,37,25,0,0,5,0,15,0,3
+Rathian,Tail,0,45,37,30,0,5,10,5,20,0,4
+Ruiner Nergigante,Horn,0,20,25,35,5,15,15,0,20,100,1
+Ruiner Nergigante,Horn,Broken,35,40,45,5,15,15,0,20,100,1
+Ruiner Nergigante,Head,0,45,60,45,5,10,10,15,15,100,1
+Ruiner Nergigante,Head,White,75,90,60,5,10,15,15,15,100,1
+Ruiner Nergigante,Head,Black,20,25,15,5,10,20,15,20,100,1
+Ruiner Nergigante,Body,0,35,30,35,0,0,10,5,10,0,
+Ruiner Nergigante,Back,0,30,35,30,0,0,10,5,10,0,
+Ruiner Nergigante,Forearms,0,50,45,40,5,5,15,0,15,0,2
+Ruiner Nergigante,Forearms,White,70,60,55,5,5,15,0,15,0,2
+Ruiner Nergigante,Forearms,Black,20,25,15,15,5,15,5,20,0,2
+Ruiner Nergigante,Hindlegs,0,35,30,35,0,0,10,5,10,0,
+Ruiner Nergigante,Wings,0,40,30,30,10,5,10,5,10,0,3
+Ruiner Nergigante,Wings,White,55,45,45,10,5,10,5,15,0,3
+Ruiner Nergigante,Wings,Black,28,25,25,10,5,15,5,20,0,3
+Ruiner Nergigante,Tail,0,45,35,25,10,5,10,5,10,0,4
+Ruiner Nergigante,Tail Tip,0,45,35,25,15,5,15,5,15,0,4
+Ruiner Nergigante,Tail Tip,White,65,55,45,15,5,15,5,15,0,4
+Ruiner Nergigante,Tail Tip,Black,10,15,15,5,5,15,0,20,0,4
+Safi'jiiva,Head,0,24,34,25,25,25,25,25,25,100,1
+Safi'jiiva,Head,Broken,45,51,35,25,25,25,25,25,100,1
+Safi'jiiva,Head,S. Critical,63,58,38,30,30,30,30,30,100,1
+Safi'jiiva,Head,B.S. Critical,68,64,48,30,30,30,30,30,100,1
+Safi'jiiva,Snout,White,24,34,3,15,15,15,15,15,100,1
+Safi'jiiva,Snout,Broken,45,51,3,15,15,15,15,15,100,1
+Safi'jiiva,Snout,S. Critical,63,58,10,20,20,20,20,20,100,1
+Safi'jiiva,Snout,B.S. Critical,68,64,10,20,20,20,20,20,100,1
+Safi'jiiva,Neck,0,25,25,3,1,1,1,1,1,0,
+Safi'jiiva,Neck,S. Critical,33,33,7,3,3,3,3,3,0,
+Safi'jiiva,Body,0,18,18,3,1,1,1,1,1,0,
+Safi'jiiva,Body,S. Critical,30,30,7,3,3,3,3,3,0,
+Safi'jiiva,Back,0,45,45,3,15,15,15,15,15,0,
+Safi'jiiva,Back,S. Critical,50,50,7,20,20,20,20,20,0,
+Safi'jiiva,Chest,0,20,20,3,1,1,1,1,1,0,
+Safi'jiiva,Chest,Broken,38,38,15,10,10,10,10,10,0,
+Safi'jiiva,Chest,S. Critical,75,75,45,30,30,30,30,30,0,
+Safi'jiiva,Forelegs,0,34,23,18,20,20,20,20,20,0,2
+Safi'jiiva,Forelegs,S. Critical,45,65,27,25,25,25,25,25,0,2
+Safi'jiiva,Forefeet,0,34,23,18,10,10,10,10,10,0,2
+Safi'jiiva,Forefeet,S. Critical,45,65,27,20,20,20,20,20,0,2
+Safi'jiiva,Foreleg+Feet,Broken,38,35,25,20,20,20,20,20,0,2
+Safi'jiiva,Hindlegs,0,18,34,18,20,20,20,20,20,0,3
+Safi'jiiva,Hindlegs,S. Critical,60,46,30,25,25,25,25,25,0,3
+Safi'jiiva,Hindfeet,0,18,34,18,15,15,15,15,15,0,3
+Safi'jiiva,Hindfeet,S. Critical,60,46,30,20,20,20,20,20,0,3
+Safi'jiiva,Hindleg+Feet,Broken,33,40,25,20,20,20,20,20,0,3
+Safi'jiiva,Wings,0,20,30,45,15,15,15,15,15,0,
+Safi'jiiva,Wings,Broken,25,35,45,15,15,15,15,15,0,
+Safi'jiiva,Wings,S. Critical,50,65,46,20,20,20,20,20,0,
+Safi'jiiva,Wing Tips,0,20,20,10,15,15,15,15,15,0,
+Safi'jiiva,Wing Tips,Broken,25,25,12,15,15,15,15,15,0,
+Safi'jiiva,Wing Tips,S. Critical,50,65,15,20,20,20,20,20,0,
+Safi'jiiva,Webbing,0,20,20,10,5,5,5,5,5,0,
+Safi'jiiva,Webbing,Broken,25,25,12,5,5,5,5,5,0,
+Safi'jiiva,Webbing,S. Critical,50,65,15,10,10,10,10,10,0,
+Safi'jiiva,Tail,0,21,34,15,20,20,20,20,20,0,4
+Safi'jiiva,Tail,Broken,46,40,20,20,20,20,20,20,0,4
+Safi'jiiva,Tail,S. Critical,65,55,35,25,25,25,25,25,0,4
+Safi'jiiva,Upper Tail,0,18,34,3,1,1,1,1,1,0,4
+Safi'jiiva,Upper Tail,Broken,20,40,7,1,1,1,1,1,0,4
+Safi'jiiva,Upper Tail,S. Critical,24,55,10,3,3,3,3,3,0,4
+Savage Deviljho,Head,0,40,45,25,20,25,25,10,30,100,1
+Savage Deviljho,Head,Broken,55,60,40,20,25,25,15,30,100,1
+Savage Deviljho,Neck,0,22,22,15,10,10,15,10,15,0,1
+Savage Deviljho,Chest,0,45,40,25,25,20,30,10,25,0,2
+Savage Deviljho,Chest,Broken,60,55,45,25,20,30,15,25,0,2
+Savage Deviljho,Torso,0,20,25,15,5,15,10,10,20,0,2
+Savage Deviljho,Forelegs,0,20,25,45,5,15,10,10,20,0,2
+Savage Deviljho,Hindlegs,0,33,36,20,15,5,20,10,10,0,3
+Savage Deviljho,Tail,0,36,33,20,15,5,20,10,10,0,4
+Savage Deviljho,Tail,Broken,40,40,25,15,5,20,15,10,0,4
+Scarred Yian Garuga,Ears,0,60,65,45,0,30,0,10,15,100,1
+Scarred Yian Garuga,Head,0,60,65,45,0,30,0,10,15,100,1
+Scarred Yian Garuga,Neck,0,34,40,30,0,15,0,5,10,0,1
+Scarred Yian Garuga,Back,0,18,18,15,0,10,0,5,10,0,
+Scarred Yian Garuga,Belly,0,34,34,30,0,25,0,5,10,0,
+Scarred Yian Garuga,Wings,0,18,18,40,0,20,0,5,10,0,2
+Scarred Yian Garuga,Wings,Broken,24,24,40,0,20,0,5,10,0,2
+Scarred Yian Garuga,Legs,0,30,30,25,0,15,0,5,10,0,3
+Scarred Yian Garuga,Tail,0,40,35,30,0,20,0,5,10,0,4
+Scarred Yian Garuga,Tail Tip,0,46,40,35,0,25,0,5,10,0,4
+Seething Bazelgeuse,Head,0,45,45,35,0,5,20,25,5,100,1
+Seething Bazelgeuse,Body,0,45,45,35,0,5,15,20,5,0,
+Seething Bazelgeuse,Back,0,30,30,15,0,5,10,15,5,0,
+Seething Bazelgeuse,Legs,0,35,35,25,0,5,10,15,5,0,2
+Seething Bazelgeuse,Wings,0,35,35,45,0,5,10,15,5,0,3
+Seething Bazelgeuse,Tail,0,65,65,55,0,5,20,25,5,0,4
+Shara Ishvalda,Head,0,50,55,45,5,15,0,20,5,100,1
+Shara Ishvalda,Head Casing,Bottom,50,50,30,5,15,0,20,5,0,1
+Shara Ishvalda,Head Casing,Top,55,60,35,5,15,0,20,5,0,2
+Shara Ishvalda,Wings,0,19,20,20,5,10,0,15,5,0,3
+Shara Ishvalda,Wings,Broken,10,10,10,5,5,0,10,5,0,3
+Shara Ishvalda,Forelegs,0,19,20,20,5,10,0,15,5,0,4
+Shara Ishvalda,Forelegs,Broken,10,10,10,5,5,0,10,5,0,4
+Shara Ishvalda,Hindlegs,0,10,10,35,5,5,0,10,5,0,5
+Shara Ishvalda,Tail,0,10,10,10,5,5,0,10,5,0,5
+Shara Ishvalda,Head,Released,70,75,35,10,20,0,25,5,100,1
+Shara Ishvalda,Body,Released,48,44,20,5,15,0,20,5,0,
+Shara Ishvalda,Wings,Released,48,48,45,5,15,0,20,5,0,
+Shara Ishvalda,Forelegs,Released,44,48,25,5,15,0,20,5,0,2
+Shara Ishvalda,Hindlegs,Released,25,25,10,5,5,0,15,5,0,3
+Shara Ishvalda,Tail,Released,25,25,10,5,5,0,15,5,0,3
+Shrieking Legiana,Head,0,65,70,45,15,10,15,0,10,100,1
+Shrieking Legiana,Neck,0,35,40,30,15,5,10,0,5,0,1
+Shrieking Legiana,Body,0,25,25,50,25,5,10,0,5,0,
+Shrieking Legiana,Back,0,25,25,45,15,5,10,0,5,0,
+Shrieking Legiana,Wings,0,50,45,40,15,10,15,0,5,0,2
+Shrieking Legiana,Legs,0,35,35,20,20,0,5,0,0,0,3
+Shrieking Legiana,Tail,0,45,40,35,20,5,10,0,5,0,4
+Silver Rathalos,Head,0,20,20,15,0,10,5,5,0,100,1
+Silver Rathalos,Head,Broken,55,60,50,0,30,20,10,0,100,1
+Silver Rathalos,Neck,0,20,20,15,0,10,5,5,0,0,1
+Silver Rathalos,Neck,Broken,30,35,25,0,25,20,10,0,0,1
+Silver Rathalos,Body,0,22,22,20,0,15,10,10,0,0,
+Silver Rathalos,Back,0,22,22,20,0,20,15,5,0,0,
+Silver Rathalos,Wings,0,50,45,40,0,25,15,10,0,0,2
+Silver Rathalos,Legs,0,38,38,32,0,10,10,5,0,0,3
+Silver Rathalos,Tail,0,18,18,16,0,10,5,5,0,0,4
+Silver Rathalos,Tail Tip,0,55,50,45,0,10,10,5,0,0,4
+Stygian Zinogre,Head,0,55,55,50,10,13,15,10,0,100,1
+Stygian Zinogre,Neck,0,50,50,45,8,10,13,8,0,100,1
+Stygian Zinogre,Body,0,30,30,20,5,8,10,5,0,0,
+Stygian Zinogre,Back,0,30,30,20,3,8,10,3,0,0,2
+Stygian Zinogre,Forelegs,0,50,50,45,10,13,15,10,0,0,3
+Stygian Zinogre,Hindlegs,0,30,30,20,5,8,10,5,0,0,
+Stygian Zinogre,Tail,0,40,40,35,8,10,13,8,0,0,4
+Stygian Zinogre,Head,Charged,45,45,45,20,25,30,20,0,100,1
+Stygian Zinogre,Neck,Charged,38,38,33,15,20,25,15,0,100,1
+Stygian Zinogre,Body,Charged,25,25,15,10,15,20,10,0,0,
+Stygian Zinogre,Back,Charged,50,50,50,0,0,0,0,0,0,2
+Stygian Zinogre,Forelegs,Charged,38,38,33,20,25,30,20,0,0,3
+Stygian Zinogre,Hindlegs,Charged,25,25,15,10,15,20,10,0,0,
+Stygian Zinogre,Tail,Charged,35,35,25,15,20,25,15,0,0,4
+Teostra,Head,0,55,60,50,0,30,10,25,10,100,1
+Teostra,Neck,0,33,38,33,0,20,5,15,5,0,
+Teostra,Body,0,18,18,18,0,15,0,10,0,0,2
+Teostra,Back,0,18,18,18,0,15,0,10,0,0,2
+Teostra,Forelegs,0,38,38,33,0,20,5,15,5,0,
+Teostra,Hindlegs,0,30,25,20,0,15,5,10,5,0,
+Teostra,Wings,0,40,35,30,0,25,10,20,10,0,2
+Teostra,Tail,0,38,33,28,0,20,5,15,5,0,4
+Tigrex,Head,0,65,70,55,0,10,25,5,15,100,1
+Tigrex,Neck,0,30,30,20,10,10,15,5,15,0,
+Tigrex,Belly,0,30,30,20,10,10,15,5,15,0,
+Tigrex,Back,0,25,25,20,0,5,15,5,15,0,
+Tigrex,Forelegs,0,50,45,35,0,15,20,10,5,0,2
+Tigrex,Hindlegs,0,30,30,25,0,5,15,0,10,0,
+Tigrex,Tail,0,40,35,30,0,5,10,0,5,0,3
+Tigrex,Tail Tip,0,45,35,30,0,5,10,0,15,0,3
+Tobi-Kadachi,Head,0,48,48,45,10,20,0,10,5,100,1
+Tobi-Kadachi,Neck,0,48,48,45,10,20,0,10,5,50,1
+Tobi-Kadachi,Body,0,45,45,35,5,15,0,5,0,0,2
+Tobi-Kadachi,Mane,0,45,45,48,5,15,0,5,0,0,2
+Tobi-Kadachi,Forelegs,0,35,35,15,5,15,0,5,0,0,3
+Tobi-Kadachi,Hindlegs,0,30,30,10,5,15,0,5,0,0,
+Tobi-Kadachi,Tail,0,65,65,55,20,30,0,20,15,0,4
+Training Area,Pole,0,80,80,80,30,30,30,30,30,0,
+Training Area,Light Barrel,0,43,43,80,20,20,20,20,20,0,
+Training Area,Med. Barrel,0,38,38,60,20,20,20,20,20,0,
+Training Area,Heavy Barrel,0,20,20,40,5,5,5,5,5,0,
+Training Area,Wagon,0,80,80,80,30,30,30,30,30,0,
+Tzitzi-Ya-Ku,Antennae,0,68,59,63,15,15,20,20,15,100,1
+Tzitzi-Ya-Ku,Head,0,59,50,50,15,15,20,20,15,100,1
+Tzitzi-Ya-Ku,Forearms,0,45,60,35,15,15,20,20,15,0,2
+Tzitzi-Ya-Ku,Body/Legs,0,45,60,35,15,15,20,20,15,0,3
+Tzitzi-Ya-Ku,Tail,0,40,40,35,15,15,20,20,15,0,
+Uragaan,Head,0,60,65,45,0,20,15,15,20,100,1
+Uragaan,Jaw,0,18,19,10,0,40,5,20,30,100,1
+Uragaan,Jaw,Broken,55,60,40,0,20,5,15,20,100,1
+Uragaan,Upper Neck,0,20,24,10,0,15,0,10,15,0,
+Uragaan,Lower Neck,0,25,30,15,0,20,0,10,15,0,
+Uragaan,Body,0,50,45,45,0,30,5,15,30,0,2
+Uragaan,Back,0,20,24,15,0,15,0,10,15,0,2
+Uragaan,Forearms,0,25,30,20,0,15,0,10,15,0,2
+Uragaan,Hindlegs,0,43,37,20,0,15,0,10,15,0,3
+Uragaan,Tail,Top,25,25,15,0,15,0,10,15,0,4
+Uragaan,Tail,Bottom,35,30,25,0,25,5,10,20,0,4
+Uragaan,Tail Tip,0,25,25,15,0,35,0,15,25,0,4
+Velkhana,Head,0,55,55,45,20,0,15,0,20,100,1
+Velkhana,Head,Broken,65,65,55,20,0,15,0,20,100,1
+Velkhana,Neck,0,35,45,30,25,5,10,0,15,0,1
+Velkhana,Neck,Broken,45,55,40,25,5,10,0,15,0,1
+Velkhana,Body,0,30,30,25,30,10,5,0,10,0,2
+Velkhana,Forelegs,0,45,40,30,30,10,5,0,10,0,
+Velkhana,Hindlegs,0,35,30,20,30,10,5,0,10,0,
+Velkhana,Wings,0,40,40,20,25,5,10,0,15,0,2
+Velkhana,Wings,Broken,50,50,30,25,5,10,0,15,0,2
+Velkhana,Tail,0,40,35,35,25,5,10,0,15,0,3
+Velkhana,Tail,Broken,50,45,45,25,5,10,0,15,0,3
+Viper Tobi-Kadachi,Head,0,65,65,50,10,0,25,20,10,100,1
+Viper Tobi-Kadachi,Neck,0,60,60,45,10,0,25,20,10,50,1
+Viper Tobi-Kadachi,Body,0,35,35,25,0,0,10,5,0,0,2
+Viper Tobi-Kadachi,Mane,0,35,35,35,0,0,10,5,0,0,2
+Viper Tobi-Kadachi,Forelegs,0,55,55,45,5,0,20,15,5,0,3
+Viper Tobi-Kadachi,Hindlegs,0,30,30,15,0,0,10,5,0,0,
+Viper Tobi-Kadachi,Tail,0,45,45,35,5,0,15,10,5,0,4
+Yian Garuga,Ears,0,60,65,45,0,30,0,10,15,100,1
+Yian Garuga,Head,0,60,65,45,0,30,0,10,15,100,1
+Yian Garuga,Neck,0,34,40,30,0,15,0,5,10,0,1
+Yian Garuga,Back,0,18,18,15,0,10,0,5,10,0,
+Yian Garuga,Belly,0,34,34,30,0,25,0,5,10,0,
+Yian Garuga,Wings,0,18,18,40,0,20,0,5,10,0,2
+Yian Garuga,Wings,Broken,24,24,40,0,20,0,5,10,0,2
+Yian Garuga,Legs,0,30,30,25,0,15,0,5,10,0,3
+Yian Garuga,Tail,0,40,35,30,0,20,0,5,10,0,4
+Yian Garuga,Tail Tip,0,46,40,35,0,25,0,5,10,0,4
+Zinogre,Head,0,45,45,50,5,10,0,15,5,100,1
+Zinogre,Neck,0,40,40,45,5,10,0,15,5,100,1
+Zinogre,Body,0,30,30,20,0,5,0,5,0,0,
+Zinogre,Back,0,30,30,20,0,5,0,10,0,0,2
+Zinogre,Forelegs,0,40,40,35,5,10,0,15,5,0,3
+Zinogre,Hindlegs,0,30,30,20,0,5,0,5,0,0,
+Zinogre,Tail,0,30,30,20,0,5,0,10,0,0,4
+Zinogre,Head,Charged,65,65,55,10,20,0,25,10,100,1
+Zinogre,Neck,Charged,60,30,50,5,15,0,20,5,100,1
+Zinogre,Body,Charged,25,25,15,0,5,0,10,0,0,
+Zinogre,Back,Charged,40,40,45,5,10,0,15,5,0,2
+Zinogre,Forelegs,Charged,45,45,45,5,15,0,20,5,0,3
+Zinogre,Hindlegs,Charged,25,25,15,0,5,0,10,0,0,
+Zinogre,Tail,Charged,45,45,45,5,10,0,15,5,0,4

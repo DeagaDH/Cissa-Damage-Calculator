@@ -1,0 +1,55 @@
+﻿Attack Name,Raw,,EleMod,Raw Mult,Elem Mult,Is Sword?,Is Green Sharp?
+Axe: Side Slash / Sword: Morph Slash,cut,23,1.00,1,1,0,0
+Axe: Forward Slash,cut,19,1.00,1,1,0,0
+Axe: Rising Slash,cut,31,1.00,1,1,0,0
+Axe: Overhead Slash,cut,45,1.00,1,1,0,0
+Axe: Wild Swing (Right Swing),cut,21,0.80,1,1,0,0
+Axe: Wild Swing (Left Swing),cut,23,0.80,1,1,0,0
+[3 or more hits] Axe: Wild Swing (Right Swing) ,cut,21,0.80,1.3,1,0,0
+[3 or more hits] Axe: Wild Swing (Left Swing),cut,23,0.80,1.3,1,0,0
+Axe: Heavy Slam (1st Hit),cut,15,1.00,1,1,0,0
+Axe: Heavy Slam (2nd Hit),cut,72,1.00,1,1,0,0
+Axe: Fade Slash,cut,34,1.00,1,1,0,0
+Axe: Morph Sweep (1st Hit),cut,20,1.00,1,1,0,0
+Axe: Morph Sweep (2nd Hit),cut,70,1.00,1,1,0,0
+Axe: Morph Sweep (3rd Hit),cut,35,1.00,1,1,0,0
+Sword: Overhead Slash / Axe: Morph Slash,cut,29,1.00,1,1,1,0
+Sword: Right Rising Slash,cut,21,1.00,1,1,1,0
+Sword: Left Rising Slash,cut,18,1.00,1,1,1,0
+Sword: Bridging Slash,cut,15,1.00,1,1,1,0
+Sword: Double Slash (1st Hit),cut,22,1.00,1,1,1,0
+Sword: Double Slash (2nd Hit),cut,26,1.00,1,1,1,0
+Sword: Heavenward Flurry (1st Hit),cut,24,1.00,1,1,1,0
+Sword: Heavenward Flurry (2nd Hit),cut,35,1.00,1,1,1,0
+Sword: Downward Fade Slash,cut,45,1.00,1,1,1,0
+[Amped] Sword: Phial Burst,cut,9,1.00,1,0.35,1,0
+[Amped] Sword: Overhead Slash / Morph Slash,cut,30,1.00,1,1,1,0
+[Amped] Sword: Right Rising Slash,cut,22,1.00,1,1,1,0
+[Amped] Sword: Left Rising Slash,cut,19,1.00,1,1,1,0
+[Amped] Sword: Double Slash (1st Hit),cut,23,1.00,1,1,1,0
+[Amped] Sword: Double Slash (2nd Hit),cut,26,1.00,1,1,1,0
+[Amped] Sword: Bridging Slash,cut,20,1.00,1,1,1,0
+[Amped] Sword: Heavenward Flurry (1st Hit),cut,25,1.00,1,1,1,0
+[Amped] Sword: Heavenward Flurry (2nd Hit),cut,38,1.00,1,1,1,0
+Axe: Jumping Slash,cut,43,1.00,1,1,0,0
+Sword: Jumping Slash,cut,35,1.00,1,1,1,0
+Axe: Jumping Sweep,cut,74,1.00,1,1,0,0
+Sword: Jumping Rising Slash,cut,35,1.00,1,1,1,0
+Element Discharge (Thrust),cut,10,0.20,1,1,1,0
+[Amped] Element Discharge (Thrust),cut,10,0.20,1,1,1,0
+Elemental Discharge (Ticks),cut,8,0.50,1,1,1,0
+Zero Sum Discharge (Thrust),cut,18,1.00,1,1,1,0
+Zero Sum Discharge (Ticks),cut,13,0.50,1,1,1,0
+Element Discharge Finisher (Early),cut,85,1.00,1,1,1,1
+Element Discharge Finisher (Full),cut,85,1.00,1,1,1,1
+[Amped] Element Discharge Finisher (Early),cut,102,1.00,1,0.7,1,1
+[Amped] Element Discharge Finisher (Full),cut,102,1.00,1,1,1,1
+Zero Sum Discharge Finisher (Early),cut,119,1.00,1,0.7,1,1
+Zero Sum Discharge Finisher (Full),cut,119,1.00,1,1,1,1
+[Clutching] Weapon Attack (1st Hit),cut,25,1.00,1,1,1,0
+[Clutching] Weapon Attack (2nd Hit),cut,45,1.00,1,1,1,0
+Special Claw shot (1st Hit),cut,7,1.00,1,1,1,0
+Special Claw shot (2nd Hit),cut,55,1.00,1,1,1,0
+[Mounting] Element Discharge (Thrust),cut,20,1.00,1,1,0,0
+[Mounting] Element Discharge (Ticks),cut,5,0.50,1,1,0,0
+[Mounting] Element Discharge Finisher,cut,100,1.00,1,1,0,0

@@ -1,0 +1,50 @@
+﻿Attack Name,Raw,,Element
+Thrust,cut,10,0.80
+Leaping Slash,cut,26,0.80
+Rising Slash (1st Hit),cut,16,0.70
+Rising Slash (2nd Hit),cut,14,0.80
+Reaping Slash,cut,18,0.80
+Double Slash (1st Hit),cut,18,0.70
+Double Slash (2nd Hit),cut,24,0.80
+Wide Sweep / Strong Wide Sweep (2nd Hit),cut,22,0.80
+Overhead Slash,cut,30,0.80
+Strong Rising Slash Combo (1st Hit),cut,16,0.80
+Strong Rising Slash Combo (2nd Hit),cut,14,0.80
+Strong Rising Slash Combo (3rd Hit),cut,15,0.80
+Strong Reaping Slash (1st Hit),cut,15,0.80
+Strong Reaping Slash (2nd Hit),cut,19,0.80
+Strong Double Slash (1st Hit),cut,16,0.60
+Strong Double Slash (2nd Hit),cut,14,0.80
+Strong Double Slash (3rd Hit),cut,28,0.80
+Strong Thrust (1st Hit),cut,12,0.80
+Strong Thrust (2nd Hit),cut,11,0.80
+Strong Wide Sweep (1st Hit),cut,18,0.80
+Tornado Slash (1st Hit),cut,24,0.80
+Tornado Slash (2nd Hit),cut,42,0.80
+Bridging Slash,cut,10,0.70
+Dodge Slash,cut,17,0.80
+Jumping Slash,cut,15,1.00
+Jumping Advancing Slash,cut,28,1.00
+Strong Jumping Slash,cut,8,0.60
+Strong Jumping Advancing Slash (1st Hit),cut,6,0.50
+Strong Jumping Advancing Slash (2nd Hit),cut,4,0.50
+Strong Jumping Advancing Slash (3rd Hit),cut,7,0.50
+Strong Jumping Advancing Slash (4th Hit),cut,4,0.50
+Strong Jumping Advancing Slash (5th Hit),cut,3,0.50
+Strong Jumping Advancing Slash (Finisher),cut,32,1.00
+Descending Thrust (Midair),cut,28,1.00
+Descending Thrust (Landing),cut,42,1.00
+Descending Thrust Finisher (1st Hit),impact,7,0.00
+Descending Thrust Finisher (2nd Hit),cut,36,1.00
+Midair Claw Attack,cut,8,0.00
+[Clutching] Weapon Attack (1st Hit),cut,14,0.70
+[Clutching] Weapon Attack (2nd Hit),cut,15,0.70
+[Clutching] Weapon Attack (3rd Hit),cut,15,0.70
+[Clutching] Weapon Attack (4th Hit),cut,18,0.70
+[Clutching] Weapon Attack (Finisher),cut,32,1.00
+[Mounting] Flying Slash (1st Hit),cut,8,0.70
+[Mounting] Flying Slash (2nd and 3rd Hit),cut,4,0.70
+[Mounting] Flying Slash (4th Hit),cut,8,0.70
+[Mounting] Slash Flurry (1st Hit and 2nd Hit),cut,13,1.00
+[Mounting] Slash Flurry (3rd Hit),cut,5,1.00
+[Mounting] Slash Flurry (4th Hit),cut,32,1.00

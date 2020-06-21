@@ -1,0 +1,52 @@
+Attack Name,Raw,,Element
+Overhead Slash,cut,48,1.00
+Side Blow,impact,16,1.00
+Charged Slash Lv1,cut,48,1.00
+Charged Slash Lv2,cut,77,1.30
+Charged Slash Lv3,cut,110,1.50
+Strong Charged Slash Lv1,cut,82,1.40
+Strong Charged Slash Lv2,cut,111,1.50
+Strong Charged Slash Lv3,cut,131,1.70
+Strong Wide Slash Lv1,cut,59,1.00
+Strong Wide Slash Lv2,cut,66,1.30
+Strong Wide Slash Lv3,cut,78,1.50
+True Charge Slash Lv1 (1st Hit),cut,15,1.00
+True Charge Slash Lv2 (1st Hit),cut,20,1.00
+True Charge Slash Lv3 (1st Hit),cut,22,1.00
+True Charge Slash Lv1 (2nd Hit),cut,120,1.40
+True Charge Slash Lv2 (2nd Hit),cut,175,1.50
+True Charge Slash Lv3 (2nd Hit),cut,211,1.70
+[Power] True Charge Slash Lv1 (2nd Hit),cut,144,1.40
+[Power] True Charge Slash Lv2 (2nd Hit),cut,210,1.50
+[Power] True Charge Slash Lv3 (2nd Hit),cut,264,1.80
+Kick,impact,5,0.00
+Tackle Lv1,impact,26,0.00
+Tackle Lv2,impact,35,0.00
+Tackle Lv3,impact,48,0.00
+Wide Slash,cut,26,1.00
+Rising Slash,cut,38,1.00
+Side Blow (v2),impact,18,1.00
+Wide Slash (v2),cut,29,1.00
+Rising Slash (v2),cut,41,1.00
+Jumping Wide Slash Lv1,cut,75,2.20
+Jumping Wide Slash Lv2,cut,96,3.15
+Jumping Wide Slash Lv3,cut,118,3.50
+Mid-Air Charged Slash Lv1 / Jumping Slash,cut,58,1.00
+Mid-Air Charged Slash Lv2,cut,69,1.10
+Mid-Air Charged Slash Lv3,cut,87,1.20
+Charged Rising Slash Lv1,cut,48,1.00
+Charged Rising Slash Lv2,cut,72,1.30
+Charged Rising Slash Lv3,cut,98,1.50
+Plunging Thrust Lv1,cut,16,0.20
+Plunging Thrust Lv2,cut,22,0.25
+Plunging Thrust Lv3,cut,27,0.30
+[Clutching] Weapon Attack (1st Hit),cut,48,1.00
+[Clutching] Weapon Attack (2nd Hit),cut,6,1.00
+[Clutching] Weapon Attack (Repeated),cut,6,0.50
+[Clutching] Weapon Attack (Final Hit),cut,60,1.00
+[Mounting] Charged Slash Lv1 (1st Hit),cut,100,1.00
+[Mounting] Charged Slash Lv2 (1st Hit),cut,122,1.30
+[Mounting] Charged Slash Lv3 (1st Hit),cut,139,1.50
+[Mounting] Charged Slash Lv1 (2nd Hit),cut,58,1.00
+[Mounting] Charged Slash Lv2 (2nd Hit),cut,72,1.30
+[Mounting] Charged Slash Lv3 (2nd Hit),cut,89,1.50

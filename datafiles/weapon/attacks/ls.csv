@@ -1,0 +1,51 @@
+﻿Attack Name,Raw,,Element,Spirit Gauge?
+Step Slash,cut,24,1.00,1
+Overhead Slash,cut,21,1.00,1
+Thrust,cut,12,1.00,1
+Rising Slash,cut,18,1.00,1
+Fade Slash,cut,22,1.00,1
+Lateral Fade Slash,cut,22,1.00,1
+Spirit Jumping Slash,cut,28,1.00,1
+Spirit Jumping Slash (No Gauge),cut,18,1.00,1
+Spirit Blade I,cut,26,1.00,1
+Spirit Blade I (No Gauge),cut,14,1.00,1
+Spirit Blade II,cut,30,1.00,1
+Spirit Blade III (1st Hit),cut,14,1.00,1
+Spirit Blade III (2nd Hit),cut,19,1.00,1
+Spirit Blade III (3rd Hit),cut,34,1.00,1
+Spirit Roundslash,cut,38,1.00,1
+Foresight Slash,cut,26,1.00,1
+Foresight Slash (No Gauge),cut,12,1.00,1
+Spirit Thrust,cut,26,1.00,1
+[White Gauge] Spirit Helm Breaker,cut,10,0.30,1
+[Yellow Gauge] Spirit Helm Breaker,cut,15,0.30,1
+[Red Gauge] Spirit Helm Breaker,cut,25,0.30,1
+Iai Slash (1st Hit),cut,18,1.00,1
+Iai Slash (2nd Hit),cut,13,1.00,1
+[No Gauge] Iai Spirit Slash,cut,17,1.00,0
+[White Gauge] Iai Spirit Slash (1st Hit),cut,19,1.00,0
+[White Gauge] Iai Spirit Slash (2nd Hit),cut,55,1.00,0
+[Yellow Gauge] Iai Spirit Slash (1st Hit),cut,31,1.00,0
+[Yellow Gauge] Iai Spirit Slash (2nd Hit),cut,72,1.00,0
+[Red Gauge] Iai Spirit Slash (1st Hit),cut,39,1.00,0
+[Red Gauge] Iai Spirit Slash (2nd Hit),cut,86,1.00,0
+Jumping Slash,cut,26,1.00,1
+Jumping Spirit Blade,cut,30,1.00,1
+Jumping Spirit Blade (No Gauge),cut,16,1.00,1
+Jumping Spirit Blade II / III (1st Hit),cut,12,1.00,1
+Jumping Spirit Blade II / III (1st Hit) (No Gauge),cut,4,1.00,1
+Jumping Spirit Blade II / III (2nd Hit),cut,36,1.00,1
+Jumping Spirit Blade II / III (2nd Hit) (No Gauge),cut,16,1.00,1
+Jumping Spirit Blade III (3rd Hit),cut,38,1.00,1
+Jumping Spirit Blade III (3rd Hit) (No Gauge),cut,18,1.00,1
+Jumping Rising Slash,cut,20,1.00,1
+Aerial Draw Spirit Blade,cut,48,1.00,1
+Aerial Draw Spirit Blade (No Gauge),cut,26,1.00,1
+[Clutching] Weapon Attack (1st Hit),cut,15,1.00,1
+[Clutching] Weapon Attack (Repeated),cut,6,0.20,1
+[Mounting] Spirit Storm (1st Hit),cut,16,1.00,1
+[Mounting] Spirit Storm (2nd Hit),cut,12,1.00,1
+[Mounting] Spirit Storm (3rd Hit),cut,14,1.00,1
+[Mounting] Spirit Storm (Finisher),cut,26,1.00,1
+[Mounting: Head] Spirit Storm (Finisher 1st Hit),cut,15,1.00,1
+[Mounting: Head] Spirit Storm (Finisher 2nd Hit),cut,34,1.00,1
