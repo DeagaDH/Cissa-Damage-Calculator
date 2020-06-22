@@ -29,7 +29,7 @@ class MainWindow(wx.Panel):
         #Create a list of weapon types for the drop down menu
         # self.weapon_list=['Great Sword','Longsword','Sword & Shield','Dual Blades','Lance','Gunlance',
         #                  'Hammer','Hunting Horn','Switch Axe','Charge Blade']
-        self.weapon_list=['Great Sword','Long Sword','Sword & Shield','Dual Blades','Lance','Hammer','Switch Axe','Insect Glaive'] #only these two are implemented so far
+        self.weapon_list=['Great Sword','Long Sword','Sword & Shield','Dual Blades','Lance','Hammer','Switch Axe','Charge Blade','Insect Glaive'] #only these two are implemented so far
         
         #Sharpness Colors list
         self.sharp_list=['Purple','White','Blue','Green','Yellow','Orange','Red']

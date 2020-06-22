@@ -114,7 +114,10 @@ class ChargeBladeAttack(Attack):
 
     Specific attributes defined below:
     is_axe: is axe attack?
-    is_phial: is phial attack?
+    is__special_phial: is it a special phial attack?
+                       SAED phials, shield thrust phials and
+                       charged sword phials are unnaffected by 
+                       shield charge
     PA raw: extra MV on Impac Phial CB with Power Axe
     PA elem: extra elemod on Elem Phial CB with Power axe
     cb_phial: Impact/Elemental
@@ -133,7 +136,8 @@ class ChargeBladeAttack(Attack):
 
         #Read variables from attributes list
         is_axe=bool(int(attributes[4]))
-        is_phial=bool(int(attributes[5]))
+        self.is_phial=(self.damage_type=='HZI') #Only Phials have HZI damage type
+        is_special_phial=bool(int(attributes[5]))
         pa_raw=int(attributes[6])
         pa_elem=float(attributes[7])
         cb_phial=attributes[8]
@@ -147,17 +151,16 @@ class ChargeBladeAttack(Attack):
             self.true_raw_mult=1.10
        
         #Check for phial attacks
-        if is_phial:
+        if self.is_phial:
             if cb_phial=='impact':
                 self.elemod=0 #No elemental damage
-                self.true_raw_mult=1/sharp_raw #Cancel sharp mod
-                if cb_shield:
+                if cb_shield and not is_special_phial:
                     self.true_raw_mult*=1.20 #extra damage for charged shield
             
             else: #Elemental phials
                 self.mv=0 #No raw damage
                 self.true_elem_mult=1/sharp_elem #Cancel sharp mod
-                if cb_shield:
+                if cb_shield and not is_special_phial:
                     self.true_elem_mult*=1.30
 
         #Check for power axe attacks
@@ -165,5 +168,3 @@ class ChargeBladeAttack(Attack):
             self.mv+=pa_raw
         elif cb_phial=='element' and cb_power:
             self.elemod+=pa_elem
-
-        print("raw mult=",self.true_raw_mult)

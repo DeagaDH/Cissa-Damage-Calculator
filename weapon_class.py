@@ -297,18 +297,37 @@ class Weapon:
         #Apply relevant buffs
         self.apply_buffs()
 
+        #Extract data from the monster
+        #Also applies Agitator if required and enr
+        temp_mon=self.get_monster_data(target_monster)
+        raw_HZ=temp_mon[0]
+        elem_HZ=temp_mon[1]
+        rage_mod=temp_mon[2]
+
+        #Iterate through attack_combo to obtain all damage values
+        for attack in self.attack_combo:
+            
+            self.generic_calculation(attack,raw_HZ,elem_HZ,rage_mod,calc_type) 
+
+    def get_monster_data(self,target_monster):
+        """
+        Extracts relevant information from the monster
+        returns it as a tuple in the form
+        (raw_HZ,elem_HZ,rage_mod)
+        """
+
         #Get the hitzone object from the monster 
         calc_hitzone=target_monster.get_hitzone(target_monster.target_hitzone)
         
         #Extract the relevant information from the hitzone (raw and elemental value)
         #Check for a wound to get appropriate raw HZVs.
         if (calc_hitzone.is_tenderized):
-            raw_HZV=calc_hitzone.raw_tenderized
+            raw_HZ=calc_hitzone.raw_tenderized
         else:
-            raw_HZV=calc_hitzone.raw
+            raw_HZ=calc_hitzone.raw
                             
         #Elemental hitzones are not affected by tenderizing.
-        elem_HZV=calc_hitzone.elem 
+        elem_HZ=calc_hitzone.elem 
 
         #Note that raw_HZV and elem_HZV are dictionaries! Each key is a possible damage type for raw ('cut','impact' or 'shot')
         #or element ('fire', 'water', 'thunder', 'ice', 'dragon') and each value is the corresponding HZV.                              
@@ -322,39 +341,42 @@ class Weapon:
         else:
             rage_mod=1 #Otherwise, set to 1 to not affect damage.
 
-        #Iterate through attack_combo to obtain all damage values
-        for attack in self.attack_combo:
+        return (raw_HZ,elem_HZ,rage_mod)
 
-            #Apply Weakness Exploit, if needed
-            if Weakness_Exploit in self.buff_dict:
-                Weakness_Exploit_Activate(self.buff_dict[Weakness_Exploit],self,
-                                            raw_HZV[attack[0].damage_type], calc_hitzone.is_tenderized)
-                                            
-            #Limit affinity if needed
-            self.aff_final=max(min(self.aff_final,1),-1)
+    def generic_calculation(self,attack,raw_HZ,elem_HZ,rage_mod,calc_type):
+        """
+        Calculates raw and elemental damage for a generic weapon attack.
+        Applies for most attacks, but there are some exceptions such
+        as CB Impact Phials, which don't consider hitzones, etc
+        """
 
-            #Obtain Crit mods for raw and elemental damage.
-            #Check for desired calc_type ('normal','crit' or 'average)
-            if self.aff_final > 0:
-                calc_crit_mod_raw=self.determine_crit_mod(self.crit_mod_raw,calc_type)
-            else:
-                calc_crit_mod_raw=self.determine_crit_mod(0.75,calc_type) #Feeble
-            
-            calc_crit_mod_elem=self.determine_crit_mod(self.crit_mod_elem,calc_type)
+        #Apply Weakness Exploit, if needed
+        if Weakness_Exploit in self.buff_dict:
+            Weakness_Exploit_Activate(self.buff_dict[Weakness_Exploit],self,
+                                        raw_HZV[attack[0].damage_type], calc_hitzone.is_tenderized)
+                                        
+        #Limit affinity if needed
+        self.aff_final=max(min(self.aff_final,1),-1)
 
-            #Raw damage or 'fixed' damage
-            #Some fixed damage scale with attack (such as CB Phials)
-            attack[1]=self.raw_number(attack[0],raw_HZV,calc_crit_mod_raw,rage_mod)    #Raw damage value
-            
-            #Elemental damage
-            attack[2]=self.elem_number(attack[0],elem_HZV,calc_crit_mod_elem,rage_mod) #Elemental damage value
-                                                   #Fixed damage value
-            
-            #Total damage
-            attack[3]=(attack[1])+round(attack[2]) 
-                      #Total damage
-                      #Raw and fixed damage are rounded together
-                
+        #Obtain Crit mods for raw and elemental damage.
+        #Check for desired calc_type ('normal','crit' or 'average)
+        if self.aff_final > 0:
+            calc_crit_mod_raw=self.determine_crit_mod(self.crit_mod_raw,calc_type)
+        else:
+            calc_crit_mod_raw=self.determine_crit_mod(0.75,calc_type) #Feeble
+        
+        calc_crit_mod_elem=self.determine_crit_mod(self.crit_mod_elem,calc_type)
+
+        #Raw damage or 'fixed' damage
+        #Some fixed damage scale with attack (such as CB Phials)
+        attack[1]=self.raw_number(attack[0],raw_HZ,calc_crit_mod_raw,rage_mod)    #Raw damage value
+        
+        #Elemental damage
+        attack[2]=self.elem_number(attack[0],elem_HZ,calc_crit_mod_elem,rage_mod) #Elemental damage value
+        
+        #Total damage
+        attack[3]=attack[1]+attack[2]
+    
     def raw_number(self,attack,hitzone,crit_mod_raw,rage_mod):
         """
         Calculates the raw portion of damage. Inputs are:
@@ -379,10 +401,11 @@ class Weapon:
         damage_type=attack.damage_type
 
         #Get the corresponding hitzone value from the hitzone object
-        try:
-            hzv=hitzone[damage_type]
-        except KeyError: #For attacks with undefined hitzone type, such as CB Phials
-            hzv=100
+        hzv=hitzone[damage_type]
+        # try:
+        #     hzv=hitzone[damage_type]
+        # except KeyError: #For attacks with undefined hitzone type, such as CB Phials
+        #     hzv=100
 
         
         #Apply possible raw multipliers from attack
@@ -495,6 +518,13 @@ class Weapon:
         self.aff_final=self.aff
         self.true_elem_final=self.true_elem
 
+        #Reset the multipliers
+        self.flat_raw_mod=0
+        self.mult_raw_mod=1
+        self.flat_elem_mod=0
+        self.mult_elem_mod=1
+        self.flat_aff_mod=0
+
         #Reset crit mods
         self.crit_mod_raw=1.25
         self.crit_mod_elem=1
@@ -506,9 +536,15 @@ class Weapon:
         for buff,level in self.buff_dict.items(): #buff has the form buff=(function,level)
             buff(level,self)
 
+        #Apply multipliers
+        self.true_raw_final=self.true_raw*self.mult_raw_mod+self.flat_raw_mod
+        self.true_elem_final=self.true_elem*self.mult_elem_mod+self.flat_elem_mod
+        self.aff_final=self.aff+self.flat_aff_mod
+        
         #Apply damage cap
         self.true_raw_final=min(self.true_raw_final,self.attack_cap)
-
+        self.true_elem_final=min(self.true_elem_final,self.elem_cap)
+        
         #Post cap multipliers are all in the form of specific weapon mods
         self.apply_weapon_buffs()
 

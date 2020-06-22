@@ -28,6 +28,9 @@ def Agitator(level, weapon):
     is enraged
     """
 
+    #Check for invalid levels
+    level=max(min(level,7),0)
+
 def Agitator_Activate(level, weapon):
     """
     Activates the Agitator skill
@@ -35,7 +38,7 @@ def Agitator_Activate(level, weapon):
 
     #Do its effect
     #Raw part
-    weapon.true_raw_final+=4*level #4 per level
+    weapon.flat_raw_mod+=4*level #4 per level
 
     #Affinity part depends heavily on level
     #Store affinity cases as a dictionary
@@ -44,18 +47,29 @@ def Agitator_Activate(level, weapon):
                 5: 0.10, 6: 0.15, 7: 0.20}
 
     #apply affinity buff
-    weapon.aff_final+=aff_dict[level]
+    weapon.flat_aff_mod+=aff_dict[level]
 
 def Artillery(level, weapon):
     """
-    Models the Artillery Skill
+    Stores the Artillery skill, if present
+
+    Skill is activated during damage calculation,
+    if required, via Artillery_Activate
     """
 
     #Check for invalid levels
     level=max(min(level,5),0)
 
-    #2DO
-    pass
+def Artillery_Activate(level):
+    """
+    Activates the Artillery skill.
+
+    This will RETURN the multiplier, due to how
+    CB Impact Phials behave weirdly with attack
+    scaling
+    """
+
+    return 1+0.1*level
 
 def Attack_Boost(level, weapon):
     """
@@ -66,10 +80,10 @@ def Attack_Boost(level, weapon):
     level=max(min(level,7),0)
     
     #Do its effect
-    weapon.true_raw_final+=3*level #3 true raw per level
+    weapon.flat_raw_mod+=3*level #3 true raw per level
 
     if level >= 4:
-        weapon.aff_final+=0.05 #Add 5% affinity on higher levels.
+        weapon.flat_aff_mod+=0.05 #Add 5% affinity on higher levels.
 
 def Coalescence(level, weapon):
     """
@@ -82,12 +96,12 @@ def Coalescence(level, weapon):
     level=max(min(level,3),0)
 
     #Apply raw effect
-    weapon.true_raw_final+=9+3*level
+    weapon.flat_raw_mod+=9+3*level
 
     #Apply elemental effect
     #Only valid if the weapon has element
     if (weapon.elem_type!=None and weapon.true_elem>0):
-        weapon.true_elem_final+=3*level
+        weapon.flat_elem_mod+=3*level
 
 def Critical_Boost(level, weapon):
     """
@@ -110,10 +124,10 @@ def Critical_Eye(level, weapon):
     
     #Do its effect
     if level < 7:
-        weapon.aff_final+=0.05*level #5% affinity per level if level <7
+        weapon.flat_aff_mod+=0.05*level #5% affinity per level if level <7
 
     else:
-        weapon.aff_final+=0.40 #Add 40% affinity on level 7
+        weapon.flat_aff_mod+=0.40 #Add 40% affinity on level 7
 
 def Critical_Element(self,level,crit_elem_file='datafiles\\weapon\\crit_elem.csv'):
     """
@@ -152,10 +166,11 @@ def Dragonvein_Awakening(level, weapon):
     level=max(min(level,2),0)
 
     #Apply buffs
-    weapon.aff_final+=0.2*level
+    weapon.flat_aff_mod+=0.2*level
+
     #Only valid if the weapon has element
     if (weapon.elem_type!=None and weapon.true_elem>0):
-        weapon.true_elem_final+=1+7*level
+        weapon.flat_elem_mod+=1+7*level
         weapon.elem_cap+=1+7*level
 
 def Elemental_Attack(level, weapon):
@@ -177,10 +192,11 @@ def Elemental_Attack(level, weapon):
             flat=10 #For levels 3+
 
     #Define multiplier:
-    mult={1: 0, 2:0, 3:0, 4:0.05, 5:0.1, 6:0.2}
+    mult={1: 1, 2:1, 3:1, 4:1.05, 5:1.1, 6:1.2}
 
     #Apply skill.
-    weapon.true_elem_final+=flat+mult[level]*weapon.true_elem
+    weapon.flat_elem_mod+=flat
+    weapon.mult_elem_mod*=mult[level]
 
 def Elemental_Acceleration(level, weapon):
     """
@@ -194,7 +210,7 @@ def Elemental_Acceleration(level, weapon):
     #Only valid if the weapon has element
     if (weapon.elem_type!=None and weapon.true_elem>0):
         #Apply buffs
-        weapon.true_elem_final+=-3+9*level
+        weapon.flat_elem_mod+=-3+9*level
 
 def Fortify(level, weapon):
     """
@@ -207,7 +223,7 @@ def Fortify(level, weapon):
     level=max(min(level,2),0)
     
     #Apply buff
-    weapon.true_raw_final+=0.1*level*weapon.true_raw
+    weapon.mult_raw_mod*=1+(0.1*level)
 
 def Frostcraft(level, weapon):
     """
@@ -234,11 +250,11 @@ def Heroics(level, weapon):
     level=max(min(level,8),0)
 
     #Define buffs
-    raw_dict={1:0, 2:0.05, 3:0.05, 4:0.10, 
-                5:0.15, 6:0.25, 7:0.40, 8:0.35}
+    raw_dict={1:1, 2:1.05, 3:1.05, 4:1.10, 
+                5:1.15, 6:1.25, 7:1.40, 8:1.35}
 
     #Apply buff
-    weapon.true_raw_final+=raw_dict[level]*weapon.true_raw
+    weapon.mult_raw_mod*=raw_dict[level]
 
 def Latent_Power(level, weapon):
     """
@@ -250,9 +266,9 @@ def Latent_Power(level, weapon):
 
     #Apply affinity effect
     if level <=5:
-        weapon.aff_final+=0.1*level
+        weapon.flat_aff_mod+=0.1*level
     else:
-        weapon.aff_final+=0.1*(level-1)
+        weapon.flat_aff_mod+=0.1*(level-1)
 
 def Maximum_Might(level, weapon):
     """
@@ -265,7 +281,7 @@ def Maximum_Might(level, weapon):
     #equivalent from the point of view of damage calculation
 
     #Apply affinity effect
-    weapon.aff_final+=0.1*level
+    weapon.flat_aff_mod+=0.1*level
 
 def Non_Elemental_Boost(level, weapon):
     """
@@ -276,8 +292,8 @@ def Non_Elemental_Boost(level, weapon):
     level=max(min(level,1),0)
     
     #Apply buff
-    if (weapon.elem_type==None or weapon.elem_value==0):
-        weapon.true_raw_final+=0.1*weapon.true_raw
+    if (weapon.elem_type==None or weapon.true_elem==0):
+        weapon.mult_raw_mod*=1.05
 
 def NormalPierce_Shots(level, weapon):
     """
@@ -302,7 +318,7 @@ def Offensive_Guard(level, weapon):
     
     #Apply buff
     if (weapon.elem_type==None or weapon.elem_value==0):
-        weapon.true_raw_final+=0.05*level*weapon.true_raw
+        weapon.mult_raw_mod*=(1+0.05*level)
 
 def Peak_Performance(level, weapon):
     """
@@ -314,9 +330,9 @@ def Peak_Performance(level, weapon):
 
     #Apply effect
     if level < 3: #5 per level on levels 1 and 2
-        weapon.true_raw_final+=5*level
+        weapon.flat_raw_mod+=5*level
     else: #20 on level 3
-        weapon.true_raw_final+=20 
+        weapon.flat_raw_mod+=20 
 
 def Punishing_Draw(level, weapon):
     """
@@ -327,7 +343,7 @@ def Punishing_Draw(level, weapon):
     level=max(min(level,1),0)
 
     #Apply raw effect
-    weapon.true_raw_final+=5
+    weapon.flat_raw_mod+=5
 
 def Resentment(level, weapon):
     """
@@ -338,7 +354,7 @@ def Resentment(level, weapon):
     level=max(min(level,5),0)
 
     #Apply effect
-    weapon.true_raw_final+=5*level
+    weapon.flat_raw_mod+=5*level
 
 def Special_Ammo_Boost(level, weapon):
     """
@@ -413,7 +429,7 @@ def Demondrug(level, weapon):
     level=max(min(level,2),0)
 
     #Apply raw effect
-    weapon.true_raw_final+=3+2*level
+    weapon.flat_raw_mod+=3+2*level
 
 def Demon_Powder(level, weapon):
     """
@@ -424,7 +440,7 @@ def Demon_Powder(level, weapon):
     level=max(min(level,1),0)
 
     #Apply raw effect
-    weapon.true_raw_final+=10
+    weapon.flat_raw_mod+=10
 
 def Evasion_Mantle(level, weapon):
     """
@@ -436,7 +452,7 @@ def Evasion_Mantle(level, weapon):
     
     #Apply buff
     if (weapon.elem_type==None or weapon.elem_value==0):
-        weapon.true_raw_final+=0.3*weapon.true_raw
+        weapon.mult_raw_mod*=1.3
 
 def Might_Seed(level, weapon):
     """
@@ -449,7 +465,7 @@ def Might_Seed(level, weapon):
     level=max(min(level,2),0)
 
     #Apply raw effect
-    weapon.true_raw_final+=15*level-5
+    weapon.flat_raw_mod+=15*level-5
 
 def Powercharm(level, weapon):
     """
@@ -463,9 +479,9 @@ def Powercharm(level, weapon):
 
     #Apply raw effect
     if level < 3: #Covers just Charm and just talon
-        weapon.true_raw_final+=3+3*level
+        weapon.flat_raw_mod+=3+3*level
     else: #Covers both at once
-        weapon.true_raw_final+=9+6
+        weapon.flat_raw_mod+=9+6
 
 def Powercone(level, weapon):
     """
@@ -476,7 +492,7 @@ def Powercone(level, weapon):
     level=max(min(level,1),0)
 
     #Apply raw effect
-    weapon.true_raw_final+=5
+    weapon.flat_raw_mod+=5
 
 #############################################################
 ####        CANTEEN
@@ -493,15 +509,29 @@ def CanteenAttack(level, weapon):
     level=max(min(level,3),0)
 
     #Apply raw effect
-    weapon.true_raw_final+=5*level
+    weapon.flat_raw_mod+=5*level
 
 def Felyne_Bombardier(level, weapon):
     """
-    Models the Felyne Bombardier Kitchen Skill
+    Stores the Felyne Bombardier Kitchen Skill
+
+    It is later activated during damage calculation
+    via the Felyne_Bombardier_Activate function.
     """
 
-    #2DO
-    pass
+    #Check for invalid levels
+    level=max(min(level,1),0)
+
+def Felyne_Bombardier_Activate(level):
+    """
+    Activates the Felyne Bombardier skill.
+
+    This will RETURN the multiplier, due to how
+    CB Impact Phials behave weirdly with attack
+    scaling
+    """
+
+    return 1.15
 
 def Felyne_Booster(level, weapon):
     """
@@ -512,7 +542,7 @@ def Felyne_Booster(level, weapon):
     level=max(min(level,1),0)
 
     #Apply raw effect
-    weapon.true_raw_final+=9
+    weapon.flat_raw_mod+=9
 
 def Felyne_Temper(level, weapon):
     """
@@ -548,7 +578,7 @@ def Melodies_Attack(level, weapon):
     level=max(min(level,3),0)
     
     #Apply effect
-    weapon.true_raw_final+=0.05*level*weapon.true_raw
+    weapon.mult_raw_mod*=(1.05+0.05*level)
 
 def Melodies_Elemental(level, weapon):
     """
@@ -566,15 +596,14 @@ def Melodies_Elemental(level, weapon):
     level=max(min(level,2),0)
 
     #Define buffs
-    elem_dict={1: 0.08, 2:0.10, 3:0.05, 4:0.16, 5:0.20}
+    elem_dict={1: 1.08, 2:1.10, 3:1.05, 4:1.16, 5:1.20}
 
     #Apply
-    weapon.true_elem_final+=elem_dict[level]*weapon.true_elem
+    weapon.mult_elem_mod*=elem_dict[level]
 
 #############################################################
 ####        DICTIONARIES
 #############################################################
-
 
 skill_dict={'Airborne':(Airborne,['No','Yes']),
             'Agitator':(Agitator,7),
@@ -602,10 +631,6 @@ skill_dict={'Airborne':(Airborne,['No','Yes']),
             'Spread/Power Shots':(SpreadPower_Shots,2),
             'Weakness Exploit':(Weakness_Exploit,3)}
 
-not_implemented_skills=['Airborne','Artillery','Frostcraft',
-                        'Normal/Pierce Shots','Special Ammo Boost',
-                        'Spread/Power Shots']
-
 item_dict= {'Demondrug':(Demondrug,['No','Demondrug','Mega']),
             'Demon Power':(Demon_Powder,['No','Yes']),
             'Evasion Mantle':(Evasion_Mantle,['No','Yes']),
@@ -619,8 +644,17 @@ canteen_dict= { 'Canteen Atk Up':(CanteenAttack,['None','(S)','(M)','(L)']),
                 'Felyne Temper':(Felyne_Temper,['No','Yes']),
                 'Felyne Sharpshooter':(Felyne_Sharpshooter,['No','Yes'])}
 
-not_implemented_canteen=['Felyne Bombardier','Felyne Temper',
-                         'Felyne Sharpshooter']
-
 song_dict= {'Attack Up':(Melodies_Attack,['None','(S)','(L)','(XL)']),
             'Elem. Atk and Effect.':(Melodies_Elemental,['None','EAB (S)','EAB (L)','EEU','EAB(S)+EEU','EAB(L)+EEU'])}
+
+
+#############################################################
+####        NOT YET IMPLEMENTED
+#############################################################
+
+not_implemented_skills=['Airborne','Frostcraft',
+                        'Normal/Pierce Shots','Special Ammo Boost',
+                        'Spread/Power Shots']
+                        
+not_implemented_canteen=['Felyne Temper',
+                         'Felyne Sharpshooter']

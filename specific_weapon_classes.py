@@ -502,3 +502,92 @@ class ChargeBlade(Blademaster):
 
         #Return it
         return attribute_list
+
+    def damage_calculation(self,target_monster,calc_type='average'):
+        """
+        CB gets its own damage_calculation function due to the weird
+        interaction between Impact Phials and Attack boosting skills.
+        Couldn't quite figure out how to implement this in the general
+        damage_calculation function due to generic Attacks not having
+        the Phial attribute. Inputs are the same as the generic function:
+
+        target_monster: a Monster object
+                        target hitzone data is extracted from it.
+
+        Three different 'calc types' are possible:
+        
+        normal: returns que regular non-critical damage
+        
+        crit: returns the critical hit damage, or feeble hit damage if Affinity < 0
+
+        average: average between 'normal' and 'crit' damage, pondered by Affinity.
+                    for negative affinity, ponder by absolute (ie positive) value.
+                    Negative affinity is treated as a different crit mod.
+        """
+
+        #Apply relevant buffs
+        self.apply_buffs()
+
+        #Extract data from the monster
+        #Also applies Agitator if required and enraged
+        temp_mon=self.get_monster_data(target_monster)
+        raw_HZ=temp_mon[0]
+        elem_HZ=temp_mon[1]
+        rage_mod=temp_mon[2]
+
+        #Iterate through attack_combo to obtain all damage values
+        for attack in self.attack_combo:
+            #Check for Phial attacks
+            if attack[0].is_phial: #Phial
+                if self.cb_phial=='impact': #Impact
+                    #Adjust raw value used for phial
+                    phial_raw=self.true_raw+(self.true_raw_final-self.true_raw)/2 #Apply only half the boost from attack skills
+                    
+                    #Apply Artillery and Felyne Bombardier if needed
+                    if Artillery in self.buff_dict:
+                        phial_raw*=Artillery_Activate(self.buff_dict[Artillery])
+                    if Felyne_Bombardier in self.buff_dict:
+                        phial_raw*=Felyne_Bombardier_Activate(self.buff_dict[Felyne_Bombardier])
+
+                    #Calculate damage.
+                    attack[1]=self.impact_phial_number(attack[0],phial_raw,rage_mod)
+                    attack[2]=0 #No elemental damage
+                    attack[3]=attack[1]
+
+                else: #Elemental
+                    #No need to adjust any Elemental stats.
+                    #however, crit_mod_elem is set to 1 as phials never crit
+
+                    attack[1]=0 #No Raw damage
+                    attack[2]=self.elem_number(attack[0],elem_HZ,1,rage_mod) #Use 1 as crit_mod as it never crits
+                    attack[3]=attack[2]
+
+            else: #All other attacks are calculated normally
+                
+                self.generic_calculation(attack,raw_HZ,elem_HZ,rage_mod,calc_type) 
+
+    def impact_phial_number(self,attack,phial_raw,rage_mod):
+        """
+        Calculates Impact Phial damage. Inputs are:
+
+        attack: an Attack object with information on the Attack being used.
+                So far only checks for MV and damage type, but may carry additional
+                information later.
+
+        phial_raw: attack value used for the impact phial
+                   Since Attack boosts scale only up to 50% with Impact Phials,
+                   this will be different from the weapon's true raw if any
+                   attack boost is used. Also considers Artillery and F. Bombardier.
+
+        rage_mod: the current rage mod for the target monster
+        """
+
+        #Get damage type and MV data from the attack object
+        mv=attack.mv
+       
+        #Apply possible raw multipliers (ie shield charge) from attack
+        calc_raw=phial_raw*attack.true_raw_mult
+        
+        #Calculate raw damage. Currently missing practically all situational modifiers.
+        #Round later. For total damage, raw and fixed damage are rounded together!
+        return round(calc_raw * (mv/100.0) * rage_mod)
