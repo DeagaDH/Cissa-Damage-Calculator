@@ -21,4 +21,6 @@ A Damage Calculator for MHWI. I recently started learning Python and thought I'd
 ## Special Thanks
 I'd like to take this space to thank MoonBunnie#0001 and Deathcream#1576 for their huge datasheets on Iceborne, which were a huge help in compiling pretty much anything damage related, MechE__ for their hitzone data compilation and Honey for her armor set builder and damage calculator, which I used to double check my own results.
 
+I'd also like to thank my coding mentors SuperRaichu and Shinji, who are not from Monster Hunter at all, but helped me take my first baby steps in this endeavor. Vocês são do caralho!
+
 P.S: Cissa is my cat's name. Of course I'd name something helpful that's Monster Hunter-related after a cat! :)
