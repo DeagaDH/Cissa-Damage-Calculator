@@ -129,7 +129,7 @@ def Critical_Eye(level, weapon):
     else:
         weapon.flat_aff_mod+=0.40 #Add 40% affinity on level 7
 
-def Critical_Element(self,level,crit_elem_file='datafiles\\weapon\\crit_elem.csv'):
+def Critical_Element(level,weapon,crit_elem_file='datafiles\\weapon\\crit_elem.csv'):
     """
     Models the Critical Element and 
     True Critical Element skills.
@@ -139,20 +139,26 @@ def Critical_Element(self,level,crit_elem_file='datafiles\\weapon\\crit_elem.csv
     #Check for invalid levels
     level=max(min(level,2),0)
 
-    #Read multipliers from file
-    try:
-        with open(crit_elem_file,'r') as file:
-            ce_mod_source=csv.reader(file) #Open the file as a csv
+    #(True) Critical Element mods in a dictionary in the format
+    #dict={'weapon_type':(CE mod, TCE mod)}
+    ce_dict={'gs':(1.50,1.70),
+             'sns':(1.35,1.55),
+             'db':(1.35,1.55),
+             'ls':(1.35,1.55),
+             'hammer':(1.50,1.70),
+             'hh':(1.50,1.70),
+             'lance':(1.35,1.55),
+             'gl':(1.35,1.55),
+             'sa':(1.35,1.55),
+             'cb':(1.35,1.55),
+             'ig':(1.35,1.55),
+             'bow':(1.35,1.55),
+             'hbg':(1.50,1.70),
+             'lbg':(1.25,1.40)
+    }
 
-            for row in ce_mod_source: #Check all rows for the weapon type
-                if (row[0]==weapon.weapon_type): #First column (index 0) is weapon
-                    weapon.crit_mod_elem=float(row[level])   #Second column (index 1) ie CE
-                                                #Index 2 is TCE
-                                                #These correspond to the "levels"
-                    break #Leave loop after finding a match
-    
-    except: #Return 1 if an error occurs (ie calling with an invalid weapon type)
-        return 1
+    #Apply effect
+    weapon.crit_mod_elem=ce_dict[weapon.weapon_type][level-1]
 
 def Dragonvein_Awakening(level, weapon):
     """
@@ -191,12 +197,12 @@ def Elemental_Attack(level, weapon):
         else:
             flat=10 #For levels 3+
 
-    #Define multiplier:
-    mult={1: 1, 2:1, 3:1, 4:1.05, 5:1.1, 6:1.2}
+        #Define multiplier:
+        mult={1: 1, 2:1, 3:1, 4:1.05, 5:1.1, 6:1.2}
 
-    #Apply skill.
-    weapon.flat_elem_mod+=flat
-    weapon.mult_elem_mod*=mult[level]
+        #Apply skill.
+        weapon.flat_elem_mod+=flat
+        weapon.mult_elem_mod*=mult[level]
 
 def Elemental_Acceleration(level, weapon):
     """

@@ -302,12 +302,13 @@ class Weapon:
         temp_mon=self.get_monster_data(target_monster)
         raw_HZ=temp_mon[0]
         elem_HZ=temp_mon[1]
-        rage_mod=temp_mon[2]
+        is_tenderized=temp_mon[2]
+        rage_mod=temp_mon[3]
 
         #Iterate through attack_combo to obtain all damage values
         for attack in self.attack_combo:
             
-            self.generic_calculation(attack,raw_HZ,elem_HZ,rage_mod,calc_type) 
+            self.generic_calculation(attack,raw_HZ,elem_HZ,is_tenderized,rage_mod,calc_type) 
 
     def get_monster_data(self,target_monster):
         """
@@ -329,8 +330,8 @@ class Weapon:
         #Elemental hitzones are not affected by tenderizing.
         elem_HZ=calc_hitzone.elem 
 
-        #Note that raw_HZV and elem_HZV are dictionaries! Each key is a possible damage type for raw ('cut','impact' or 'shot')
-        #or element ('fire', 'water', 'thunder', 'ice', 'dragon') and each value is the corresponding HZV.                              
+        #Also store tenderized status
+        is_tenderized=calc_hitzone.is_tenderized                         
 
         #Extract the rage_mod from the monster, depending on its enraged status
         if target_monster.is_enraged: #If enraged, get the rage_mod
@@ -341,9 +342,9 @@ class Weapon:
         else:
             rage_mod=1 #Otherwise, set to 1 to not affect damage.
 
-        return (raw_HZ,elem_HZ,rage_mod)
+        return (raw_HZ,elem_HZ,is_tenderized,rage_mod)
 
-    def generic_calculation(self,attack,raw_HZ,elem_HZ,rage_mod,calc_type):
+    def generic_calculation(self,attack,raw_HZ,elem_HZ,is_tenderized,rage_mod,calc_type):
         """
         Calculates raw and elemental damage for a generic weapon attack.
         Applies for most attacks, but there are some exceptions such
@@ -353,7 +354,7 @@ class Weapon:
         #Apply Weakness Exploit, if needed
         if Weakness_Exploit in self.buff_dict:
             Weakness_Exploit_Activate(self.buff_dict[Weakness_Exploit],self,
-                                        raw_HZV[attack[0].damage_type], calc_hitzone.is_tenderized)
+                                        raw_HZ[attack[0].damage_type], is_tenderized)
                                         
         #Limit affinity if needed
         self.aff_final=max(min(self.aff_final,1),-1)
