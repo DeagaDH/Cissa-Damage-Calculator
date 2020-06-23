@@ -38,7 +38,7 @@ def Agitator_Activate(level, weapon):
 
     #Do its effect
     #Raw part
-    weapon.flat_raw_mod+=4*level #4 per level
+    weapon.true_raw_final+=4*level #4 per level
 
     #Affinity part depends heavily on level
     #Store affinity cases as a dictionary
@@ -47,7 +47,7 @@ def Agitator_Activate(level, weapon):
                 5: 0.10, 6: 0.15, 7: 0.20}
 
     #apply affinity buff
-    weapon.flat_aff_mod+=aff_dict[level]
+    weapon.aff_final+=aff_dict[level]
 
 def Artillery(level, weapon):
     """
