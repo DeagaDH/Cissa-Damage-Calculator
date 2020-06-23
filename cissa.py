@@ -7,15 +7,6 @@ import wx.lib.intctrl #For IntCtrl
 import wx.grid #For grids
 import wx.adv #For tooltips
 
-"""
-Notes to self:
-- CB halfway implemented. Moves should work fine.
-    -Still need to implement exclusive skills such as ARtillery, Felyne Bombardier, etc
-    -Need to make Atk boosting skills only half as effective on Phial damage
-
-- Need to implement actual EFR/EFE calculations
-"""
-
 class MainWindow(wx.Panel):
     ''' The program's main window '''
 
@@ -418,7 +409,7 @@ class MainWindow(wx.Panel):
         index=self.monster_choice.GetSelection()
         
         #Set self.target_monster as a new monster object
-        self.target_monster.create_monster(self.monster_list[index])
+        self.target_monster.create_monster=Monster(self.monster_list[index])
         
         #Reset the tenderized checkbox, if needed
         if self.hitzone_checkbox.IsChecked(): #If checked
@@ -1117,7 +1108,7 @@ class BuffWindow(wx.Frame):
         self.SetBackgroundColour('white')
 
         #Pass weapon object to this window
-        self.user_weapon=weapon
+        self.buff_weapon=weapon
 
         #Store function for updating damage grid
         self.update_grid=update_function
@@ -1250,7 +1241,7 @@ class BuffWindow(wx.Frame):
 
         #Add appropriate buff. Current selection corresponds
         #to level
-        self.user_weapon.update_buff_dict(choice.BuffName,choice.GetSelection())
+        self.buff_weapon.update_buff_dict(choice.BuffName,choice.GetSelection())
 
         #Update damage grid
         self.update_grid()                             
@@ -1290,8 +1281,8 @@ class BuffWindow(wx.Frame):
 
             #Default selection to skill level stored in the
             #user_weapon object
-            if (function in self.user_weapon.buff_dict):
-                choice_dict[name].SetSelection(self.user_weapon.buff_dict[function])
+            if (function in self.buff_weapon.buff_dict):
+                choice_dict[name].SetSelection(self.buff_weapon.buff_dict[function])
             else:
                 choice_dict[name].SetSelection(0)
 
