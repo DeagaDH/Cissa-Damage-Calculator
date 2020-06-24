@@ -236,6 +236,10 @@ class MainWindow(wx.Panel):
         self.clear_combo=wx.Button(self,label='Delete\ncurrent\ncombo',size=(80,55))
         # self.clear_selected=wx.Button(self,label='Delete\nselected\nattacks',size=(80,55))
 
+        #Buttons to save and load combos
+        self.save_combo_button = wx.Button(self,label='Save\ncurrent\ncombo',size=(80,55))
+        self.load_combo_button = wx.Button(self,label='Load\nsaved\ncombo',size=(80,55))
+
         #Button for skills and items
         self.skill_button = wx.Button(self,label='Skills and Items',size=(180,55))
     
@@ -265,7 +269,8 @@ class MainWindow(wx.Panel):
         self.specific_checkbox1.Bind(wx.EVT_CHECKBOX,self.specific_check1)
         self.specific_checkbox2.Bind(wx.EVT_CHECKBOX,self.specific_check2)
         self.skill_button.Bind(wx.EVT_BUTTON,self.open_skill_window)
-        
+        self.save_combo_button.Bind(wx.EVT_BUTTON,self.save_combo)
+
     def doLayout(self):
         """
         Layout the controls by means of sizers. The main window is split in 3 parts
@@ -383,6 +388,7 @@ class MainWindow(wx.Panel):
         #Buttons next to the grid
         right_box.Add(self.clear_combo,pos=(1,3))
         # right_box.Add(self.clear_selected,pos=(2,3))
+        right_box.Add(self.save_combo_button,pos=(3,3))
         #Add to main box
         main_box.Add(right_box)
        
@@ -1099,6 +1105,39 @@ class MainWindow(wx.Panel):
         """
         self.skill_window=BuffWindow(self.user_weapon,self.update_damage_grid)
         self.skill_window.Show()
+
+    def save_combo(self,event):
+        """
+        Saves the current combo to a file
+        """
+
+        #This will save only the attack indexes.
+        #Extract them from the weapon
+        to_save=[] #empty list
+
+        #Append the index of each attack in the current combo
+        for attack in self.user_weapon.attack_combo:
+            to_save.append(str(self.user_weapon.attack_list.index(attack[0].name)))
+
+        #Convert to string
+        to_save=','.join(to_save)
+       
+        #Pop up window to save
+        with wx.FileDialog(self, "Save current combo file", 
+                           wildcard="cmb files (*.cmb)|*.cmb",
+                           style=wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT,
+                           defaultDir='.\datafiles\saved_combos') as dlg:
+
+            if dlg.ShowModal() == wx.ID_CANCEL:
+                return     # the user changed their mind
+
+            # save the current contents in the file
+            pathname = dlg.GetPath()
+            try:
+                with open(pathname, 'w') as file:
+                    file.write(to_save)
+            except IOError:
+                wx.LogError("Cannot save current data in file '%s'." % pathname)
 
 class FrameWithForms(wx.Frame):
     def __init__(self, *args, **kwargs):
