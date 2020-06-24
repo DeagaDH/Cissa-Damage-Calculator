@@ -139,7 +139,7 @@ class MainWindow(wx.Panel):
         #Grid for monster hitzones
         self.monster_grid=wx.grid.Grid(self)
         self.monster_grid.CreateGrid(12,12)
-        # self.monster_grid.SetSelectionMode(wx.grid.Grid.GridSelectRows)
+        
         
         #Change column names for damage types and resize
         dmg_types=['Name','State','Cut','Impact','Shot','Fire','Water','Thunder','Ice','Dragon','Stun','Group']
@@ -155,6 +155,8 @@ class MainWindow(wx.Panel):
         #Manually adjust name and state columns for longer text
         self.monster_grid.SetColSize(0,80)
         self.monster_grid.SetColSize(1,70)
+        self.monster_grid.SetSelectionMode(wx.grid.Grid.GridSelectRows)
+        self.monster_grid.EnableEditing(False)
 
         #Label and grid for the selected hitzone, checkbox for tenderizing
         self.hitzone_label=wx.StaticText(self, label="Selected Hitzone:")
@@ -229,6 +231,7 @@ class MainWindow(wx.Panel):
 
         #Select rows only
         self.damage_grid.SetSelectionMode(wx.grid.Grid.GridSelectRows)
+        self.damage_grid.EnableEditing(False)
 
         #Initialize paramaters with default choices
         self.weapon_select(None) #Initialize weapon selection; no event
@@ -269,7 +272,7 @@ class MainWindow(wx.Panel):
         self.elem_type_choice.Bind(wx.EVT_CHOICE,self.elem_type_select)
         self.aff_int_ctrl.Bind(wx.EVT_TEXT,self.set_affinity)
         self.sharp_choice.Bind(wx.EVT_CHOICE,self.sharp_select)
-        self.monster_grid.Bind(wx.grid.EVT_GRID_CELL_LEFT_CLICK,self.hitzone_select)
+        self.monster_grid.Bind(wx.grid.EVT_GRID_SELECT_CELL,self.hitzone_select)
         self.monster_checkbox.Bind(wx.EVT_CHECKBOX,self.toggle_rage)
         self.hitzone_checkbox.Bind(wx.EVT_CHECKBOX,self.toggle_tenderize)
         self.attack_choice.Bind(wx.EVT_CHOICE,self.add_attack)
@@ -284,7 +287,7 @@ class MainWindow(wx.Panel):
         self.save_combo_button.Bind(wx.EVT_BUTTON,self.save_combo)
         self.load_combo_button.Bind(wx.EVT_BUTTON,self.load_combo)
         self.clear_selected.Bind(wx.EVT_BUTTON,self.clear_selected_attacks)
-    
+     
     def doLayout(self):
         """
         Layout the controls by means of sizers. The main window is split in 3 parts
@@ -430,7 +433,7 @@ class MainWindow(wx.Panel):
         index=self.monster_choice.GetSelection()
         
         #Set self.target_monster as a new monster object
-        self.target_monster.create_monster=Monster(self.monster_list[index])
+        self.target_monster.create_monster(self.monster_list[index])
         
         #Reset the tenderized checkbox, if needed
         if self.hitzone_checkbox.IsChecked(): #If checked
@@ -469,18 +472,9 @@ class MainWindow(wx.Panel):
             self.monster_grid.SetCellValue(i,9,str(self.target_monster.hitzones[i].elem['dragon']))
             self.monster_grid.SetCellValue(i,10,str(self.target_monster.hitzones[i].stun))
             self.monster_grid.SetCellValue(i,11,str(self.target_monster.hitzones[i].tender_group))
-
-            #Also set as read-only
-            attr = wx.grid.GridCellAttr()
-            attr.SetReadOnly(True)
-            self.monster_grid.SetRowAttr(i, attr)
-        
         
         #Refresh
         self.monster_grid.Refresh()
-        # #Readjust name and state columns for text
-        # self.monster_grid.AutoSizeColumn(0) #Name
-        # self.monster_grid.AutoSizeColumn(1) #State
 
         #Update damage_grid
         self.update_damage_grid()
@@ -930,9 +924,6 @@ class MainWindow(wx.Panel):
                 self.hitzone_checkbox.SetValue(False) #Uncheck
                 self.toggle_tenderize(None)      #Toggle is_tenderized
 
-            #Set entire row as selected
-            self.monster_grid.SelectRow(row)
-
             #Check for tenderize group 0, which cannot be tenderized.
             #Is group 0, disable Tenderize button. Otherwise, enable
             if self.monster_grid.GetCellValue(row,11)=='0':
@@ -991,13 +982,13 @@ class MainWindow(wx.Panel):
                 if (self.monster_grid.GetCellValue(i,11)==tender_group):
                     
                     if self.target_monster.get_hitzone(row).is_tenderized: 
-                        self.monster_grid.SetCellValue(i,2,str(self.target_monster.hitzones[row].raw_tenderized['cut']))
-                        self.monster_grid.SetCellValue(i,3,str(self.target_monster.hitzones[row].raw_tenderized['impact']))
-                        self.monster_grid.SetCellValue(i,4,str(self.target_monster.hitzones[row].raw_tenderized['shot']))
+                        self.monster_grid.SetCellValue(i,2,str(self.target_monster.hitzones[i].raw_tenderized['cut']))
+                        self.monster_grid.SetCellValue(i,3,str(self.target_monster.hitzones[i].raw_tenderized['impact']))
+                        self.monster_grid.SetCellValue(i,4,str(self.target_monster.hitzones[i].raw_tenderized['shot']))
                     else:
-                        self.monster_grid.SetCellValue(i,2,str(self.target_monster.hitzones[row].raw['cut']))
-                        self.monster_grid.SetCellValue(i,3,str(self.target_monster.hitzones[row].raw['impact']))
-                        self.monster_grid.SetCellValue(i,4,str(self.target_monster.hitzones[row].raw['shot']))
+                        self.monster_grid.SetCellValue(i,2,str(self.target_monster.hitzones[i].raw['cut']))
+                        self.monster_grid.SetCellValue(i,3,str(self.target_monster.hitzones[i].raw['impact']))
+                        self.monster_grid.SetCellValue(i,4,str(self.target_monster.hitzones[i].raw['shot']))
 
         #Update damage_grid
         self.update_damage_grid()
@@ -1205,6 +1196,10 @@ class MainWindow(wx.Panel):
         #Update damage grid
         self.damage_grid.ClearGrid()
         self.update_damage_grid()
+
+    def OnMotion(self, event):
+    # just trap this event and prevent it from percolating up the window hierarchy
+        pass
 
 class FrameWithForms(wx.Frame):
     def __init__(self, *args, **kwargs):
