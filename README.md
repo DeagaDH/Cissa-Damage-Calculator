@@ -16,7 +16,8 @@ A Damage Calculator for MHWI. I recently started learning Python and thought I'd
 
 * The Agitator skill will only activate if the monster is Enraged.
 
-* The Weakness Exploit skill will base its activation criteria based on the **last** attack in the current combo and will only activate properly for EFR calculations if at least one attack is in the combo. The Tenderize checkbox must be activated to get the full effect from the skill, as in the actual game.
+* The Weakness Exploit skill will base its activation criteria in each attack individually, as different attacks may have different damage types (Cutting, Impact or Shot) which may or may not proc WE on a given hitzone. For example, Lunastra's head, when not tenderized, is a weak spot for Impact and Shot damage, but not cutting. This distinction is relevant for weapons such as Sword & Shield, which has attacks that deal Cutting damage, but also attacks that deal Impact damage.
+    * For the Effective Raw / Element / Affinity calculations, Weakness Exploit activation will be based on the **last** attack in the current combo.
 
 ## Special Thanks
 I'd like to take this space to thank MoonBunnie#0001 and Deathcream#1576 for their huge datasheets on Iceborne, which were a huge help in compiling pretty much anything damage related, MechE__ for their hitzone data compilation and Honey for her armor set builder and damage calculator, which I used to double check my own results.

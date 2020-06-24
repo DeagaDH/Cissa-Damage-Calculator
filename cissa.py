@@ -403,8 +403,8 @@ class MainWindow(wx.Panel):
         #Buttons next to the grid
         right_box.Add(self.save_combo_button,pos=(1,3))
         right_box.Add(self.load_combo_button,pos=(2,3))
-        right_box.Add(self.clear_combo,pos=(3,3))
-        right_box.Add(self.clear_selected,pos=(4,3))
+        right_box.Add(self.clear_selected,pos=(3,3))
+        right_box.Add(self.clear_combo,pos=(4,3))
         
         #Add to main box
         main_box.Add(right_box)
