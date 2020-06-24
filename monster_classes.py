@@ -83,6 +83,15 @@ class Hitzone:
         else: #Otherwise, flip value of is_tenderied
             self.is_tenderized = not self.is_tenderized
 
+        print("Hitzone tenderized?",self.is_tenderized)
+    def set_tenderize(self,is_tenderized):
+        """
+        Sets the hitzone as tenderized (true) or
+        not tenderized (False)
+        """
+
+        self.is_tenderized=is_tenderized
+
 class Monster():
     """
     The monster class encapsulates all Hitzones that belong to a specific monster. Input is the monster's name. 

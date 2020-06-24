@@ -435,15 +435,14 @@ class MainWindow(wx.Panel):
         #Set self.target_monster as a new monster object
         self.target_monster.create_monster(self.monster_list[index])
         
+
         #Reset the tenderized checkbox, if needed
         if self.hitzone_checkbox.IsChecked(): #If checked
             self.hitzone_checkbox.SetValue(False) #Uncheck
-            self.toggle_tenderize(None)      #Toggle is_tenderized
-
+    
         #Reset the enraged checkbox, if needed
         if self.monster_checkbox.IsChecked(): #If checked
             self.monster_checkbox.SetValue(False) #Uncheck
-            self.toggle_rage(None)      #Toggle is_tenderized
 
         #Get the number of different hitzones
         num_hitzones = len(self.target_monster.hitzones)
@@ -1080,8 +1079,8 @@ class MainWindow(wx.Panel):
         #Clear the damage_grid:
         self.damage_grid.ClearGrid()
 
-        # #Update damage_calc:
-        # damage_calc.update_weapon(self.user_weapon)
+        #Update damage_calc:
+        self.update_damage_grid()
         
     def calculation_select(self,event):
         """
