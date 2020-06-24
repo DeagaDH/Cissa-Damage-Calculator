@@ -139,7 +139,8 @@ class MainWindow(wx.Panel):
         #Grid for monster hitzones
         self.monster_grid=wx.grid.Grid(self)
         self.monster_grid.CreateGrid(12,12)
-     
+        
+        
         #Change column names for damage types and resize
         dmg_types=['Name','State','Cut','Impact','Shot','Fire','Water','Thunder','Ice','Dragon','Stun','Group']
 
@@ -154,6 +155,8 @@ class MainWindow(wx.Panel):
         #Manually adjust name and state columns for longer text
         self.monster_grid.SetColSize(0,80)
         self.monster_grid.SetColSize(1,70)
+        self.monster_grid.SetSelectionMode(wx.grid.Grid.GridSelectRows)
+        self.monster_grid.EnableEditing(False)
 
         #Label and grid for the selected hitzone, checkbox for tenderizing
         self.hitzone_label=wx.StaticText(self, label="Selected Hitzone:")
@@ -226,6 +229,10 @@ class MainWindow(wx.Panel):
         self.damage_grid.SetColLabelSize(25) #Adjust col labels
         self.update_damage_grid()
 
+        #Select rows only
+        self.damage_grid.SetSelectionMode(wx.grid.Grid.GridSelectRows)
+        self.damage_grid.EnableEditing(False)
+
         #Initialize paramaters with default choices
         self.weapon_select(None) #Initialize weapon selection; no event
         self.monster_select(None) #Monster selection; no event
@@ -234,8 +241,20 @@ class MainWindow(wx.Panel):
         #Add a button to clear current combo, another to delete
         #selected rows only
         self.clear_combo=wx.Button(self,label='Delete\ncurrent\ncombo',size=(80,55))
-        # self.clear_selected=wx.Button(self,label='Delete\nselected\nattacks',size=(80,55))
+        self.clear_selected=wx.Button(self,label='Delete\nselected\nattacks',size=(80,55))
 
+        #Tooltip to clear combo button
+        clear_tooltip=wx.ToolTip("This will delete ALL attacks\nfrom the current combo!")
+        self.clear_combo.SetToolTip(clear_tooltip)
+
+        #Buttons to save and load combos
+        self.save_combo_button = wx.Button(self,label='Save\ncurrent\ncombo',size=(80,55))
+        self.load_combo_button = wx.Button(self,label='Load\nsaved\ncombo',size=(80,55))
+
+        #Tooltip to load combo button
+        load_tooltip=wx.ToolTip("This will ADD the loaded combo\nto the current combo!")
+        self.load_combo_button.SetToolTip(load_tooltip)
+        
         #Button for skills and items
         self.skill_button = wx.Button(self,label='Skills and Items',size=(180,55))
     
@@ -253,7 +272,7 @@ class MainWindow(wx.Panel):
         self.elem_type_choice.Bind(wx.EVT_CHOICE,self.elem_type_select)
         self.aff_int_ctrl.Bind(wx.EVT_TEXT,self.set_affinity)
         self.sharp_choice.Bind(wx.EVT_CHOICE,self.sharp_select)
-        self.monster_grid.Bind(wx.grid.EVT_GRID_CELL_LEFT_CLICK,self.hitzone_select)
+        self.monster_grid.Bind(wx.grid.EVT_GRID_SELECT_CELL,self.hitzone_select)
         self.monster_checkbox.Bind(wx.EVT_CHECKBOX,self.toggle_rage)
         self.hitzone_checkbox.Bind(wx.EVT_CHECKBOX,self.toggle_tenderize)
         self.attack_choice.Bind(wx.EVT_CHOICE,self.add_attack)
@@ -265,7 +284,10 @@ class MainWindow(wx.Panel):
         self.specific_checkbox1.Bind(wx.EVT_CHECKBOX,self.specific_check1)
         self.specific_checkbox2.Bind(wx.EVT_CHECKBOX,self.specific_check2)
         self.skill_button.Bind(wx.EVT_BUTTON,self.open_skill_window)
-        
+        self.save_combo_button.Bind(wx.EVT_BUTTON,self.save_combo)
+        self.load_combo_button.Bind(wx.EVT_BUTTON,self.load_combo)
+        self.clear_selected.Bind(wx.EVT_BUTTON,self.clear_selected_attacks)
+     
     def doLayout(self):
         """
         Layout the controls by means of sizers. The main window is split in 3 parts
@@ -378,11 +400,14 @@ class MainWindow(wx.Panel):
         right_box.Add(self.damage_choice,pos=(0,3), flag=wx.EXPAND)
 
         #Damage grid
-        right_box.Add(self.damage_grid,pos=(1,0),span=(12,3))
+        right_box.Add(self.damage_grid,pos=(1,0),span=(6,3))
 
         #Buttons next to the grid
-        right_box.Add(self.clear_combo,pos=(1,3))
-        # right_box.Add(self.clear_selected,pos=(2,3))
+        right_box.Add(self.save_combo_button,pos=(1,3))
+        right_box.Add(self.load_combo_button,pos=(2,3))
+        right_box.Add(self.clear_combo,pos=(3,3))
+        right_box.Add(self.clear_selected,pos=(4,3))
+        
         #Add to main box
         main_box.Add(right_box)
        
@@ -408,7 +433,7 @@ class MainWindow(wx.Panel):
         index=self.monster_choice.GetSelection()
         
         #Set self.target_monster as a new monster object
-        self.target_monster.create_monster=Monster(self.monster_list[index])
+        self.target_monster.create_monster(self.monster_list[index])
         
         #Reset the tenderized checkbox, if needed
         if self.hitzone_checkbox.IsChecked(): #If checked
@@ -447,18 +472,9 @@ class MainWindow(wx.Panel):
             self.monster_grid.SetCellValue(i,9,str(self.target_monster.hitzones[i].elem['dragon']))
             self.monster_grid.SetCellValue(i,10,str(self.target_monster.hitzones[i].stun))
             self.monster_grid.SetCellValue(i,11,str(self.target_monster.hitzones[i].tender_group))
-
-            #Also set as read-only
-            attr = wx.grid.GridCellAttr()
-            attr.SetReadOnly(True)
-            self.monster_grid.SetRowAttr(i, attr)
-        
         
         #Refresh
         self.monster_grid.Refresh()
-        # #Readjust name and state columns for text
-        # self.monster_grid.AutoSizeColumn(0) #Name
-        # self.monster_grid.AutoSizeColumn(1) #State
 
         #Update damage_grid
         self.update_damage_grid()
@@ -908,9 +924,6 @@ class MainWindow(wx.Panel):
                 self.hitzone_checkbox.SetValue(False) #Uncheck
                 self.toggle_tenderize(None)      #Toggle is_tenderized
 
-            #Set entire row as selected
-            self.monster_grid.SelectRow(row)
-
             #Check for tenderize group 0, which cannot be tenderized.
             #Is group 0, disable Tenderize button. Otherwise, enable
             if self.monster_grid.GetCellValue(row,11)=='0':
@@ -922,8 +935,6 @@ class MainWindow(wx.Panel):
             for i in range(2):
                 self.hitzone_grid.SetCellValue(0,i,self.monster_grid.GetCellValue(row,i))
             
-            
-
             #Refresh
             self.hitzone_grid.Refresh()
 
@@ -971,13 +982,13 @@ class MainWindow(wx.Panel):
                 if (self.monster_grid.GetCellValue(i,11)==tender_group):
                     
                     if self.target_monster.get_hitzone(row).is_tenderized: 
-                        self.monster_grid.SetCellValue(i,2,str(self.target_monster.hitzones[row].raw_tenderized['cut']))
-                        self.monster_grid.SetCellValue(i,3,str(self.target_monster.hitzones[row].raw_tenderized['impact']))
-                        self.monster_grid.SetCellValue(i,4,str(self.target_monster.hitzones[row].raw_tenderized['shot']))
+                        self.monster_grid.SetCellValue(i,2,str(self.target_monster.hitzones[i].raw_tenderized['cut']))
+                        self.monster_grid.SetCellValue(i,3,str(self.target_monster.hitzones[i].raw_tenderized['impact']))
+                        self.monster_grid.SetCellValue(i,4,str(self.target_monster.hitzones[i].raw_tenderized['shot']))
                     else:
-                        self.monster_grid.SetCellValue(i,2,str(self.target_monster.hitzones[row].raw['cut']))
-                        self.monster_grid.SetCellValue(i,3,str(self.target_monster.hitzones[row].raw['impact']))
-                        self.monster_grid.SetCellValue(i,4,str(self.target_monster.hitzones[row].raw['shot']))
+                        self.monster_grid.SetCellValue(i,2,str(self.target_monster.hitzones[i].raw['cut']))
+                        self.monster_grid.SetCellValue(i,3,str(self.target_monster.hitzones[i].raw['impact']))
+                        self.monster_grid.SetCellValue(i,4,str(self.target_monster.hitzones[i].raw['shot']))
 
         #Update damage_grid
         self.update_damage_grid()
@@ -1099,6 +1110,96 @@ class MainWindow(wx.Panel):
         """
         self.skill_window=BuffWindow(self.user_weapon,self.update_damage_grid)
         self.skill_window.Show()
+
+    def save_combo(self,event):
+        """
+        Saves the current combo to a .cmb file
+        """
+
+        #This will save only the attack indexes.
+        #Extract them from the weapon
+        to_save=[] #empty list
+
+        #Append the index of each attack in the current combo
+        for attack in self.user_weapon.attack_combo:
+            to_save.append(str(self.user_weapon.attack_list.index(attack[0].name)))
+
+        #Convert to string
+        to_save=','.join(to_save)
+        
+        #Get extension from weapon type
+        ext=self.user_weapon.weapon_type
+
+        #Pop up window to save
+        with wx.FileDialog(self, "Save current combo", 
+                           wildcard=ext+" files (*."+ext+")|*."+ext,
+                           style=wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT,
+                           defaultDir='.\datafiles\saved_combos') as dlg:
+
+            if dlg.ShowModal() == wx.ID_CANCEL:
+                return     # the user changed their mind
+
+            # save the current contents in the file
+            pathname = dlg.GetPath()
+            try:
+                with open(pathname, 'w') as file:
+                    file.write(to_save)
+            except IOError:
+                wx.LogError("Cannot save current data in file '%s'." % pathname)
+
+    def load_combo(self,event):
+        """
+        Loads a previously saved combo from a .weapon_type file
+        """
+
+        #Get extension from weapon type
+        ext=self.user_weapon.weapon_type
+        with wx.FileDialog(self, "Open combo file", 
+                           wildcard=ext+" files (*."+ext+")|*."+ext,
+                           style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST,
+                           defaultDir='.\datafiles\saved_combos') as fileDialog:
+
+            if fileDialog.ShowModal() == wx.ID_CANCEL:
+                return     # the user changed their mind
+
+            # Proceed loading the file chosen by the user
+            pathname = fileDialog.GetPath()
+            try:
+                with open(pathname, 'r') as file:
+                    string_combo=list(csv.reader(file))[0] #Only 1 row
+                    int_combo=[]
+                    
+                    for item in string_combo:
+                        int_combo.append(int(item))
+
+                    #Update attack combo
+                    self.user_weapon.append_combo(int_combo)
+
+                    #Update damage grid
+                    self.update_damage_grid()
+
+            except IOError:
+                wx.LogError("Cannot open file '%s'." % newfile)
+
+    def clear_selected_attacks(self,event):
+        """
+        Clears selected attacks from the
+        current combo
+        """
+
+        #Get selection
+        selection=self.damage_grid.GetSelectedRows()
+        
+        #Clear selection from combo
+        self.user_weapon.delete_from_combo(selection)
+
+        #Update damage grid
+        self.damage_grid.ClearGrid()
+        self.update_damage_grid()
+
+    def OnMotion(self, event):
+    # just trap this event and prevent it from percolating up the window hierarchy
+        pass
 
 class FrameWithForms(wx.Frame):
     def __init__(self, *args, **kwargs):

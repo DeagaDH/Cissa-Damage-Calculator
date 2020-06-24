@@ -180,12 +180,12 @@ class Weapon:
 
         return self.attack_list
 
-    def append_combo(self,index,file_path='datafiles\\weapon\\attacks\\'):
+    def append_combo(self,index_list,file_path='datafiles\\weapon\\attacks\\'):
         """
         Appends one attack to the current combo
         The combo is stored as a list of Attack objects.
         
-        index is an int corresponding to rows
+        index is a list of ints corresponding to rows
         in the respective .csv file for weapon_type.
 
         attack_class is an Attack class to creat the Attack object
@@ -204,24 +204,32 @@ class Weapon:
         Other weapons have specific Attack objects!
         """
 
+        #Check for int rather than list
+        if type(index_list)==int:
+            index_list=[index_list] #Convert to list
+
+        #Open file with attacks
         with open(file_path+self.weapon_type+'.csv') as file:
           
             attack_source=csv.reader(file) #Store in this variable
             attack_source=list(attack_source)
-
-            #row index+1 will be used to generate the attack object
-            #+1 to skip the header.
-           
-            #Check for extra attributes to define an attack_class
-            #Currently done for: SA, LS
-            attack_source[index+1]=self.add_extra(attack_source[index+1])
-
-            #Append attack_class to the attack_combo
-            self.attack_combo.append([
-                self.attack_class(attack_source[index+1]),
-                        0,0,0]    #Raw, element and total damage               
-                )                   #They'll be updated in the damage_calc() function
             
+
+            for index in index_list: #Go through list
+                #row index+1 will be used to generate the attack object
+                #+1 to skip the header.
+                
+
+                #Check for extra attributes to define an attack_class
+                #Currently done for: SA, LS
+                attack_source[index+1]=self.add_extra(attack_source[index+1])
+
+                #Append attack_class to the attack_combo
+                self.attack_combo.append([
+                    self.attack_class(attack_source[index+1]),
+                            0,0,0]    #Raw, element and total damage               
+                    )                   #They'll be updated in the damage_calc() function
+
     def update_combo(self,file_path='datafiles\\weapon\\attacks\\'):
         """
         Updates all entries of the current combo with
@@ -260,13 +268,21 @@ class Weapon:
 
         return attribute_list
 
-    def delete_from_combo(self,min_index,max_index):
+    def delete_from_combo(self,index_list):
         """
         Deletes entries from the current combo
-        starting from min_dex up to max_index
+        with indexes given in index_list
         """
 
-        del self.attack_combo[min_index:max_index+1]
+        #Count deletions to correct index in the list
+        del_counter=0
+
+        try:
+            for index in index_list:
+                del self.attack_combo[index-del_counter]
+                del_counter+=1
+        except IndexError: #If out of bounds, do nothing
+            pass
 
     def delete_combo(self):
         """
