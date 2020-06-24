@@ -320,6 +320,7 @@ class Weapon:
         elem_HZ=temp_mon[1]
         is_tenderized=temp_mon[2]
         rage_mod=temp_mon[3]
+        self.aff_no_we=self.aff_final #Store affinity without WE, but with Agitator
 
         #Iterate through attack_combo to obtain all damage values
         for attack in self.attack_combo:
@@ -562,7 +563,7 @@ class Weapon:
         self.true_raw_final=self.true_raw*self.mult_raw_mod+self.flat_raw_mod
         self.true_elem_final=self.true_elem*self.mult_elem_mod+self.flat_elem_mod
         self.aff_final=self.aff+self.flat_aff_mod
-        self.aff_no_we=self.aff_final #Store affinity without WE
+        
         
         #Apply damage cap
         self.true_raw_final=min(self.true_raw_final,self.attack_cap)
