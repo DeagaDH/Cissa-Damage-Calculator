@@ -6,6 +6,7 @@ import wx #For the interface
 import wx.lib.intctrl #For IntCtrl
 import wx.grid #For grids
 import wx.adv #For tooltips
+import copy #For deepcopy
 
 class MainWindow(wx.Panel):
     ''' The program's main window '''
@@ -70,9 +71,7 @@ class MainWindow(wx.Panel):
         #Default to average damage when opening
         self.calc_type = 'average'
 
-        # #Create a buff (skills, itens, etc) dict do be updated later
-        # self.buff_dict={}
-
+        #Make control buttons, binds and layout
         self.createControls()
         self.bindEvents()
         self.doLayout()
@@ -193,11 +192,6 @@ class MainWindow(wx.Panel):
         efa_tooltip.SetAutoPop(10000)
         self.efa_int_ctrl.SetToolTip(wx.ToolTip(tooltip_text))
         
-        #Initialize paramaters with default choices
-        # self.weapon_select(None) #Initialize weapon selection; no event
-        self.monster_select(self.monster_list.index(self.target_monster.name)) #Monster selection
-        self.hitzone_select(None) #Hitzone selection with no event
-
         #Label and dropdown for attack selection
         self.attack_label = wx.StaticText(self, label="Select an attack:")
         self.attack_choice = wx.Choice(self, choices=self.user_weapon.attack_list)
@@ -232,6 +226,11 @@ class MainWindow(wx.Panel):
         self.damage_grid.SetColLabelSize(25) #Adjust col labels
         self.update_damage_grid()
 
+        #Initialize paramaters with default choices
+        self.weapon_select(None) #Initialize weapon selection; no event
+        self.monster_select(None) #Monster selection; no event
+        self.hitzone_select(None) #Hitzone selection with no event
+        
         #Add a button to clear current combo, another to delete
         #selected rows only
         self.clear_combo=wx.Button(self,label='Delete\ncurrent\ncombo',size=(80,55))
@@ -524,8 +523,11 @@ class MainWindow(wx.Panel):
         """
 
         #Get the index of the weapon choice list
-        index=self.weapon_choice.GetSelection()
-      
+        if event:
+            index=self.weapon_choice.GetSelection()
+        else: #Default to GS if no event
+            index=0
+
         #Convert to a new weapon object
         self.user_weapon=self.convert_weapon(index)
 
@@ -563,7 +565,8 @@ class MainWindow(wx.Panel):
                elem_type=self.elem_list[self.elem_type_choice.GetSelection()].lower(),
                sharp_color=self.sharp_list[self.sharp_choice.GetSelection()].lower(),
                is_true_elem=self.elem_checkbox.IsChecked(),
-               is_true_raw=True
+               is_true_raw=True,
+               buff_dict=copy.deepcopy(self.user_weapon.buff_dict)
             )
 
             
@@ -580,7 +583,8 @@ class MainWindow(wx.Panel):
                elem_type=self.elem_list[self.elem_type_choice.GetSelection()].lower(),
                sharp_color=self.sharp_list[self.sharp_choice.GetSelection()].lower(),
                is_true_elem=self.elem_checkbox.IsChecked(),
-               is_true_raw=True
+               is_true_raw=True,
+               buff_dict=copy.deepcopy(self.user_weapon.buff_dict)
             )
 
             
@@ -597,7 +601,8 @@ class MainWindow(wx.Panel):
                elem_type=self.elem_list[self.elem_type_choice.GetSelection()].lower(),
                sharp_color=self.sharp_list[self.sharp_choice.GetSelection()].lower(),
                is_true_elem=self.elem_checkbox.IsChecked(),
-               is_true_raw=True
+               is_true_raw=True,
+               buff_dict=copy.deepcopy(self.user_weapon.buff_dict)
             )
 
             
@@ -614,7 +619,8 @@ class MainWindow(wx.Panel):
                sharp_color=self.sharp_list[self.sharp_choice.GetSelection()].lower(),
                is_true_elem=self.elem_checkbox.IsChecked(),
                is_true_raw=True,
-               power_charge=True
+               power_charge=True,
+               buff_dict=copy.deepcopy(self.user_weapon.buff_dict)
             )
 
             
@@ -634,7 +640,8 @@ class MainWindow(wx.Panel):
                is_true_elem=self.elem_checkbox.IsChecked(),
                is_true_raw=True,
                sa_phial='power',
-               sa_dragon=0
+               sa_dragon=0,
+               buff_dict=copy.deepcopy(self.user_weapon.buff_dict)
             )
 
         if (self.weapon_list[index]=='Charge Blade'): #CB
@@ -654,7 +661,8 @@ class MainWindow(wx.Panel):
                is_true_raw=True,
                cb_phial='impact',
                cb_shield=True,
-               cb_power=False
+               cb_power=False,
+               buff_dict=copy.deepcopy(self.user_weapon.buff_dict)
             )    
 
         if (self.weapon_list[index]=='Dual Blades'): #DB
@@ -669,7 +677,8 @@ class MainWindow(wx.Panel):
                elem_type=self.elem_list[self.elem_type_choice.GetSelection()].lower(),
                sharp_color=self.sharp_list[self.sharp_choice.GetSelection()].lower(),
                is_true_elem=self.elem_checkbox.IsChecked(),
-               is_true_raw=True
+               is_true_raw=True,
+               buff_dict=copy.deepcopy(self.user_weapon.buff_dict)
             )
 
             
@@ -688,6 +697,7 @@ class MainWindow(wx.Panel):
                is_true_elem=self.elem_checkbox.IsChecked(),
                is_true_raw=True,
                ls_gauge='red',
+               buff_dict=copy.deepcopy(self.user_weapon.buff_dict)
             )
 
             
@@ -707,6 +717,7 @@ class MainWindow(wx.Panel):
                is_true_elem=self.elem_checkbox.IsChecked(),
                is_true_raw=True,
                ig_extract='triple up',
+               buff_dict=copy.deepcopy(self.user_weapon.buff_dict)
             )
 
     def convert_true_raw(self,event):

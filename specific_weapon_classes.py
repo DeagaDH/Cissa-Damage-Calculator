@@ -14,10 +14,10 @@ class Blademaster(Weapon):
     'white' or 'purple'
     """
 
-    def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,
+    def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,buff_dict={},
                  elem_type=None,sharp_color='white',is_true_raw=True,is_true_elem=True):
         #Initialize parent class
-        Weapon.__init__(self,bloat_attack,affinity)
+        Weapon.__init__(self,bloat_attack,affinity,is_true_raw,buff_dict)
         
         #Store true element and element type
         
@@ -89,10 +89,10 @@ class GreatSword(Blademaster):
     """
 
     def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
-                 sharp_color='white',is_true_elem=True,is_true_raw=True):
+                 sharp_color='white',is_true_elem=True,is_true_raw=True,buff_dict={}):
         #Initialize parent class
-        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,
-                             elem_type,sharp_color,is_true_elem)
+        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,buff_dict,
+                             elem_type,sharp_color,is_true_raw,is_true_elem)
 
         #Store GS weapon type
         self.weapon_type='gs'
@@ -118,10 +118,10 @@ class LongSword(Blademaster):
     """
 
     def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
-                 sharp_color='white',is_true_elem=True,is_true_raw=True,ls_gauge='red'):
+                 sharp_color='white',is_true_elem=True,is_true_raw=True,buff_dict={},ls_gauge='red'):
         #Initialize parent class
-        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,
-                             elem_type,sharp_color,is_true_elem)
+        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,buff_dict,
+                             elem_type,sharp_color,is_true_raw,is_true_elem)
         #Store Hammer weapon type
         self.weapon_type='ls'
 
@@ -182,10 +182,10 @@ class SwordNShield(Blademaster):
     """
 
     def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
-                 sharp_color='white',is_true_elem=True,is_true_raw=True):
+                 sharp_color='white',is_true_elem=True,is_true_raw=True,buff_dict={}):
         #Initialize parent class
-        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,
-                             elem_type,sharp_color,is_true_elem)
+        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,buff_dict,
+                             elem_type,sharp_color,is_true_raw,is_true_elem)
 
         #Store SnS weapon type
         self.weapon_type='sns'
@@ -210,10 +210,10 @@ class DualBlades(Blademaster):
     """
 
     def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
-                 sharp_color='white',is_true_elem=True,is_true_raw=True):
+                 sharp_color='white',is_true_elem=True,is_true_raw=True,buff_dict={}):
         #Initialize parent class
-        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,
-                             elem_type,sharp_color,is_true_elem)
+        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,buff_dict,
+                             elem_type,sharp_color,is_true_raw,is_true_elem)
         #Store Lance weapon type
         self.weapon_type='db'
 
@@ -240,10 +240,10 @@ class Lance(Blademaster):
     """
 
     def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
-                 sharp_color='white',is_true_elem=True,is_true_raw=True):
+                 sharp_color='white',is_true_elem=True,is_true_raw=True,buff_dict={}):
         #Initialize parent class
-        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,
-                             elem_type,sharp_color,is_true_elem)
+        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,buff_dict,
+                             elem_type,sharp_color,is_true_raw,is_true_elem)
         #Store Lance weapon type
         self.weapon_type='lance'
 
@@ -268,10 +268,10 @@ class Hammer(Blademaster):
 
     def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
                  sharp_color='white',is_true_elem=True,is_true_raw=True,
-                 power_charge=True):
+                 power_charge=True,buff_dict={}):
         #Initialize parent class
-        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,
-                             elem_type,sharp_color,is_true_elem)
+        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,buff_dict,
+                             elem_type,sharp_color,is_true_raw,is_true_elem)
         #Store Hammer weapon type
         self.weapon_type='hammer'
 
@@ -311,10 +311,10 @@ class InsectGlaive(Blademaster):
     """
 
     def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
-                 sharp_color='white',is_true_elem=True,is_true_raw=True,ig_extract='triple up'):
+                 sharp_color='white',is_true_elem=True,is_true_raw=True,ig_extract='triple up',buff_dict={}):
         #Initialize parent class
-        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,
-                             elem_type,sharp_color,is_true_elem)
+        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,buff_dict,
+                             elem_type,sharp_color,is_true_raw,is_true_elem)
         #Store Hammer weapon type
         self.weapon_type='ig'
 
@@ -362,10 +362,10 @@ class SwitchAxe(Blademaster):
 
     def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
                  sharp_color='white',is_true_elem=True,is_true_raw=True,
-                 sa_phial='power',sa_dragon=0):
+                 sa_phial='power',sa_dragon=0,buff_dict={}):
         #Initialize parent class
-        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,
-                             elem_type,sharp_color,is_true_elem)
+        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,buff_dict,
+                             elem_type,sharp_color,is_true_raw,is_true_elem)
         #Store Switch Axe weapon type
         self.weapon_type='sa'
 
@@ -425,10 +425,10 @@ class ChargeBlade(Blademaster):
 
     def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
                  sharp_color='white',is_true_elem=True,is_true_raw=True,
-                 cb_phial='impact',cb_shield=True,cb_power=False):
+                 cb_phial='impact',cb_shield=True,cb_power=False,buff_dict={}):
         #Initialize parent class
-        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,
-                             elem_type,sharp_color,is_true_elem)
+        Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,buff_dict,
+                             elem_type,sharp_color,is_true_raw,is_true_elem)
         #Store Switch Axe weapon type
         self.weapon_type='cb'
 
