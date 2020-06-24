@@ -14,7 +14,7 @@ class Blademaster(Weapon):
     'white' or 'purple'
     """
 
-    def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,buff_dict={},
+    def __init__(self,bloat_attack=300,affinity=0,bloat_elem=0,buff_dict={},
                  elem_type=None,sharp_color='white',is_true_raw=True,is_true_elem=True):
         #Initialize parent class
         Weapon.__init__(self,bloat_attack,affinity,is_true_raw,buff_dict)
@@ -88,7 +88,7 @@ class GreatSword(Blademaster):
     class_mod, attacks and crit_mod_elem (when implemented)
     """
 
-    def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
+    def __init__(self,bloat_attack=300,affinity=0,bloat_elem=0,elem_type=None,
                  sharp_color='white',is_true_elem=True,is_true_raw=True,buff_dict={}):
         #Initialize parent class
         Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,buff_dict,
@@ -117,7 +117,7 @@ class LongSword(Blademaster):
     properties on said attacks.
     """
 
-    def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
+    def __init__(self,bloat_attack=300,affinity=0,bloat_elem=0,elem_type=None,
                  sharp_color='white',is_true_elem=True,is_true_raw=True,buff_dict={},ls_gauge='red'):
         #Initialize parent class
         Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,buff_dict,
@@ -181,7 +181,7 @@ class SwordNShield(Blademaster):
     class_mod, attacks and crit_mod_elem (when implemented)
     """
 
-    def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
+    def __init__(self,bloat_attack=300,affinity=0,bloat_elem=0,elem_type=None,
                  sharp_color='white',is_true_elem=True,is_true_raw=True,buff_dict={}):
         #Initialize parent class
         Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,buff_dict,
@@ -209,7 +209,7 @@ class DualBlades(Blademaster):
     also uses a special DualBladesAttack class for its special properties.
     """
 
-    def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
+    def __init__(self,bloat_attack=300,affinity=0,bloat_elem=0,elem_type=None,
                  sharp_color='white',is_true_elem=True,is_true_raw=True,buff_dict={}):
         #Initialize parent class
         Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,buff_dict,
@@ -239,7 +239,7 @@ class Lance(Blademaster):
     class_mod, attacks and crit_mod_elem (when implemented)
     """
 
-    def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
+    def __init__(self,bloat_attack=300,affinity=0,bloat_elem=0,elem_type=None,
                  sharp_color='white',is_true_elem=True,is_true_raw=True,buff_dict={}):
         #Initialize parent class
         Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,buff_dict,
@@ -266,7 +266,7 @@ class Hammer(Blademaster):
     class_mod and attacks
     """
 
-    def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
+    def __init__(self,bloat_attack=300,affinity=0,bloat_elem=0,elem_type=None,
                  sharp_color='white',is_true_elem=True,is_true_raw=True,
                  power_charge=True,buff_dict={}):
         #Initialize parent class
@@ -310,7 +310,7 @@ class InsectGlaive(Blademaster):
     Holds extra information on class mod, IG attacks and extracts
     """
 
-    def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
+    def __init__(self,bloat_attack=300,affinity=0,bloat_elem=0,elem_type=None,
                  sharp_color='white',is_true_elem=True,is_true_raw=True,ig_extract='triple up',buff_dict={}):
         #Initialize parent class
         Blademaster.__init__(self,bloat_attack,affinity,bloat_elem,buff_dict,
@@ -343,9 +343,9 @@ class InsectGlaive(Blademaster):
         with open(ig_mod_file,'r') as file:
             ig_source=csv.reader(file) #Open the file as a csv
 
-            for row in ig_source: #Check all rows for the sharpness color
-                if (row[0]==ig_extract): #First value is the sharpness color
-                    self.weapon_raw_mod = float(row[1])     #Return the rest of the line as the sharp mods
+            for row in ig_source: #Check all rows for the extract
+                if (row[0]==ig_extract): #First value is the buff
+                    self.weapon_raw_mod = 1.10
 
         #Apply it to the weapon
         self.apply_weapon_buffs()
@@ -360,7 +360,7 @@ class SwitchAxe(Blademaster):
     Dragon element value from phial.
     """
 
-    def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
+    def __init__(self,bloat_attack=300,affinity=0,bloat_elem=0,elem_type=None,
                  sharp_color='white',is_true_elem=True,is_true_raw=True,
                  sa_phial='power',sa_dragon=0,buff_dict={}):
         #Initialize parent class
@@ -423,7 +423,7 @@ class ChargeBlade(Blademaster):
     and power axe (or savage axe) status
     """
 
-    def __init__(self,bloat_attack=290,affinity=0,bloat_elem=0,elem_type=None,
+    def __init__(self,bloat_attack=300,affinity=0,bloat_elem=0,elem_type=None,
                  sharp_color='white',is_true_elem=True,is_true_raw=True,
                  cb_phial='impact',cb_shield=True,cb_power=False,buff_dict={}):
         #Initialize parent class

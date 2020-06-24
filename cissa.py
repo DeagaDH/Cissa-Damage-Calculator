@@ -1,5 +1,3 @@
-from monster_classes import * #Import Hitzone and Monster classes
-from weapon_class import * #Import Generic weapon class. Contains skill definitions.
 from specific_weapon_classes import * #Import specific wapon classes.
 from skill_functions import * #Import skills, itens and canteen buffs
 import wx #For the interface
@@ -37,7 +35,7 @@ class MainWindow(wx.Panel):
         self.specific_hammer_text='Power\nCharge?'
 
         #SA phial list and label text
-        self.specific_sa_list=['Power','Elemental','Dragon','Other']
+        self.specific_sa_list=['Power','Elemental','Other'] #Dragon Phial not implemented
         self.specific_sa_text='Phial:'
 
         #CB Phial list

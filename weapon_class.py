@@ -30,7 +30,7 @@ class Weapon:
     Blademaster then has 11 sub-classes, one for each BM weapon.
     """
 
-    def __init__(self,bloat_attack=290,affinity=0,is_true_raw=True,
+    def __init__(self,bloat_attack=300,affinity=0,is_true_raw=True,
                  buff_dict={}):
         
         #Store the bloat_attack value
@@ -367,7 +367,12 @@ class Weapon:
         as CB Impact Phials, which don't consider hitzones, etc
         """
 
-        #Apply Weakness Exploit, if needed
+        #Restore pre-WE affinity
+        self.aff_final=self.aff_no_we
+
+        #(Re)Apply Weakness Exploit, if needed
+        #Done because different attacks may have different damage types,
+        #which may or may not proc WE in each hit
         if Weakness_Exploit in self.buff_dict:
             Weakness_Exploit_Activate(self.buff_dict[Weakness_Exploit],self,
                                         raw_HZ[attack[0].damage_type], is_tenderized)
@@ -557,6 +562,7 @@ class Weapon:
         self.true_raw_final=self.true_raw*self.mult_raw_mod+self.flat_raw_mod
         self.true_elem_final=self.true_elem*self.mult_elem_mod+self.flat_elem_mod
         self.aff_final=self.aff+self.flat_aff_mod
+        self.aff_no_we=self.aff_final #Store affinity without WE
         
         #Apply damage cap
         self.true_raw_final=min(self.true_raw_final,self.attack_cap)
