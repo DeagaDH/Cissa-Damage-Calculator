@@ -36,8 +36,9 @@ Sword: Jumping Slash,cut,35,1.00,1,1,1,0
 Axe: Jumping Sweep,cut,74,1.00,1,1,0,0
 Sword: Jumping Rising Slash,cut,35,1.00,1,1,1,0
 Element Discharge (Thrust),cut,10,0.20,1,1,1,0
-[Amped] Element Discharge (Thrust),cut,10,0.20,1,1,1,0
+[Amped] Element Discharge (Thrust),cut,10,0.20,1.2,1,1,0
 Elemental Discharge (Ticks),cut,8,0.50,1,1,1,0
+[Amped] Elemental Discharge (Ticks),cut,8,0.50,1.2,1,1,0
 Zero Sum Discharge (Thrust),cut,18,1.00,1,1,1,0
 Zero Sum Discharge (Ticks),cut,13,0.50,1,1,1,0
 Element Discharge Finisher (Early),cut,85,1.00,1,1,1,1
