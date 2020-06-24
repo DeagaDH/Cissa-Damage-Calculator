@@ -218,7 +218,8 @@ class Weapon:
             for index in index_list: #Go through list
                 #row index+1 will be used to generate the attack object
                 #+1 to skip the header.
-            
+                
+
                 #Check for extra attributes to define an attack_class
                 #Currently done for: SA, LS
                 attack_source[index+1]=self.add_extra(attack_source[index+1])
@@ -267,13 +268,21 @@ class Weapon:
 
         return attribute_list
 
-    def delete_from_combo(self,min_index,max_index):
+    def delete_from_combo(self,index_list):
         """
         Deletes entries from the current combo
-        starting from min_dex up to max_index
+        with indexes given in index_list
         """
 
-        del self.attack_combo[min_index:max_index+1]
+        #Count deletions to correct index in the list
+        del_counter=0
+
+        try:
+            for index in index_list:
+                del self.attack_combo[index-del_counter]
+                del_counter+=1
+        except IndexError: #If out of bounds, do nothing
+            pass
 
     def delete_combo(self):
         """
