@@ -155,7 +155,8 @@ class MainWindow(wx.Panel):
         self.monster_grid.SetColSize(1,70)
         self.monster_grid.SetSelectionMode(wx.grid.Grid.GridSelectRows)
         self.monster_grid.EnableEditing(False)
-
+        self.monster_grid.SelectRow(0)
+        
         #Label and grid for the selected hitzone, checkbox for tenderizing
         self.hitzone_label=wx.StaticText(self, label="Selected Hitzone:")
         self.hitzone_grid=wx.grid.Grid(self)
