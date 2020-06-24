@@ -533,7 +533,8 @@ class ChargeBlade(Blademaster):
         temp_mon=self.get_monster_data(target_monster)
         raw_HZ=temp_mon[0]
         elem_HZ=temp_mon[1]
-        rage_mod=temp_mon[2]
+        is_tenderized=temp_mon[2]
+        rage_mod=temp_mon[3]
 
         #Iterate through attack_combo to obtain all damage values
         for attack in self.attack_combo:
@@ -564,7 +565,7 @@ class ChargeBlade(Blademaster):
 
             else: #All other attacks are calculated normally
                 
-                self.generic_calculation(attack,raw_HZ,elem_HZ,rage_mod,calc_type) 
+                self.generic_calculation(attack,raw_HZ,elem_HZ,is_tenderized,rage_mod,calc_type) 
 
     def impact_phial_number(self,attack,phial_raw,rage_mod):
         """
