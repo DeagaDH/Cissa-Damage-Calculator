@@ -474,6 +474,9 @@ class MainWindow(wx.Panel):
         #Refresh
         self.monster_grid.Refresh()
 
+        #Reset Hitzone selection to default
+        self.hitzone_select(None)
+
         #Update damage_grid
         self.update_damage_grid()
     

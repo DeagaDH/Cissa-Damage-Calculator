@@ -323,8 +323,7 @@ def Offensive_Guard(level, weapon):
     level=max(min(level,3),0)
     
     #Apply buff
-    if (weapon.elem_type==None or weapon.elem_value==0):
-        weapon.mult_raw_mod*=(1+0.05*level)
+    weapon.mult_raw_mod*=(1+0.05*level)
 
 def Peak_Performance(level, weapon):
     """
