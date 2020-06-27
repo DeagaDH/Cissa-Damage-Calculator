@@ -916,6 +916,7 @@ class MainWindow(wx.Panel):
             row=event.GetRow()
         else:
             row=0 #Default to 0
+            self.monster_grid.SelectRow(row)
 
         #Check selected row against currently targeted hitzone
         #Only select another hitzone if they're different
