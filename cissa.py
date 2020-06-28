@@ -258,7 +258,7 @@ class MainWindow(wx.Panel):
         self.skill_button = wx.Button(self,label='Set Buffs (Skills and Items)',size=(180,-1))
         self.skill_save = wx.Button(self,label='Save Buffs',size=(80,-1))
         self.skill_load = wx.Button(self,label='Load Buffs',size=(80,-1))
-    
+
     def bindEvents(self):
         """
         Binds events to the controls on the main window.
@@ -1250,7 +1250,55 @@ class MainWindow(wx.Panel):
         Loads the currently selected buffs
         from skills, items, canteen, melody, etc
         """
-        pass
+
+        #Define extention of the file
+        ext='bff'
+
+        #Open w/ dialog
+        with wx.FileDialog(self, "Open buff file", 
+                           wildcard=ext+" files (*."+ext+")|*."+ext,
+                           style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST,
+                           defaultDir='.\datafiles\saved_buffs') as fileDialog:
+
+            if fileDialog.ShowModal() == wx.ID_CANCEL:
+                return     # the user changed their mind
+
+            # Proceed loading the file chosen by the user
+            pathname = fileDialog.GetPath()
+            try:
+                #Open selected file
+                with open(pathname, 'r') as file:
+                    #Clear current buffs
+                    self.user_weapon.clear_buff_dict()
+                    
+                    #Open as a csv (same format)
+                    buff_source=csv.reader(file)
+                    
+                    #Each line is formated as:
+                    #SKILL NAME, SKILL LEVEL
+                    #Where "SKILL NAME" is a string with the skill's name
+                    for row in buff_source:
+                        #Get the skill function from full_dict
+                        if row[0] in full_dict.keys(): #Check for vlaid name
+                            buff_func=full_dict[row[0]]
+
+                            #Update the weapon's buff_dict with the given skill
+                            self.user_weapon.update_buff_dict(buff_func,int(row[1]))
+
+                    #Update damage grid after completing the dictionary
+                    self.update_damage_grid()
+
+                    #Deal with an open skill window, if needed
+                    try:
+                        if self.skill_window.IsShown():
+                            self.skill_window.Destroy() #Close
+                            self.open_skill_window(None)#Reopen
+                            
+                    except AttributeError: #If not yet defined, do nothing
+                        pass
+                    
+            except IOError:
+                wx.LogError("Cannot open file '%s'." % newfile)
 
     def clear_selected_attacks(self,event):
         """
