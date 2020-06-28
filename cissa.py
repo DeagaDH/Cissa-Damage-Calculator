@@ -1207,7 +1207,43 @@ class MainWindow(wx.Panel):
         Saves the currently selected buffs
         from skills, items, canteen, melody, etc
         """
-        pass
+        to_save='' #Empty string
+
+        #This will save the skill names as strings from
+        #full_dict values, along with the current levels
+
+        for key,value in self.user_weapon.buff_dict.items():
+            #Skill level is just the value in the buff_dict dicitonary
+            level=value 
+
+            """For the skill name, do a reverse search in the dictionary
+            the skill FUNCTION is a value in the full_dict, while the
+            string with the skill name is the key. However, skill functions are
+            keys in the buff_dict dictionary!"""           
+            name=list(full_dict.keys())[list(full_dict.values()).index(key)]
+            
+            #Add to the to_save string
+            to_save+=name+','+str(level)+'\n'
+
+        #Define the .bff extension
+        ext='bff'
+
+        #Pop up window to save
+        with wx.FileDialog(self, "Save current buffs", 
+                           wildcard=ext+" files (*."+ext+")|*."+ext,
+                           style=wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT,
+                           defaultDir='.\datafiles\saved_buffs') as dlg:
+
+            if dlg.ShowModal() == wx.ID_CANCEL:
+                return     # the user changed their mind
+
+            # save the current contents in the file
+            pathname = dlg.GetPath()
+            try:
+                with open(pathname, 'w') as file:
+                    file.write(to_save)
+            except IOError:
+                wx.LogError("Cannot save current data in file '%s'." % pathname)
 
     def load_buffs(self,event):
         """
