@@ -527,6 +527,13 @@ class Weapon:
         else: #For level > 0
             self.buff_dict[buff_func]=buff_level #Add or update buff_func
                                             #at buff_level to buff_dict
+    
+    def clear_buff_dict(self):
+        """
+        Clears the current buff dictionary.
+        """
+
+        self.buff_dict={}
         
     def apply_buffs(self):
         """
