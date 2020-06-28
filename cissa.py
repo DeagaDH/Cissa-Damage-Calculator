@@ -1291,12 +1291,11 @@ class MainWindow(wx.Panel):
                     #Deal with an open skill window, if needed
                     try:
                         if self.skill_window.IsShown():
-                            self.skill_window.Destroy() #Close
-                            self.open_skill_window(None)#Reopen
+                            self.skill_window.update_choices()
                             
                     except AttributeError: #If not yet defined, do nothing
                         pass
-                    
+
             except IOError:
                 wx.LogError("Cannot open file '%s'." % newfile)
 
@@ -1315,10 +1314,6 @@ class MainWindow(wx.Panel):
         #Update damage grid
         self.damage_grid.ClearGrid()
         self.update_damage_grid()
-
-    def OnMotion(self, event):
-    # just trap this event and prevent it from percolating up the window hierarchy
-        pass
 
 class FrameWithForms(wx.Frame):
     def __init__(self, *args, **kwargs):
@@ -1540,6 +1535,37 @@ class BuffWindow(wx.Frame):
             
             # empty.Hide()
             buffcount+=1
+    
+    def update_choices(self):
+        """
+        Updates current selections from wxChoice objects
+        to correspond to current skills from self.buff_weapon.
+        To be used after loading skills from file
+        """
+
+        for buff,level in self.buff_weapon.buff_dict.items():
+            """
+            buff is a FUNCTION corresponding to the buff. Do a reverse
+            search in the full_dict dictionary to get the corresponding string
+            with its name
+            """
+            buff_name=list(full_dict.keys())[list(full_dict.values()).index(buff)]
+
+            #Check each of the 4 dictionaries of wxChoice in this window:
+            #self.skill_choices, self.item_choices, self.canteen_choices and self.song_choices
+
+            if   buff_name in self.skill_choices.keys():
+                self.skill_choices[buff_name].SetSelection(level)
+            
+            elif buff_name in self.item_choices.keys():
+                self.item_choices[buff_name].SetSelection(level)
+        
+            elif buff_name in self.canteen_choices.keys():
+                self.canteen_choices[buff_name].SetSelection(level)
+            
+            elif buff_name in self.song_choices.keys():
+                self.song_choices[buff_name].SetSelection(level)
+
 if __name__ == '__main__':                  
     app = wx.App(0)
     frame = FrameWithForms(None, title='Cissa Damage Calculator')
