@@ -254,8 +254,10 @@ class MainWindow(wx.Panel):
         load_tooltip=wx.ToolTip("This will ADD the loaded combo\nto the current combo!")
         self.load_combo_button.SetToolTip(load_tooltip)
         
-        #Button for skills and items
-        self.skill_button = wx.Button(self,label='Skills and Items',size=(180,55))
+        #Buttons for skills and items
+        self.skill_button = wx.Button(self,label='Set Buffs (Skills and Items)',size=(180,-1))
+        self.skill_save = wx.Button(self,label='Save Buffs',size=(80,-1))
+        self.skill_load = wx.Button(self,label='Load Buffs',size=(80,-1))
     
     def bindEvents(self):
         """
@@ -286,7 +288,9 @@ class MainWindow(wx.Panel):
         self.save_combo_button.Bind(wx.EVT_BUTTON,self.save_combo)
         self.load_combo_button.Bind(wx.EVT_BUTTON,self.load_combo)
         self.clear_selected.Bind(wx.EVT_BUTTON,self.clear_selected_attacks)
-     
+        self.skill_save.Bind(wx.EVT_BUTTON,self.save_buffs)
+        self.skill_load.Bind(wx.EVT_BUTTON,self.load_buffs)
+
     def doLayout(self):
         """
         Layout the controls by means of sizers. The main window is split in 3 parts
@@ -304,25 +308,29 @@ class MainWindow(wx.Panel):
         main_box=wx.BoxSizer(orient=wx.HORIZONTAL)
 
         #Two more boxes corresponding to each half (left/right) of main_box
-        left_box = wx.GridBagSizer(vgap=10, hgap=25)
+        left_box = wx.GridBagSizer(vgap=10, hgap=5)
         right_box = wx.GridBagSizer(vgap=10, hgap=10)
         
         ##########################################    
         #LEFT BOX
         ##########################################
         row=0 #Count which row the buttons are being positioned at
-        
+        spacer='       ' #Blank text for spacing
+
         #Type of weapon label and choice
         left_box.Add(self.weapon_label,pos=(row,0))
         left_box.Add(self.weapon_choice,pos=(row,1),span=(1,2),flag=wx.EXPAND)
-        
+        left_box.Add(wx.StaticText(self,label=spacer),pos=(row,3))
+
         #Specific choices for specific weapons
-        left_box.Add(self.specific_label,pos=(row,3))
-        left_box.Add(self.specific_choice,pos=(row,4),flag=wx.EXPAND)
-        
+        left_box.Add(self.specific_label,pos=(row,4))
+        left_box.Add(self.specific_choice,pos=(row,5),flag=wx.EXPAND)
+        left_box.Add(wx.StaticText(self,label=spacer),pos=(row,6))
+
         #EFR display
-        left_box.Add(self.efr_label,pos=(row,5))
-        left_box.Add(self.efr_int_ctrl,pos=(row,6),span=(1,2),flag=wx.EXPAND)
+        left_box.Add(self.efr_label,pos=(row,7))
+        left_box.Add(self.efr_int_ctrl,pos=(row,8),span=(1,2),flag=wx.EXPAND)
+        left_box.Add(wx.StaticText(self,label=spacer),pos=(row,10))
         row+=1
 
         #Attack, Affinity Element and Element type
@@ -330,61 +338,73 @@ class MainWindow(wx.Panel):
         left_box.Add(self.raw_label,pos=(row,0))
         left_box.Add(self.raw_int_ctrl,pos=(row,1))
         left_box.Add(self.raw_checkbox,pos=(row,2))
+        left_box.Add(wx.StaticText(self,label=spacer),pos=(row,3))
 
         #Specific checkboxes for specific weapons
-        left_box.Add(self.specific_checkbox1,pos=(row,3))
-        left_box.Add(self.specific_checkbox2,pos=(row,4))
-        
+        left_box.Add(self.specific_checkbox1,pos=(row,4))
+        left_box.Add(self.specific_checkbox2,pos=(row,5))
+        left_box.Add(wx.StaticText(self,label=spacer),pos=(row,6))
+
         #EFE display
-        left_box.Add(self.efe_label,pos=(row,5))
-        left_box.Add(self.efe_int_ctrl,pos=(row,6),span=(1,2),flag=wx.EXPAND)
+        left_box.Add(self.efe_label,pos=(row,7))
+        left_box.Add(self.efe_int_ctrl,pos=(row,8),span=(1,2),flag=wx.EXPAND)
         row+=1
 
         #Affinity label, input and % sign
         left_box.Add(self.aff_label,pos=(row,0))
         left_box.Add(self.aff_int_ctrl,pos=(row,1))
         left_box.Add(self.aff_percent_label,pos=(row,2))
-        
+        left_box.Add(wx.StaticText(self,label=spacer),pos=(row,3))
+
         #Sharpness label and choice
-        left_box.Add(self.sharp_label,pos=(row,3))
-        left_box.Add(self.sharp_choice,pos=(row,4),flag=wx.EXPAND)
-        
+        left_box.Add(self.sharp_label,pos=(row,4))
+        left_box.Add(self.sharp_choice,pos=(row,5),flag=wx.EXPAND)
+        left_box.Add(wx.StaticText(self,label=spacer),pos=(row,6))
+
         #Effective Affinity display
-        left_box.Add(self.efa_label,pos=(row,5))
-        left_box.Add(self.efa_int_ctrl,pos=(row,6),flag=wx.EXPAND)
-        left_box.Add(self.efa_percent_label,pos=(row,7))
+        left_box.Add(self.efa_label,pos=(row,7))
+        left_box.Add(self.efa_int_ctrl,pos=(row,8),flag=wx.EXPAND)
+        left_box.Add(self.efa_percent_label,pos=(row,9))
         row+=1
 
         #Element value label, input and true value checkbox
         left_box.Add(self.elem_label,pos=(row,0))
         left_box.Add(self.elem_int_ctrl,pos=(row,1))
         left_box.Add(self.elem_checkbox,pos=(row,2))
+        left_box.Add(wx.StaticText(self,label=spacer),pos=(row,3))
 
         #Element type label and choice
-        left_box.Add(self.elem_type_label,pos=(row,3))
-        left_box.Add(self.elem_type_choice,pos=(row,4),flag=wx.EXPAND)
-        
-        #Button for buffs
-        left_box.Add(self.skill_button,pos=(row,5),span=(2,4))
+        left_box.Add(self.elem_type_label,pos=(row,4))
+        left_box.Add(self.elem_type_choice,pos=(row,5),flag=wx.EXPAND)
+        left_box.Add(wx.StaticText(self,label=spacer),pos=(row,6))
+
+        #Button to set buffs
+        left_box.Add(self.skill_button,pos=(row,7),span=(1,4))
         row+=1
 
         #Monster label and choice   
         left_box.Add(self.monster_label,pos=(row,0))
         left_box.Add(self.monster_choice,pos=(row,1),span=(1,2),flag=wx.EXPAND)
+        left_box.Add(wx.StaticText(self,label=spacer),pos=(row,3))
 
         #Checkboxes for Rage and Tenderizing
-        left_box.Add(self.monster_checkbox,pos=(row,3))
-        left_box.Add(self.hitzone_checkbox,pos=(row,4))
+        left_box.Add(self.monster_checkbox,pos=(row,4))
+        left_box.Add(self.hitzone_checkbox,pos=(row,5))
+        left_box.Add(wx.StaticText(self,label=spacer),pos=(row,6))
+
+        #Buttons to save and load buffs
+        left_box.Add(self.skill_save,pos=(row,7))
+        left_box.Add(self.skill_load,pos=(row,8))
         row+=1
 
         #Grid for all hitzones from the monster
-        left_box.Add(self.monster_grid,pos=(row,0),span=(1,7))
+        left_box.Add(self.monster_grid,pos=(row,0),span=(1,10))
         row+=1
 
         #Selected hitzone label and small grid
         #There are to the right of monster select
         left_box.Add(self.hitzone_label,pos=(row,0))
-        left_box.Add(self.hitzone_grid,pos=(row,1),span=(2,3))
+        left_box.Add(self.hitzone_grid,pos=(row,1),span=(2,5))
 
         #Add to main_box
         main_box.Add(left_box)
@@ -1118,10 +1138,9 @@ class MainWindow(wx.Panel):
         Saves the current combo to a .cmb file
         """
 
-        #This will save only the attack indexes.
-        #Extract them from the weapon
         to_save=[] #empty list
 
+        #This will save only the attack indexes.
         #Append the index of each attack in the current combo
         for attack in self.user_weapon.attack_combo:
             to_save.append(str(self.user_weapon.attack_list.index(attack[0].name)))
@@ -1182,6 +1201,20 @@ class MainWindow(wx.Panel):
 
             except IOError:
                 wx.LogError("Cannot open file '%s'." % newfile)
+
+    def save_buffs(self,event):
+        """
+        Saves the currently selected buffs
+        from skills, items, canteen, melody, etc
+        """
+        pass
+
+    def load_buffs(self,event):
+        """
+        Loads the currently selected buffs
+        from skills, items, canteen, melody, etc
+        """
+        pass
 
     def clear_selected_attacks(self,event):
         """

@@ -652,6 +652,7 @@ canteen_dict= { 'Canteen Atk Up':(CanteenAttack,['None','(S)','(M)','(L)']),
 song_dict= {'Attack Up':(Melodies_Attack,['None','(S)','(L)','(XL)']),
             'Elem. Atk and Effect.':(Melodies_Elemental,['None','EAB (S)','EAB (L)','EEU','EAB(S)+EEU','EAB(L)+EEU'])}
 
+full_dict = {**skill_dict, **item_dict, **canteen_dict, **song_dict}
 
 #############################################################
 ####        NOT YET IMPLEMENTED
