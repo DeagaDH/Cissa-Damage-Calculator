@@ -1293,7 +1293,7 @@ class MainWindow(wx.Panel):
                         if self.skill_window.IsShown():
                             self.skill_window.update_choices()
                             
-                    except AttributeError: #If not yet defined, do nothing
+                    except: #If not yet defined, do nothing
                         pass
 
             except IOError:
