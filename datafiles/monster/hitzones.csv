@@ -1,4 +1,4 @@
-.Large Monster,Body Part,State,Cut,Impact,Shot,Fire,Water,Thunder,Ice,Dragon,Stun,T
+Large Monster,Body Part,State,Cut,Impact,Shot,Fire,Water,Thunder,Ice,Dragon,Stun,T
 Acidic Glavenus,Head,0,43,55,45,20,10,15,5,15,100,1
 Acidic Glavenus,Neck,0,37,37,25,15,10,10,10,10,0,1
 Acidic Glavenus,Throat,0,65,45,45,25,10,15,10,10,0,1
@@ -10,6 +10,34 @@ Acidic Glavenus,Tail Base,0,37,32,25,20,10,15,10,10,0,4
 Acidic Glavenus,Tail,0,37,32,25,25,10,15,10,10,0,4
 Acidic Glavenus,Tail,Hvy Crystal,18,24,15,35,5,20,5,5,0,4
 Acidic Glavenus,Tail,Sharpened,65,60,50,20,10,10,10,15,0,4
+Alatreon (Toppled),Head,0,85,85,30,13,10,10,13,13,100,1
+Alatreon (Toppled),Neck,0,85,85,30,13,10,10,13,13,0,1
+Alatreon (Toppled),Body,0,20,25,45,7,5,5,7,7,0,2
+Alatreon (Toppled),Wings,0,35,35,25,17,13,13,17,17,0,2
+Alatreon (Toppled),Arms,0,60,60,20,20,16,16,20,20,0,3
+Alatreon (Toppled),Legs,0,40,40,25,17,13,13,17,17,0,4
+Alatreon (Toppled),Tail,0,40,35,40,10,8,8,10,10,0,5
+Alatreon (Fire),Head,0,85,85,30,0,10,3,14,1,100,1
+Alatreon (Fire),Neck,0,85,85,30,0,10,3,14,1,0,1
+Alatreon (Fire),Body,0,20,25,45,0,5,1,7,0,0,2
+Alatreon (Fire),Wings,0,35,35,25,0,13,4,18,1,0,2
+Alatreon (Fire),Arms,0,60,60,20,0,16,5,22,2,0,3
+Alatreon (Fire),Legs,0,40,40,25,0,13,4,18,1,0,4
+Alatreon (Fire),Tail,0,40,35,40,0,8,2,11,1,0,5
+Alatreon (Ice),Head,0,85,85,30,14,3,10,0,1,100,1
+Alatreon (Ice),Neck,0,85,85,30,14,3,10,0,1,0,1
+Alatreon (Ice),Body,0,20,25,45,7,1,5,0,0,0,2
+Alatreon (Ice),Wings,0,35,35,25,18,4,13,0,1,0,2
+Alatreon (Ice),Arms,0,60,60,20,22,5,16,0,2,0,3
+Alatreon (Ice),Legs,0,40,40,25,18,4,13,0,1,0,4
+Alatreon (Ice),Tail,0,40,35,40,11,2,8,0,1,0,5
+Alatreon (Dragon),Head,0,85,85,30,6,5,5,6,9,100,1
+Alatreon (Dragon),Neck,0,85,85,30,6,5,5,6,9,0,1
+Alatreon (Dragon),Body,0,20,25,45,3,2,2,3,4,0,2
+Alatreon (Dragon),Wings,0,35,35,25,8,6,6,8,11,0,2
+Alatreon (Dragon),Arms,0,60,60,20,10,8,8,10,14,0,3
+Alatreon (Dragon),Legs,0,40,40,25,8,6,6,8,11,0,4
+Alatreon (Dragon),Tail,0,40,35,40,5,4,4,5,7,0,5
 Anjanath,Nose,0,65,63,55,0,30,15,20,10,100,1
 Anjanath,Head,0,60,60,45,0,25,10,15,5,100,1
 Anjanath,Neck,0,30,30,10,0,20,5,15,5,0,1
@@ -157,6 +185,16 @@ Ebony Odogaron,Hindlegs,Broken,50,50,40,10,20,10,10,5,0,3
 Ebony Odogaron,Tail,0,25,22,25,20,30,20,20,5,0,4
 Ebony Odogaron,Tail,Broken,50,45,45,10,15,10,10,5,0,4
 Ebony Odogaron,Tail Tip,0,45,30,40,15,20,15,15,5,0,4
+Frostfang Barioth,Head,0,65,70,55,20,10,15,0,15,100,1
+Frostfang Barioth,Neck/Back,0,30,30,25,5,5,5,0,5,0,
+Frostfang Barioth,Belly,0,38,38,25,10,0,5,0,5,0,
+Frostfang Barioth,Claws,0,21,45,25,35,5,25,0,10,0,2
+Frostfang Barioth,Claws,Broken,25,45,30,20,5,15,0,10,0,2
+Frostfang Barioth,Wings,0,30,45,20,10,0,5,0,5,0,2
+Frostfang Barioth,Forelegs,0,40,45,35,15,0,10,0,5,0,2
+Frostfang Barioth,Hindlegs,0,25,24,25,5,5,5,0,5,0,
+Frostfang Barioth,Tail,0,45,23,45,10,0,5,0,5,0,3
+Frostfang Barioth,Tail Tip,0,60,40,40,15,0,10,0,5,0,3
 Fulgur Anjanath,Nose,0,65,60,55,15,20,0,30,10,100,1
 Fulgur Anjanath,Nose,Charged,65,60,55,15,35,0,20,10,100,1
 Fulgur Anjanath,Head,0,60,60,45,10,15,0,25,5,100,1
