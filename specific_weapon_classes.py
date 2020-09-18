@@ -345,7 +345,7 @@ class InsectGlaive(Blademaster):
 
             for row in ig_source: #Check all rows for the extract
                 if (row[0]==ig_extract): #First value is the buff
-                    self.weapon_raw_mod = 1.10
+                    self.weapon_raw_mod = float(row[1])
 
         #Apply it to the weapon
         self.apply_weapon_buffs()
