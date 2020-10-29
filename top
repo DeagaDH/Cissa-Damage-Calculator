@@ -1,0 +1,218 @@
+[33mcommit bbba711f4ef171a4f312ffb840f984768ae0de36[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;32mextractfix[m[33m)[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Fri Sep 18 11:55:21 2020 -0300
+
+    extracts fixed
+
+[33mcommit 0af0ea5e194301783938219747b8fd3ad74ccc7f[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Fri Sep 18 11:49:05 2020 -0300
+
+    adding new combos
+
+[33mcommit a93f77d51a0f0a5e942b3cb169ec82cdfb27421c[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Fri Aug 7 13:38:46 2020 -0300
+
+    Added Alatreon/Frostfang
+
+[33mcommit 1e824640049e366b897979a9a0d3d7e98e95d9f2[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Wed Jul 1 18:16:22 2020 -0300
+
+    Small fix when loading buffs from file
+
+[33mcommit 6e58cffc274c9ba3457dfe0115ebbe5f4a9476d5[m
+Merge: 89e3033 fc31866
+Author: DeagaDH <dhdeaga@gmail.com>
+Date:   Sun Jun 28 19:43:39 2020 -0300
+
+    Merge pull request #9 from DeagaDH/save-load-buffs
+    
+    Save load buffs
+
+[33mcommit fc3186664bda07ee4ce40a57971500e2c2ae8279[m[33m ([m[1;31morigin/save-load-buffs[m[33m, [m[1;32msave-load-buffs[m[33m)[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Sun Jun 28 19:41:26 2020 -0300
+
+    Proper refresh of skill window when loading skills implemented
+
+[33mcommit c769734a898f265e5f7b033f82aa43eb60b978ca[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Sun Jun 28 19:25:23 2020 -0300
+
+    Load done; need better way to refresh skill window
+
+[33mcommit 2251ad6ca31608032acbbf29ba7d096d07d153df[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Sun Jun 28 14:40:37 2020 -0300
+
+    Save implemented; load 2do
+
+[33mcommit bb31d6585c8655243d253a0c5939a9ce284cb786[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Sun Jun 28 14:09:44 2020 -0300
+
+    Save/Load buttons and full_dict made; need to implement save/load
+
+[33mcommit 89e3033242617d85c08ea2d5c1c3eed8f37522ee[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Sat Jun 27 11:19:04 2020 -0300
+
+    Minor fixes to monster selection; removed HR monsters from ragemods.csv
+
+[33mcommit 9cc00d52877e1408e50bc415a94a9d7054899129[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Sat Jun 27 02:05:37 2020 -0300
+
+    Reset default hitzone on monster switch, ragemod adjustments
+
+[33mcommit 1f87d80f514c7175b6286bfecc09fc3c185caa27[m[33m ([m[1;31morigin/minor-fixes[m[33m)[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Thu Jun 25 22:19:26 2020 -0300
+
+    Added some SA combos
+
+[33mcommit a73203bbeb5e8e790beb92f07df2d285da9608bd[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Wed Jun 24 13:49:14 2020 -0300
+
+    Minor fixes on SA attacks
+
+[33mcommit 104a42101d1833fbc956cedb7e09ee7dd81c9fb2[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Wed Jun 24 13:15:00 2020 -0300
+
+    Fixing the Agitator glitch
+
+[33mcommit 9875fe117b7eb750101b1be926bae03d4a96e867[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Wed Jun 24 11:58:09 2020 -0300
+
+    Set first hitzone as default selection on start up
+
+[33mcommit 124fd02529707d86ef2b5d768cffe0e332010b61[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Wed Jun 24 11:52:45 2020 -0300
+
+    Fixed CB bug, generic_attack function was missing an argument
+
+[33mcommit 4c736a6fa1bd642451cc25b2fda17c8513f666c5[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Wed Jun 24 11:47:35 2020 -0300
+
+    Small update to README.md
+
+[33mcommit 445790f11762d683cdad7b65804e00baf53bdfc9[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Wed Jun 24 11:40:56 2020 -0300
+
+    WE bug fixed by resetting affinity on each attack
+
+[33mcommit 56aa16efaace380d82693c7feed73b007bc7ee9a[m[33m ([m[1;31morigin/monster-change-fix[m[33m)[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Wed Jun 24 01:38:08 2020 -0300
+
+    Fixed bug, cause was unnecessary toggle
+
+[33mcommit 26edd91cc7dd789b9de62e67d7779eecc48e70b9[m
+Merge: dcd480b 8dd0741
+Author: DeagaDH <dhdeaga@gmail.com>
+Date:   Wed Jun 24 01:23:57 2020 -0300
+
+    Merge pull request #8 from DeagaDH/save-load-combo
+    
+    Save load combo
+
+[33mcommit 8dd0741d2096e99bb887f13b1413231ce9346294[m[33m ([m[1;31morigin/save-load-combo[m[33m)[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Wed Jun 24 01:21:46 2020 -0300
+
+    Final adjustments to combo and hitzone selection
+
+[33mcommit 22fdcce40df7290565eeb3c73bba3ebcf49c0c43[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Wed Jun 24 00:39:45 2020 -0300
+
+    Load implemented. Delete selection implemented
+
+[33mcommit 55238ceac56f2e71a4a1b57a5db255692b7f0f5c[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Tue Jun 23 23:22:05 2020 -0300
+
+    Save function implemented
+
+[33mcommit dcd480b1f72c2a539de2be209ef880a9a5e548e8[m
+Merge: 7f9aa3b 0b5b8ac
+Author: DeagaDH <dhdeaga@gmail.com>
+Date:   Tue Jun 23 22:23:11 2020 -0300
+
+    Merge pull request #7 from DeagaDH/skill-tab-fix
+    
+    Skill tab fix
+
+[33mcommit 0b5b8ac069b8f59af67b2d9809c6f3efdf0f002f[m[33m ([m[1;31morigin/skill-tab-fix[m[33m)[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Tue Jun 23 22:21:43 2020 -0300
+
+    Skill window bug fixed; used deep copy for skill dict in new weapons
+
+[33mcommit 24a2ea3267f0edae7225ff78f648050a5f32e929[m[33m ([m[1;31morigin/tenderize-fix[m[33m)[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Tue Jun 23 20:21:36 2020 -0300
+
+    Fixed the Tenderize/WE glitch
+
+[33mcommit 7f9aa3b30f6372ff92aea7d97936b6d980f9d433[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Tue Jun 23 19:58:40 2020 -0300
+
+    Skill fixes
+
+[33mcommit 3a3fffd71c7f39e5988df7fca299ba454477ef19[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Sun Jun 21 23:00:38 2020 -0300
+
+    Bunch of bug fixes in skills
+
+[33mcommit 82102fac91278a50912e67bf654990ca5501fdaa[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Sun Jun 21 21:34:37 2020 -0300
+
+    updated readme
+
+[33mcommit 37749e57bc86b8caa93d1a97da91f579afdc10b6[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Sun Jun 21 21:33:01 2020 -0300
+
+    Fixing pull mess-up
+
+[33mcommit 67095ef007460c48e7f3bcae328626aa65449ba0[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Sat Jun 20 23:48:13 2020 -0300
+
+    First version, adding Readme.md and aligning skills
+
+[33mcommit e4a81e79699effe84bfedaec5c8f326b497e4411[m
+Author: DeagaDH <dhdeaga@gmail.com>
+Date:   Sat Jun 20 23:40:20 2020 -0300
+
+    Update README.md
+
+[33mcommit 409e4cf1c82e8db61c81c526153e5bc1cb7af0e5[m
+Author: DeagaDH <dhdeaga@gmail.com>
+Date:   Sat Jun 20 23:39:41 2020 -0300
+
+    Create README.md
+
+[33mcommit 0724e673e12154cfd91905e2c363860fa6c80c24[m
+Author: DeagaDH <dhdeaga@gmail.com>
+Date:   Sat Jun 20 23:31:55 2020 -0300
+
+    Create LICENSE
+
+[33mcommit 64920b3abd40e37b14e2cee7a32027f7677ba279[m
+Author: Deaga <dhdeaga@gmail.com>
+Date:   Sat Jun 20 23:08:56 2020 -0300
+
+    First commit

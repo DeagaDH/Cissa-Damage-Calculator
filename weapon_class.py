@@ -395,7 +395,7 @@ class Weapon:
 
         #Check for Frostcraft skil and, if present, apply its effects
         if Frostcraft in self.buff_dict:
-            Frostcraft_Activate(self.buff_dick[Frostcraft],self)
+            Frostcraft_Activate(self.buff_dict[Frostcraft],self)
         else: #If absent, set modifiers to 1.0
             self.fc_mod=1.0
             

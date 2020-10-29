@@ -1,3 +1,5 @@
+import csv #For reading CSV files for data
+
 #Defines skills and other buffs
 #All skills take 2 inputs: the desired level and
 #a weapon object to apply the skill to.
@@ -255,8 +257,8 @@ def Frostcraft_Activate(level, weapon, fc_file='datafiles\\weapon\\frostcraft.cs
         mod_source=csv.reader(file) #Open the file as a csv
 
         for row in mod_source: #Check all rows for the weapon type
-            if (row[0]==self.weapon_type): #First value is the type of weapon
-                self.fc_mod=float(row[weapon.buff_dict[Frostcraft]]) #Second value is the desired mod
+            if (row[0]==weapon.weapon_type): #First value is the type of weapon
+                weapon.fc_mod=float(row[weapon.buff_dict[Frostcraft]]) #Second value is the desired mod
                 break #Leave loop after finding a match
 
 def Heroics(level, weapon):
