@@ -129,7 +129,7 @@ def Critical_Eye(level, weapon):
     else:
         weapon.flat_aff_mod+=0.40 #Add 40% affinity on level 7
 
-def Critical_Element(level,weapon,crit_elem_file='datafiles\\weapon\\crit_elem.csv'):
+def Critical_Element(level,weapon):
     """
     Models the Critical Element and 
     True Critical Element skills.
@@ -233,16 +233,31 @@ def Fortify(level, weapon):
 
 def Frostcraft(level, weapon):
     """
-    Models the Frostcraft skill
-
-    Each level corresponds to a level in
-    FC's gauge.
+    Stores the Frostcraft skill, if present
+    
+    It'll be activated during damage calculation
+    via weapon.Frostcraft_Activate if the skill is present
+    in weapon.buff_dict
     """
 
     #Check for invalid levels
     level=max(min(level,3),0)
 
     pass
+
+def Frostcraft_Activate(level, weapon, fc_file='datafiles\\weapon\\frostcraft.csv'):
+    """
+    Activates the Frostcraft skill
+    """
+
+    #Open file with FC modifiers
+    with open(fc_file,'r') as file:
+        mod_source=csv.reader(file) #Open the file as a csv
+
+        for row in mod_source: #Check all rows for the weapon type
+            if (row[0]==self.weapon_type): #First value is the type of weapon
+                self.fc_mod=float(row[weapon.buff_dict[Frostcraft]]) #Second value is the desired mod
+                break #Leave loop after finding a match
 
 def Heroics(level, weapon):
     """
@@ -695,8 +710,9 @@ full_dict = {'Airborne':Airborne,
 ####        NOT YET IMPLEMENTED
 #############################################################
 
-not_implemented_skills=['Airborne','Frostcraft',
-                        'Normal/Pierce Shots','Special Ammo Boost',
+not_implemented_skills=['Airborne',
+                        'Normal/Pierce Shots',
+                        'Special Ammo Boost',
                         'Spread/Power Shots']
                         
 not_implemented_canteen=['Felyne Temper',

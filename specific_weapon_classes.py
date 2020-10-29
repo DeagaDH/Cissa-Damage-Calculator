@@ -589,6 +589,6 @@ class ChargeBlade(Blademaster):
         #Apply possible raw multipliers (ie shield charge) from attack
         calc_raw=phial_raw*attack.true_raw_mult
         
-        #Calculate raw damage. Currently missing practically all situational modifiers.
+        #Calculate raw damage. 
         #Round later. For total damage, raw and fixed damage are rounded together!
         return round(calc_raw * (mv/100.0) * rage_mod)

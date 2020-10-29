@@ -86,6 +86,9 @@ class Weapon:
         #Store skill and item buffs
         self.buff_dict=buff_dict
 
+        #Store Froscraft modifiers. Default to 1, change if skill is used
+        self.fc_mod=1.0
+
     def get_class_mod(self,class_mod_file='datafiles\\weapon\\classmods.csv'):
         """
         Returns the class mod for a certain weapon. Checks values on classmods.csv. File should be organized as:
@@ -390,6 +393,12 @@ class Weapon:
         
         calc_crit_mod_elem=self.determine_crit_mod(self.crit_mod_elem,calc_type)
 
+        #Check for Frostcraft skil and, if present, apply its effects
+        if Frostcraft in self.buff_dict:
+            Frostcraft_Activate(self.buff_dick[Frostcraft],self)
+        else: #If absent, set modifiers to 1.0
+            self.fc_mod=1.0
+            
         #Raw damage or 'fixed' damage
         #Some fixed damage scale with attack (such as CB Phials)
         attack[1]=self.raw_number(attack[0],raw_HZ,calc_crit_mod_raw,rage_mod)    #Raw damage value
@@ -442,7 +451,7 @@ class Weapon:
         
         #Calculate raw damage. Currently missing practically all situational modifiers.
         #Round later. For total damage, raw and fixed damage are rounded together!
-        return round(calc_raw * (mv/100.0) * crit_mod_raw * rage_mod * (hzv/100.0) * calc_sharp)
+        return round(calc_raw * (mv/100.0) * crit_mod_raw * rage_mod * (hzv/100.0) * calc_sharp * self.fc_mod)
 
     def elem_number(self,attack,hitzone,crit_mod_elem,rage_mod):
         """
@@ -481,7 +490,7 @@ class Weapon:
                 calc_sharp=self.sharp_elem
 
             #Calculate raw damage. Currently missing practically all situational modifiers.
-            return round(round(calc_elem * crit_mod_elem) * ele_mod * rage_mod * (hzv/100.0) * calc_sharp)
+            return round(round(calc_elem * crit_mod_elem) * ele_mod * rage_mod * (hzv/100.0) * calc_sharp * self.fc_mod)
 
         except KeyError: #For a None in weapon.elem_type, return 0
             return 0
